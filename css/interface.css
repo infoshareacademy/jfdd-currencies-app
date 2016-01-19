@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 .wrapper {
     min-height: 100%;
     overflow: hidden;
@@ -83,13 +87,18 @@ body {
     float: right;
 }
 
-
 .sidebar-toggle {
     color: #ffffff;
     float: left;
     background-color: transparent;
     padding: 15px 15px;
 }
+
+.sidebar-toggle:hover {
+    background-color: #285f7f;
+    color: #ffffff;
+}
+
 
 .control-theme {
     color: #ffffff;
@@ -98,13 +107,50 @@ body {
     padding: 15px 15px;
 }
 
+.right-navbar-items ul {
+    position: relative;
+}
+
+.right-navbar-items ul ul {
+    transition: all 500ms linear;
+    margin-left: 100px;
+    position: absolute;
+    top: 50px;
+}
+
+.right-navbar-items ul ul li {
+    left: -95px;
+    width:140px;
+    position: relative;
+}
+
+.control-theme-section {
+    font-size: 10px;
+    text-align: justify;
+    padding: 15px;
+    height: 150px;
+    background-color: #292929;
+    color: #ffffff;
+}
+
 .right-top-icons > li {
     float: left;
 }
 
+.right-top-icons li:hover {
+    background-color: #285f7f;
+}
+
+.right-top-icons li a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
 .avatar-icon {
     margin-top: -2px;
     margin-right: 12px;
+    margin-left: 5px;
     float: left;
     width: 26px;
     height: 26px;
@@ -113,8 +159,7 @@ body {
 
 .user-settings {
     color: inherit;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 9px;
     line-height: 20px;
     display: block;
 }
@@ -134,7 +179,7 @@ body {
 }
 
 .user-last-activity {
-    height: 120px;
+    height: 130px;
     position: relative;
     background-color: #292929;
     padding: 10px;
@@ -147,12 +192,11 @@ body {
 }
 
 .last-observed-detail {
-    text-align: right;
     font-size: 12px;
 }
 
 .last-observed {
-    padding-left:62px;
+    padding-left:52px;
 }
 
 .sidebar-list {
@@ -161,6 +205,7 @@ body {
 }
 
 .sidebar-list li {
+    cursor: pointer;
     padding-top: 10px;
     padding-bottom: 10px;
 }
