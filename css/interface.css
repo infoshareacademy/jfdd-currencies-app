@@ -104,7 +104,20 @@ body {
 }
 
 .avatar-icon {
+    margin-top: -2px;
+    margin-right: 12px;
+    float: left;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
 
+.user-settings {
+    color: inherit;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    display: block;
 }
 
 /* ################################################################# */
