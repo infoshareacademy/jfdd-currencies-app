@@ -9,10 +9,8 @@ $(document).ready(function(){
         }, 400)
     });
 
-    $( ".user-settings" ).click(function() {
-        $('.user-settings-dropdown').animate({
-            top: 50
-        }, 400)
+    $( ".user-settings").click(function() {
+        $('.user-settings-dropdown').css('display','block');
     });
 
 });

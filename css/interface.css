@@ -20,8 +20,6 @@ body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333;
-    background-color: #fff;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -35,7 +33,7 @@ body {
 /* ######################## SKINS ################################ */
 
 .blue-skin {
-    background-color: #367fa9;
+    background-color: #4b9dff;
     color: #ffffff;
 }
 
@@ -69,7 +67,7 @@ body {
 }
 
 .main-header .logo {
-    opacity: 0.9;
+    background-color: #4aa7ff;
     display: block;
     float: left;
     height: 50px;
@@ -99,7 +97,6 @@ body {
     color: #ffffff;
 }
 
-
 .control-theme {
     color: #ffffff;
     float: right;
@@ -111,18 +108,39 @@ body {
     position: relative;
 }
 
-.right-navbar-items ul ul {
+
+.right-navbar-items .slide-list-right {
     position: absolute;
     top: 50px;
     right: -140px;
 }
 
-.user-settings-dropdown {
+.right-navbar-items .user-settings-dropdown {
+    box-sizing: border-box;
+    display: none;
     position: absolute;
-    top: -50px;
+    color: #292929;
+    background-color: #ffffff;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    top: 50px;
+    width: 170px;
 }
 
-.user-settings-dropdown li {
+.right-navbar-items .user-settings-dropdown li {
+    padding: 15px;
+}
+
+.user-settings-dropdown li i {
+    padding: 5px;
+}
+.right-navbar-items .user-settings-dropdown li:hover {
+    background-color: #285f7f;
+    color: #ffffff;
+}
+
+.right-navbar-items li {
     position: relative;
 }
 
@@ -130,7 +148,7 @@ body {
     right: 0;
 }
 
-.right-navbar-items ul ul li {
+.right-navbar-items .slide-list-right li {
     width:140px;
     position: relative;
 }
@@ -142,6 +160,10 @@ body {
     height: 150px;
     background-color: #292929;
     color: #ffffff;
+}
+
+.control-theme-section i {
+    padding: 10px;
 }
 
 .right-top-icons > li {
@@ -169,10 +191,11 @@ body {
 }
 
 .user-settings {
-    color: inherit;
+    color: #ffffff;
     padding: 15px 9px;
     line-height: 20px;
     display: block;
+    width: 170px;
 }
 
 /* ################################################################# */
@@ -216,13 +239,16 @@ body {
 }
 
 .sidebar-list li {
+    box-sizing: border-box;
     cursor: pointer;
     padding-top: 10px;
     padding-bottom: 10px;
+    border-left: 4px solid transparent;
 }
 
 .sidebar-list li:hover {
     background-color: #292929;
+    border-left: 4px solid #367fa9;
 }
 
 .sidebar-list i {
@@ -233,9 +259,14 @@ body {
 /* ######################## MAIN FOOTER ########################### */
 
 .main-footer {
-    margin-left: 230px;
+    font-size: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: right;
     background: #fff;
-    padding: 15px;
+    padding: 5px;
+    padding-right: 20px;
     color: #444;
     border-top: 1px solid #d2d6de;
     z-index: 50;
