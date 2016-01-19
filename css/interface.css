@@ -67,7 +67,7 @@ body {
 }
 
 .main-header .logo {
-    background-color: #4aa7ff;
+    background-color: #2a75ff;
     display: block;
     float: left;
     height: 50px;
@@ -239,6 +239,7 @@ body {
 }
 
 .sidebar-list li {
+    transition: all 300ms linear;
     box-sizing: border-box;
     cursor: pointer;
     padding-top: 10px;
