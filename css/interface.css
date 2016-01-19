@@ -1,0 +1,139 @@
+/* ################################################################# */
+/* ######################## GENERAL ################################ */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    min-height: 100%;
+    position: static;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.wrapper:before, .wrapper:after {
+    content: " ";
+    display: table;
+}
+
+/* ################################################################# */
+/* ######################## SKINS ################################ */
+
+.blue-skin {
+    background-color: #367fa9;
+    color: #ffffff;
+}
+
+
+.red-skin {
+    background-color: #ba161d;
+    color: #ffffff;
+}
+
+.purple-skin {
+    background-color: #9f09ba;
+    color: #ffffff;
+}
+
+
+/* ################################################################# */
+/* ######################## HEADER ################################ */
+
+.main-header {
+    position: relative;
+    max-height: 100px;
+    z-index: 100;
+}
+
+.main-header > .navbar {
+    margin-bottom: 0;
+    margin-left: 230px;
+    border: none;
+    min-height: 50px;
+    position: relative;
+}
+
+.main-header .logo {
+    opacity: 0.9;
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 230px;
+    padding: 0 15px;
+    font-weight: 300;
+    overflow: hidden;
+}
+
+
+.right-navbar-items {
+    float: right;
+}
+
+
+.sidebar-toggle {
+    color: #ffffff;
+    float: left;
+    background-color: transparent;
+    padding: 15px 15px;
+}
+
+.control-theme {
+    color: #ffffff;
+    float: right;
+    background-color: transparent;
+    padding: 15px 15px;
+}
+
+.right-top-icons > li {
+    float: left;
+}
+
+.avatar-icon {
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: -2px;
+}
+
+/* ################################################################# */
+/* ######################## MAIN SIDEBAR ########################### */
+
+.main-sidebar {
+    z-index: 75;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    min-height: 100%;
+    width: 230px;
+}
+
+/* ################################################################# */
+/* ######################## MAIN FOOTER ########################### */
+
+.main-footer {
+    margin-left: 230px;
+    background: #fff;
+    padding: 15px;
+    color: #444;
+    border-top: 1px solid #d2d6de;
+    z-index: 50;
+}
