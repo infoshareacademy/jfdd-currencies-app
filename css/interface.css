@@ -309,7 +309,6 @@ body {
 
 .box-selected-cur {
     height: 500px; /* todo   tymczasowo do widoku */
-    background-color: red;
     border: 1px solid black;
 }
 
