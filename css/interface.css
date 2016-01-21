@@ -22,6 +22,7 @@ body {
     line-height: 1.42857143;
     overflow-x: hidden;
     overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .wrapper:before, .wrapper:after {
@@ -292,18 +293,39 @@ body {
     top: 200px;
     width: 150px;
     height: 80px;
-<<<<<<< Updated upstream
-=======
+
 }
 
 .content {
-
 
     margin-left: 230px;
     border: 1px solid black;
     min-height: 100%;
     position: relative;
->>>>>>> Stashed changes
+}
+
+/* ################################################################# */
+/* ######################## CURRENCIES BOXES ########################### */
+
+.box-selected-cur {
+    height: 500px; /* todo   tymczasowo do widoku */
+    background-color: red;
+    border: 1px solid black;
+}
+
+.dashboard-buttons-cur {
+    text-align: center;
+    background-color: lime;
+    border: 1px solid black;
+}
+
+.btn-cur {
+    background-color: #517feb;
+    margin: 10px;
+}
+
+.dashboard-heading {
+    background-color: aqua;
 }
 /*LOGIN POPUP*/
 .logInBackground {
