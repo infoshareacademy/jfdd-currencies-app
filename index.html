@@ -16,14 +16,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-
 </head>
 <body>
-    <div class="wrapper">
+
 
         <header class="main-header">
-            <a href="#" class="logo blue-skin">MONITOR KW</a>
+            <a href="#" class="logo blue-skin"><img src="images/logo.svg"></a>
             <nav class="navbar navbar-static-top blue-skin">
                 <a href="#" class="sidebar-toggle">
                     <i class="fa fa-bars"></i>
@@ -36,13 +34,28 @@
                             </a>
                         </li>
                         <li>
-                            <img src="images/avatar.jpg" class="avatar-icon">
-                            <span>Tomasz Nastały</span>
+                            <a href="#" class="user-settings">
+                                <img src="images/avatar.jpg" class="avatar-icon">
+                                <span class="userName"></span>
+                            </a>
+                            <ul class="user-settings-dropdown">
+                                <li><i class="fa fa-user"></i>Profil</li>
+                                <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="#" class="control-theme">
-                                <i class="fa fa-cogs"></i>
-                            </a>
+                            <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
+                            <ul class="menu-hidden">
+                                <li>
+                                    <div class="control-theme-section">
+                                        <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
+                                        <p>Niebieskie migdały</p>
+                                        <p>Kocham zimę!</p>
+                                        <p>Czarno to widzę...</p>
+                                        <p>Zielono mi</p>
+                                    </div>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
 
@@ -50,8 +63,44 @@
             </nav>
         </header>
 
-        <aside class="main-sidebar blue-skin"></aside>
-        <footer class="main-footer">xxxx</footer>
+        <aside class="main-sidebar blue-skin">
+            <div class="user-last-activity">
+                <i class="fa fa-th-list fa-2x list-icon-observe"></i>
+                <p class="last-observed">Ostatnio obserwowane:</p>
+                <p class="last-observed last-observed-detail">USD / EUR</p>
+                <p class="last-observed last-observed-detail">PLN / EUR</p>
+                <p class="last-observed last-observed-detail">CAD / USD</p>
+            </div>
+
+            <ul class="sidebar-list">
+                <li><i class="fa fa-tachometer"></i>Deska</li>
+                <li><i class="fa fa-table"></i>Tabele</li>
+                <li><i class="fa fa-line-chart"></i>Wykresy</li>
+                <li><i class="fa fa-sort-amount-asc"></i>Trendy</li>
+            </ul>
+        </aside>
+
+
+<div class="test-fb">
+
+    146191052425641
+        </div>
     </div>
+        <!-- TU WRZUCAMY CONTENT -->
+
+        <div class="content">xxx
+
+            <!--<div class="test-fb">-->
+            <!--146191052425641-->
+            <!--</div>-->
+
+        </div>
+
+        <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
+<!-- scripts !-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/interface.js"></script>
+        <script src="js/fb-login.js"></script>
+
 </body>
 </html>

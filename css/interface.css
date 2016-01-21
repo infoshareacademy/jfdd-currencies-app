@@ -7,9 +7,12 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 .wrapper {
     min-height: 100%;
-    position: static;
     overflow: hidden;
 }
 
@@ -17,8 +20,6 @@ body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333;
-    background-color: #fff;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -32,7 +33,7 @@ body {
 /* ######################## SKINS ################################ */
 
 .blue-skin {
-    background-color: #367fa9;
+    background-color: #5193ff;
     color: #ffffff;
 }
 
@@ -66,7 +67,7 @@ body {
 }
 
 .main-header .logo {
-    opacity: 0.9;
+    background-color: #517feb;
     display: block;
     float: left;
     height: 50px;
@@ -79,17 +80,27 @@ body {
     overflow: hidden;
 }
 
+.logo img {
+    margin-left: -5px;
+    margin-bottom: 3px;
+    height: 35px;
+}
+
 
 .right-navbar-items {
     float: right;
 }
-
 
 .sidebar-toggle {
     color: #ffffff;
     float: left;
     background-color: transparent;
     padding: 15px 15px;
+}
+
+.sidebar-toggle:hover {
+    background-color: #517feb;
+    color: #ffffff;
 }
 
 .control-theme {
@@ -99,17 +110,105 @@ body {
     padding: 15px 15px;
 }
 
+.right-navbar-items ul {
+    position: relative;
+}
+
+
+.right-navbar-items .menu-hidden {
+    position: absolute;
+    top: 50px;
+    display: none;
+}
+
+.right-navbar-items .menu-show-up {
+    display: block;
+}
+
+
+
+
+.right-navbar-items .user-settings-dropdown {
+    box-sizing: border-box;
+    display: none;
+    position: absolute;
+    color: #292929;
+    background-color: #ffffff;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    top: 50px;
+    width: 170px;
+}
+
+.right-navbar-items .user-settings-dropdown li {
+    padding: 15px;
+}
+
+.user-settings-dropdown li i {
+    padding: 5px;
+}
+.right-navbar-items .user-settings-dropdown li:hover {
+    background-color: #517feb;
+    color: #ffffff;
+}
+
+.right-navbar-items li {
+    position: relative;
+}
+
+.move-from-right {
+    right: 0;
+}
+
+.right-navbar-items .slide-list-right li {
+    width:140px;
+    position: relative;
+}
+
+.control-theme-section {
+    font-size: 10px;
+    text-align: justify;
+    padding: 15px;
+    height: 150px;
+    background-color: #292929;
+    color: #ffffff;
+}
+
+.control-theme-section i {
+    padding: 10px;
+}
+
 .right-top-icons > li {
     float: left;
 }
 
+.right-top-icons li:hover {
+    background-color: #517feb;
+}
+
+.right-top-icons li a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
 .avatar-icon {
-    float: left;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin-right: 10px;
     margin-top: -2px;
+    margin-right: 12px;
+    margin-left: 5px;
+    float: left;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+.user-settings {
+    color: #ffffff;
+    padding: 15px 9px;
+    line-height: 20px;
+    display: block;
+    width: 170px;
 }
 
 /* ################################################################# */
@@ -126,14 +225,83 @@ body {
     width: 230px;
 }
 
+.user-last-activity {
+    height: 130px;
+    position: relative;
+    background-color: #292929;
+    padding: 10px;
+}
+
+.list-icon-observe {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.last-observed-detail {
+    font-size: 12px;
+}
+
+.last-observed {
+    padding-left:52px;
+}
+
+.sidebar-list {
+    width: 100%;
+    text-align: left;
+}
+
+.sidebar-list li {
+    transition: all 300ms linear;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-list li:hover {
+    background-color: #292929;
+    border-left: 4px solid #517feb;
+}
+
+.sidebar-list i {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 /* ################################################################# */
 /* ######################## MAIN FOOTER ########################### */
 
 .main-footer {
-    margin-left: 230px;
+    font-size: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: right;
     background: #fff;
-    padding: 15px;
+    padding: 5px;
+    padding-right: 20px;
     color: #444;
     border-top: 1px solid #d2d6de;
-    z-index: 50;
+    z-index: 125;
+}
+
+.test-fb {
+    position: absolute;
+    left: 300px;
+    top: 200px;
+    width: 150px;
+    height: 80px;
+<<<<<<< Updated upstream
+=======
+}
+
+.content {
+
+
+    margin-left: 230px;
+    border: 1px solid black;
+    min-height: 100%;
+    position: relative;
+>>>>>>> Stashed changes
 }
