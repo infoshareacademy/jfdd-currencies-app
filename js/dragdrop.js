@@ -1,4 +1,16 @@
-/**
- * Created by Tomasz on 21.01.2016.
- */
-x
+$(function() {
+    $("#sortable").sortable({
+        containment: "parent",
+        cursor: "move",
+        delay: 150,
+        items: "> section",
+        opacity: 0.4,
+        zIndex: 9999,
+    });
+    $("#sortable").disableSelection();
+
+
+
+});
+
+

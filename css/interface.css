@@ -11,10 +11,7 @@ a {
     text-decoration: none;
 }
 
-.wrapper {
-    min-height: 100%;
-    overflow: hidden;
-}
+
 
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -288,38 +285,46 @@ body {
 }
 
 .content {
-    background-color: #a9aeae;
+    background-color: #eaeded;
     margin-left: 230px;
-    border: 1px solid black;
     min-height: 100%;
-    position: relative;
+
+
 }
 
 /* ################################################################# */
 /* ######################## CURRENCIES BOXES ########################### */
 
 .box-selected-cur {
+    background-color: #F5F5F5;
     position: relative;
-    height: 500px; /* todo   tymczasowo do widoku */
-    border: 1px solid black;
+    min-height: 100%
+
 }
+
+
 
 .dashboard-buttons-cur {
     text-align: center;
-    border: 1px solid black;
 }
 
-.btn-cur {
+/* ################################################################# */
+/* ######################## DRAG DROP BOXES ########################### */
+
+
+.panel-heading {
     margin: 10px;
 }
 
-.dashboard-heading {
-    background-color: aqua;
+.panel-body {
+    margin: 10px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: #F5F5F5;
 }
 
-.panel-cur {
-    width: 100%;
-    position: absolute;
-    background-color: red;
-
+.test-color {
+    height: 400px;
+    border-radius: 3px;
+    background-color: #ffffff;
 }

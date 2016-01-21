@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
     <link rel="stylesheet" href="css/interface.css">
+
 </head>
 <body>
 
@@ -84,42 +85,44 @@
     </div>
         <!-- TU WRZUCAMY CONTENT -->
 
+        <div class="content panel panel-default">
+            <div class="panel-heading"><h4>Overview</h4></div>
+            <div class="panel-body">
+                <div id="sortable">
+                  <section id='bla' class="box-selected-cur col-md-4 col-xs-12">
+                      <div class="col-md-12 test-color">
+                      <select class="form-control left-select">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                      </select>
+                      <canvas id="myChart" width="200" height="200"></canvas>
+                          </div>
+                  </section>
 
-        <div class="content">
-            <section class="dashboard-heading col-md-12 col-xs-12"><h2>Overview</h2></section>
+                  <section class="box-selected-cur col-md-4 col-xs-12">
+                      <div class="col-md-12 test-color"><h1>PANEL 2</h1></div>
+                  </section>
 
-              <section id='bla' class="box-selected-cur col-md-4 col-xs-12">
-                  <select class="form-control left-select">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                  </select>
-
-
-                  <canvas id="myChart" width="200" height="200"></canvas>
-
-              </section>
-              <section class="box-selected-cur col-md-4 col-xs-12">
-
-
-              </section>
-              <section class="box-selected-cur col-md-4 col-xs-12">
-
-
-              </section>
-            <div id="post"></div>
+                    <section class="box-selected-cur col-md-4 col-xs-12">
+                        <div class="col-md-12 test-color"><h1>PANEL 3</h1></div>
+                  </section>
+                </div>
+            </div>
         </div>
-
+            <div id="post"></div>
         <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
         <script src="js/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <script src="js/tableData.js"></script>
         <script src="js/interface.js"></script>
         <script src="js/fb-login.js"></script>
         <script src="js/Chart.js-master/Chart.js"></script>
         <script src="js/Chart.js-master/chartcur.js"></script>
+        <script src="js/dragdrop.js"></script>
 
 </body>
 </html>
