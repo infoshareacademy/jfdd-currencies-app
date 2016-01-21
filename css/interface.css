@@ -195,17 +195,6 @@ body {
     text-decoration: none;
 }
 
-
-.avatar-icon {
-    margin-top: -2px;
-    margin-right: 12px;
-    margin-left: 5px;
-    float: left;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-}
-
 .user-settings {
     color: #ffffff;
     padding: 15px 9px;
