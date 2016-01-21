@@ -28,23 +28,34 @@ body {
 }
 
 /* ################################################################# */
-/* ######################## SKINS ################################ */
+/* ######################## SKIN ################################ */
 
 .blue-skin {
     background-color: #5193ff;
     color: #ffffff;
 }
 
-
-.red-skin {
-    background-color: #ba161d;
-    color: #ffffff;
+.blue-skin-hover:hover {
+    background-color: #517feb;
 }
 
-.purple-skin {
-    background-color: #9f09ba;
-    color: #ffffff;
+.cursor-pointer {
+    cursor: pointer;
 }
+
+.motive-blue-btn {
+    background-color: #5193ff;
+}
+
+.motive-red-btn {
+    background-color: #CC0000;
+}
+
+.motive-green-btn {
+    background-color: #73AD21;
+}
+
+
 
 
 /* ################################################################# */
@@ -65,7 +76,6 @@ body {
 }
 
 .main-header .logo {
-    background-color: #517feb;
     display: block;
     float: left;
     height: 50px;
@@ -97,7 +107,6 @@ body {
 }
 
 .sidebar-toggle:hover {
-    background-color: #517feb;
     color: #ffffff;
 }
 
@@ -107,6 +116,8 @@ body {
     background-color: transparent;
     padding: 15px 15px;
 }
+
+
 
 .right-navbar-items ul {
     position: relative;
@@ -149,7 +160,6 @@ body {
     padding: 5px;
 }
 .right-navbar-items .user-settings-dropdown li:hover {
-    background-color: #517feb;
     color: #ffffff;
 }
 
@@ -169,10 +179,13 @@ body {
 .control-theme-section {
     font-size: 10px;
     text-align: justify;
-    padding: 15px;
-    height: 150px;
+    height: 250px;
     background-color: #292929;
     color: #ffffff;
+}
+
+.control-theme-section p {
+    padding: 15px;
 }
 
 .control-theme-section i {
@@ -183,9 +196,6 @@ body {
     float: left;
 }
 
-.right-top-icons li:hover {
-    background-color: #517feb;
-}
 
 .right-top-icons li a:hover {
     color: #ffffff;
@@ -319,12 +329,12 @@ body {
 .panel-body {
     margin: 10px;
     border: 1px solid transparent;
-    border-radius: 3px;
     background-color: #F5F5F5;
 }
 
 .test-color {
     height: 400px;
-    border-radius: 3px;
+
     background-color: #ffffff;
 }
+
