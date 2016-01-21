@@ -292,4 +292,16 @@ body {
     top: 200px;
     width: 150px;
     height: 80px;
+<<<<<<< Updated upstream
+=======
+}
+
+.content {
+
+
+    margin-left: 230px;
+    border: 1px solid black;
+    min-height: 100%;
+    position: relative;
+>>>>>>> Stashed changes
 }
