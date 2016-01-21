@@ -33,7 +33,7 @@ body {
 /* ######################## SKINS ################################ */
 
 .blue-skin {
-    background-color: #4b9dff;
+    background-color: #5193ff;
     color: #ffffff;
 }
 
@@ -67,7 +67,7 @@ body {
 }
 
 .main-header .logo {
-    background-color: #2a75ff;
+    background-color: #517feb;
     display: block;
     float: left;
     height: 50px;
@@ -78,6 +78,12 @@ body {
     padding: 0 15px;
     font-weight: 300;
     overflow: hidden;
+}
+
+.logo img {
+    margin-left: -5px;
+    margin-bottom: 3px;
+    height: 35px;
 }
 
 
@@ -93,7 +99,7 @@ body {
 }
 
 .sidebar-toggle:hover {
-    background-color: #285f7f;
+    background-color: #517feb;
     color: #ffffff;
 }
 
@@ -109,11 +115,18 @@ body {
 }
 
 
-.right-navbar-items .slide-list-right {
+.right-navbar-items .menu-hidden {
     position: absolute;
     top: 50px;
-    right: -140px;
+    display: none;
 }
+
+.right-navbar-items .menu-show-up {
+    display: block;
+}
+
+
+
 
 .right-navbar-items .user-settings-dropdown {
     box-sizing: border-box;
@@ -136,7 +149,7 @@ body {
     padding: 5px;
 }
 .right-navbar-items .user-settings-dropdown li:hover {
-    background-color: #285f7f;
+    background-color: #517feb;
     color: #ffffff;
 }
 
@@ -171,7 +184,7 @@ body {
 }
 
 .right-top-icons li:hover {
-    background-color: #285f7f;
+    background-color: #517feb;
 }
 
 .right-top-icons li a:hover {
@@ -249,7 +262,7 @@ body {
 
 .sidebar-list li:hover {
     background-color: #292929;
-    border-left: 4px solid #367fa9;
+    border-left: 4px solid #517feb;
 }
 
 .sidebar-list i {
@@ -270,5 +283,13 @@ body {
     padding-right: 20px;
     color: #444;
     border-top: 1px solid #d2d6de;
-    z-index: 50;
+    z-index: 125;
+}
+
+.test-fb {
+    position: absolute;
+    left: 300px;
+    top: 200px;
+    width: 150px;
+    height: 80px;
 }

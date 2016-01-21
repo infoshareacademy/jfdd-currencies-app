@@ -3,15 +3,13 @@
  */
 $(document).ready(function(){
 
-    $( ".trigger-slide" ).click(function() {
-        $('.slide-list-right').animate({
-            right: 0
-        }, 400)
+    $(".trigger-slide").click(function() {
+        $('.menu-hidden').toggleClass('menu-show-up')
     });
 
     $( ".user-settings").click(function() {
-        $('.user-settings-dropdown').css('display','block');
-    });
+        $('.user-settings-dropdown').toggle();
 
+    });
 });
 
