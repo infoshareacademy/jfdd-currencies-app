@@ -1,0 +1,329 @@
+/* ################################################################# */
+/* ######################## GENERAL ################################ */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.wrapper:before, .wrapper:after {
+    content: " ";
+    display: table;
+}
+
+/* ################################################################# */
+/* ######################## SKINS ################################ */
+
+.blue-skin {
+    background-color: #5193ff;
+    color: #ffffff;
+}
+
+
+.red-skin {
+    background-color: #ba161d;
+    color: #ffffff;
+}
+
+.purple-skin {
+    background-color: #9f09ba;
+    color: #ffffff;
+}
+
+
+/* ################################################################# */
+/* ######################## HEADER ################################ */
+
+.main-header {
+    position: relative;
+    max-height: 100px;
+    z-index: 100;
+}
+
+.main-header > .navbar {
+    margin-bottom: 0;
+    margin-left: 230px;
+    border: none;
+    min-height: 50px;
+    position: relative;
+}
+
+.main-header .logo {
+    background-color: #517feb;
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 230px;
+    padding: 0 15px;
+    font-weight: 300;
+    overflow: hidden;
+}
+
+.logo img {
+    margin-left: -5px;
+    margin-bottom: 3px;
+    height: 35px;
+}
+
+
+.right-navbar-items {
+    float: right;
+}
+
+.sidebar-toggle {
+    color: #ffffff;
+    float: left;
+    background-color: transparent;
+    padding: 15px 15px;
+}
+
+.sidebar-toggle:hover {
+    background-color: #517feb;
+    color: #ffffff;
+}
+
+.control-theme {
+    color: #ffffff;
+    float: right;
+    background-color: transparent;
+    padding: 15px 15px;
+}
+
+.right-navbar-items ul {
+    position: relative;
+}
+
+
+.right-navbar-items .menu-hidden {
+    position: absolute;
+    top: 50px;
+    display: none;
+}
+
+.right-navbar-items .menu-show-up {
+    display: block;
+}
+
+
+
+
+.right-navbar-items .user-settings-dropdown {
+    box-sizing: border-box;
+    display: none;
+    position: absolute;
+    color: #292929;
+    background-color: #ffffff;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    top: 50px;
+    width: 170px;
+}
+
+.right-navbar-items .user-settings-dropdown li {
+    padding: 15px;
+}
+
+.user-settings-dropdown li i {
+    padding: 5px;
+}
+.right-navbar-items .user-settings-dropdown li:hover {
+    background-color: #517feb;
+    color: #ffffff;
+}
+
+.right-navbar-items li {
+    position: relative;
+}
+
+.move-from-right {
+    right: 0;
+}
+
+.right-navbar-items .slide-list-right li {
+    width:140px;
+    position: relative;
+}
+
+.control-theme-section {
+    font-size: 10px;
+    text-align: justify;
+    padding: 15px;
+    height: 150px;
+    background-color: #292929;
+    color: #ffffff;
+}
+
+.control-theme-section i {
+    padding: 10px;
+}
+
+.right-top-icons > li {
+    float: left;
+}
+
+.right-top-icons li:hover {
+    background-color: #517feb;
+}
+
+.right-top-icons li a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.avatar-icon {
+    margin-top: -2px;
+    margin-right: 12px;
+    margin-left: 5px;
+    float: left;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+.user-settings {
+    color: #ffffff;
+    padding: 15px 9px;
+    line-height: 20px;
+    display: block;
+    width: 170px;
+}
+
+/* ################################################################# */
+/* ######################## MAIN SIDEBAR ########################### */
+
+.main-sidebar {
+    z-index: 75;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    min-height: 100%;
+    width: 230px;
+}
+
+.user-last-activity {
+    height: 130px;
+    position: relative;
+    background-color: #292929;
+    padding: 10px;
+}
+
+.list-icon-observe {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.last-observed-detail {
+    font-size: 12px;
+}
+
+.last-observed {
+    padding-left:52px;
+}
+
+.sidebar-list {
+    width: 100%;
+    text-align: left;
+}
+
+.sidebar-list li {
+    transition: all 300ms linear;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-list li:hover {
+    background-color: #292929;
+    border-left: 4px solid #517feb;
+}
+
+.sidebar-list i {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* ################################################################# */
+/* ######################## MAIN FOOTER ########################### */
+
+.main-footer {
+    font-size: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: right;
+    background: #fff;
+    padding: 5px;
+    padding-right: 20px;
+    color: #444;
+    border-top: 1px solid #d2d6de;
+    z-index: 125;
+}
+
+.test-fb {
+    position: absolute;
+    left: 300px;
+    top: 200px;
+    width: 150px;
+    height: 80px;
+
+}
+
+.content {
+
+    margin-left: 230px;
+    border: 1px solid black;
+    min-height: 100%;
+    position: relative;
+}
+
+/* ################################################################# */
+/* ######################## CURRENCIES BOXES ########################### */
+
+.box-selected-cur {
+    height: 500px; /* todo   tymczasowo do widoku */
+    background-color: red;
+    border: 1px solid black;
+}
+
+.dashboard-buttons-cur {
+    text-align: center;
+    background-color: lime;
+    border: 1px solid black;
+}
+
+.btn-cur {
+    background-color: #517feb;
+    margin: 10px;
+}
+
+.dashboard-heading {
+    background-color: aqua;
+}
