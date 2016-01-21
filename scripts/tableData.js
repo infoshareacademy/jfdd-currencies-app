@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
 
-    $("#post").append("<ul></ul>");
+    $(".box-selected-cur").append("<table class='table table-striped table-bordered'><thead><tr><th>Waluta</th><th>Kod waluty</th><th>Kurs kupna</th><th>Kurs sprzedaży</th></tr></thead></table>");
 
     $.ajax({
 
@@ -16,7 +16,7 @@ $(document).ready(function () {
 
         success: function (xml) {
 
-            $(xml).find('pozycja').each(function () {
+            $(xml).find('pozycja').eq(0).each(function () {
 
                 var nazwaWaluty = $(this).find('nazwa_waluty').text();
 
@@ -25,7 +25,7 @@ $(document).ready(function () {
                 var kursKupna = $(this).find('kurs_kupna').text();
                 var kursSprzedazy = $(this).find('kurs_sprzedazy').text();
 
-                $("<li></li>").html(nazwaWaluty + ", " + kodWaluty+", " +kursKupna+", " +kursSprzedazy).appendTo("#post");
+                $("<tr></tr>").html('<td>'+nazwaWaluty + '</td>'+ '<td>'+ kodWaluty+'</td>'+'<td>'+kursKupna+'</td>'+'<td>'+kursSprzedazy+'</td>').appendTo("table");
 
             });
 
@@ -33,10 +33,12 @@ $(document).ready(function () {
 
         error: function () {
 
-            alert("An error occurred while processing XML file.");
+            console.log("An error occurred while processing XML file.");
 
         }
 
     });
-
+$("tr").click(function(){
+    $(this).hide();
+})
 });
