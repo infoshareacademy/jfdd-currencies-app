@@ -323,3 +323,7 @@ body {
     background-color: #517feb;
     margin: 10px;
 }
+
+.dashboard-heading {
+    background-color: aqua;
+}
