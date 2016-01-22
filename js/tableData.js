@@ -4,7 +4,8 @@
 
 $(document).ready(function () {
 
-    $(".box-selected-cur").append("<table class='table table-striped table-bordered'><thead><tr><th>Waluta</th><th>Kod waluty</th><th>Kurs kupna</th><th>Kurs sprzedaży</th></tr></thead></table>");
+
+    $(".left-select").after("<table class='table table-striped table-bordered'><thead><tr><th>Waluta</th><th>Kod waluty</th><th>Kurs kupna</th><th>Kurs sprzedaży</th></tr></thead></table>");
 
     $.ajax({
 
