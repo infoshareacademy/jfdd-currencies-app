@@ -23,11 +23,10 @@
     padding-left: 10%;
     padding-right: 10%;
     top:10%;
-
 }
 
 .blockPopUp {
-    display:none;
+    /*display:none;*/
 }
 
 .logInPopUp p{
@@ -54,4 +53,7 @@
     margin-bottom: 0;
     padding-left: 0;
     display: inline;
+}
+.google {
+    padding-left: 36px;
 }
