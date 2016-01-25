@@ -6,7 +6,7 @@ $(document).ready(function () {
     var ctx = document.getElementById("myChart").getContext("2d");
 
     var data = {
-        labels: ["PN", "WT", "ŚR", "CZW", "PT", "SB", "ND"],
+        labels: ["PN", "WT", "ŚR", "CZW", "PT"],
         datasets: [
             {
                 label: "Kupno",
@@ -16,7 +16,7 @@ $(document).ready(function () {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [4.32, 4.11, 4.54, 4.21, 4.04, 3.99]
+                data: []
             },
             {
                 label: "Sprzedaż",
@@ -26,7 +26,7 @@ $(document).ready(function () {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
-                data: [4.52, 4.44, 4.64, 4.32, 4.10, 4.21]
+                data: []
             }
         ]
     };
@@ -77,38 +77,54 @@ $(document).ready(function () {
 
     };
 
+    var chart = new Chart(ctx);
 
-    $.ajax({
+    function fetchDataset(url, index) {
+        $.ajax({
 
-        type: "GET",
+            type: "GET",
 
-        url: "xml/2016_01_11.xml",
+            url: url,
 
-        dataType: "xml",
+            dataType: "xml",
 
-        success: function (xml) {
-            $(xml).find('pozycja').eq(0).each(function () {
+            success: function (xml) {
+                $(xml).find('pozycja').eq(index).each(function () {
 
-                var nazwaWaluty = $(this).find('nazwa_waluty').text();
-                var przelicznik = $(this).find('przelicznik').text();
-                var kodWaluty = $(this).find('kod_waluty').text();
-                var kursKupna = $(this).find('kurs_kupna').text();
-                var kursSprzedazy = $(this).find('kurs_sprzedazy').text();
+                    var nazwaWaluty = $(this).find('nazwa_waluty').text();
+                    var przelicznik = $(this).find('przelicznik').text();
+                    var kodWaluty = $(this).find('kod_waluty').text();
+                    var kursKupna = $(this).find('kurs_kupna').text();
+                    var kursSprzedazy = $(this).find('kurs_sprzedazy').text();
 
-                data.datasets[0].data.push(+kursKupna.replace(',', '.'));
-                data.datasets[1].data.push(+kursSprzedazy.replace(',', '.'));
-            });
+                    data.datasets[0].data[index] = +kursKupna.replace(',', '.');
+                    data.datasets[1].data[index] = +kursSprzedazy.replace(',', '.');
+                });
 
-            new Chart(ctx).Line(data, options);
-        },
+                for (var i = 0 ; i < 5 ; i++) {
 
-        error: function () {
+                }
+                chart.Line(data, options);
+            },
 
-            console.log("An error occurred while processing XML file.");
+            error: function () {
 
-        }
+                console.log("An error occurred while processing XML file.");
 
-    });
+            }
+
+        });
+    }
+
+    fetchDataset('xml/2016_01_11.xml',0);
+    fetchDataset('xml/2016_01_12.xml',1);
+    fetchDataset('xml/2016_01_13.xml',2);
+    fetchDataset('xml/2016_01_14.xml',3);
+    fetchDataset('xml/2016_01_15.xml',4);
+
+
 
 });
+
+
 
