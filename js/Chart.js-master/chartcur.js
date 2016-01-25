@@ -106,11 +106,8 @@ $(document).ready(function () {
                     currencies[kodWaluty].przelicznik = przelicznik;
                     currencies[kodWaluty].kodWaluty = kodWaluty;
 
-
                     currencies[kodWaluty].kursyKupna = currencies[kodWaluty].kursyKupna || [];
                     currencies[kodWaluty].kursySprzedazy = currencies[kodWaluty].kursySprzedazy || [];
-
-
 
                     currencies[kodWaluty].kursyKupna[index] = +kursKupna.replace(',', '.');
                     currencies[kodWaluty].kursySprzedazy[index] = +kursSprzedazy.replace(',', '.');
@@ -122,7 +119,6 @@ $(document).ready(function () {
                 console.log("An error occurred while processing XML file.");
 
             }
-
         });
     }
     $.when(
