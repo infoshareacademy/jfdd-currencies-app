@@ -27,6 +27,7 @@ $(document).ready(function () {
                  .appendTo('#tresc');
 
 
+
              //var tabliczka = [kodWaluty, kursKupna, kursSprzedazy, roznica, data];
              //if (tabliczka[0]='AUD')  {
              //    console.log(tabliczka[3]);
@@ -45,9 +46,12 @@ $(document).ready(function () {
              //    console.log(this.obiekcik.kurs_sprzedazy)
              //}
 
-
-
          });
+            $(response).find('pozycja').each(function ()    {
+                $(response):contains('AUD')
+            })
+
+
         })
     }
 
