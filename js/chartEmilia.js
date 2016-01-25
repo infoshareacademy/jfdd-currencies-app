@@ -23,8 +23,29 @@ $(document).ready(function () {
              var kursKupna = parseFloat(($(this).find('kurs_kupna').text()).replace(',','.'));
              var kursSprzedazy = parseFloat(($(this).find('kurs_sprzedazy').text()).replace(',','.'));
              var roznica = ((kursSprzedazy) - (kursKupna)).toFixed(4);
-             $('<li></li>').html(nazwaWaluty + kodWaluty +' '+ kursKupna +' '+ kursSprzedazy+ ' '+roznica + data)
+             $('<li></li>').html(nazwaWaluty +' ,kod waluty: '+ kodWaluty +' ,kurs kupna:  '+ kursKupna +' ,kurs sprzedaży:  '+ kursSprzedazy+ ' ,różnica: '+roznica +' ,data: ' +data)
                  .appendTo('#tresc');
+
+
+             //var tabliczka = [kodWaluty, kursKupna, kursSprzedazy, roznica, data];
+             //if (tabliczka[0]='AUD')  {
+             //    console.log(tabliczka[3]);
+             //}
+
+
+             //var obiekcik= {
+             //    nazwa_waluty: nazwaWaluty,
+             //    kod_waluty: kodWaluty,
+             //    kurs_kupna: kursKupna,
+             //    kurs_sprzedazy: kursSprzedazy,
+             //    roznica_kursow: roznica,
+             //    data_notowania: data
+             //};
+             //if (obiekcik.kod_waluty ='AUD')    {
+             //    console.log(this.obiekcik.kurs_sprzedazy)
+             //}
+
+
 
          });
         })
@@ -40,7 +61,10 @@ $(document).ready(function () {
 
 
 
-});
+
+
+
+
 //1. Ściągnąć dane
 //2. Przeliczyć dane - wyliczyć różnicę
 //3.Wyrysować wykres
@@ -69,3 +93,4 @@ $(document).ready(function () {
 //        });
 //    }
 
+});
