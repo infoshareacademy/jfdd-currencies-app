@@ -5,10 +5,17 @@
 $(document).ready(function () {
 
     $(".left-select").after("<table class='table table-striped table-bordered'><thead><tr><th>Waluta</th><th>Kod waluty</th><th>Kurs kupna</th><th>Kurs sprzedaży</th></tr></thead><tr class='edit-tr'></tr></table>");
-    actualizeTableData(0);
+    var leftSelect = localStorage.getItem("selectLeft");
+    var rightSelect = localStorage.getItem("selectRight");
+    var centerSelect = localStorage.getItem("selectCenter");
+
+    actualizeTableData(leftSelect, $('#selectLeft').parents('section')[0]);
+    actualizeTableData(rightSelect, $('#selectRight').parents('section')[0]);
+    actualizeTableData(centerSelect, $('#selectCenter').parents('section')[0]);
 
     $("select").change(function() {
         actualizeTableData($(this)[0].selectedIndex, $(this).parents('section')[0]);
+        addLocalStorage(this.id,$(this)[0].selectedIndex);
     });
 
 });
@@ -34,7 +41,12 @@ function actualizeTableData (selectedOption, container){
                 var kursSprzedazy = $(this).find('kurs_sprzedazy').text();
                 var newCurrency='<tr class="edit-tr"><td>'+nazwaWaluty + '</td>'+ '<td>'+ kodWaluty+'</td>'+'<td>'+kursKupna+'</td>'+'<td>'+kursSprzedazy+'</td></tr>';
                 $('.table .edit-tr ', container).replaceWith(newCurrency);
+
+
             });
         }
     });
+}
+function addLocalStorage(selectId,selectedOption){
+    localStorage.setItem(selectId, selectedOption);
 }
