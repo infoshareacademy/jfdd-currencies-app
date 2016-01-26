@@ -15,15 +15,16 @@ $(document).ready(function () {
             },
             success: function (response) {
                 $(response).find('waluty').each(function () {
+                    var data = [];
 
                     $(response).find('pozycja').each(function () {
 
-                        var data = [];
+
                         $(this).find('data').each(function() {
                             data.push($(this).text());
                         });
-
                         console.log(data);
+
                         //var kurs = $(this).find('kurs').text();
                         //
                         //console.log(typeof data);
