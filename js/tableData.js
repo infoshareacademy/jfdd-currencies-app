@@ -75,5 +75,5 @@ function buildSelectCurrency(selectId,selectedOption,container) {
             buildSelect += '<option >' + currency[countCurrency] + '</option>';
         }
     }
-    $(container).prepend(buildSelect);
+    $('button',container).after(buildSelect);
 }
