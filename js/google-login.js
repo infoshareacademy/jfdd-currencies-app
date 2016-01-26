@@ -1,16 +1,14 @@
-/**
- * Created by siwexx on 25.01.16.
- */
-
 function onSignIn(googleUser) {
-    // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log("ID: " + profile.getId());
     console.log("Name: " + profile.getName());
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
 
-    // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
-};
+}
+//aktualnaData...
+var date = new Date();
+var actualYear = date.getFullYear();
+document.getElementById("currentYear").innerHTML = actualYear;
