@@ -3,6 +3,7 @@
  */
 $(document).ready(function () {
 
+
     var ctx = document.getElementById("myChart").getContext("2d");
 
     var data = {
@@ -73,7 +74,9 @@ $(document).ready(function () {
         datasetStrokeWidth: 2,
 
         //Boolean - Whether to fill the dataset with a colour
-        datasetFill: true
+        datasetFill: true,
+
+        responsive: true
 
     };
 
@@ -143,8 +146,17 @@ $(document).ready(function () {
     $('#selectLeft').change(function() {
             drawChart($(this).val());
     });
-
-
 });
 
+//
+//var currenciesList = [
+//    {val : 'USD', text: 'Dolar amerykanski'},
+//    {val : 'EUR', text: 'Euro europejskie'},
+//    {val : 'CAD', text: 'Dolar canadyjski'}
+//];
+//
+//var currenciesSelect = $('<select>').appendTo('.test-select');
+//$(currenciesList).each(function() {
+//    sel.append($("<option>").attr('value',this.val).text(this.text));
+//});
 

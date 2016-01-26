@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitor wymiany walut</title>
+
+    <!-- css files -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/interface.css">
+    <link rel="stylesheet" href="css/main-table.css">
+
+</head>
+<body>
+
+
+<header class="main-header">
+    <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
+    <nav class="navbar blue-skin">
+        <a href="#" class="sidebar-toggle blue-skin blue-skin-hover">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="right-navbar-items">
+            <ul class="right-top-icons">
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="control-theme">
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </li>
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="user-settings">
+                        <span class="userName"></span>
+                    </a>
+                    <ul class="user-settings-dropdown blue-skin blue-skin-hover">
+                        <li><i class="fa fa-user"></i>Profil</li>
+                        <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
+                    </ul>
+                </li>
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
+                    <ul class="menu-hidden">
+                        <li>
+                            <div class="control-theme-section">
+                                <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
+                                <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
+                                <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
+                                <p class="motive-green-btn cursor-pointer">Zielono mi</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+<aside class="main-sidebar blue-skin">
+    <div class="user-last-activity">
+        <i class="fa fa-th-list fa-2x list-icon-observe"></i>
+        <p class="last-observed">Ostatnio obserwowane:</p>
+        <p class="last-observed last-observed-detail">USD / EUR</p>
+        <p class="last-observed last-observed-detail">PLN / EUR</p>
+        <p class="last-observed last-observed-detail">CAD / USD</p>
+    </div>
+
+    <ul class="sidebar-list">
+        <li><a href="index.html"><i class="fa fa-tachometer"></i>Deska</a></li>
+        <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
+        <li><i class="fa fa-line-chart"></i>Wykresy</li>
+        <li><i class="fa fa-sort-amount-asc"></i>Trendy</li>
+    </ul>
+</aside>
+</div>
+<!-- TU WRZUCAMY CONTENT -->
+
+
+<div class="content">
+    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Zestawienie z dnia <span class="dateOfTable"></span></h2></div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <table class="table table-bordered table-cur">
+                <thead>
+                    <td>Waluta</td>
+                    <td>Kod waluty</td>
+                    <td>Kurs kupna</td>
+                    <td>Kurs sprzedaży</td>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+
+<footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
+<!-- scripts !-->
+<script src="js/jquery.min.js"></script>
+<script src="js/interface.js"></script>
+<script src="js/fb-login.js"></script>
+<script src="js/totalTable.js"></script>
+
+</body>
+</html>
