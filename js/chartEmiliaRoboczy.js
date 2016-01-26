@@ -18,13 +18,24 @@ $(document).ready(function () {
 
                     $(response).find('pozycja').each(function () {
 
-                        var data = $(this).find('data').text();
-                        var kurs = $(this).find('kurs').text();
-                        var dataTablica=[];
+                        var data = [];
+                        $(this).find('data').each(function() {
+                            data.push($(this).text());
+                        });
+
+                        console.log(data);
+                        //var kurs = $(this).find('kurs').text();
+                        //
+                        //console.log(typeof data);
+                        //console.log(data);
+                        //
+                        //var dataTablica=data.split(" ");
+                        //
+                        //$('<p></p>').html(data).appendTo('#tresc');
 
 
-                        dataTablica.push(data);
-                        console.log(dataTablica);
+                        //dataTablica.push(data);
+                        //console.log(dataTablica);
 
 
 
@@ -35,11 +46,11 @@ $(document).ready(function () {
                         //    console.log(kurs[x]);
                         //    $('.lista').append('<li>' + kurs + '</li>');
                         //}
+                        //$('<p></p>').html(data).appendTo('#tresc');
 
-                        //$('<li></li>').html(data).appendTo('#tresc');
                     });
-                    return dataTablica;
-                    console.log(dataTablica);
+                    //return dataTablica;
+                    //console.log(dataTablica);
 
 
 
