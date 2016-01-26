@@ -1,69 +1,51 @@
 $(document).ready(function () {
 
-    var wybranaData1= 19930107;
-    var wybranaData2= 19930127;
+    var wybranaData1 = 20100409;
+    var wybranaData2 = 20100701;
 
 
-    function gownoTest () {
+    function pobierzDane(url) {
         //$('#tresc').append('<ul></ul>');
         $.ajax({
             type: "GET",
-            url: "../xml/GBPtest.xml",
+            url: url,
             dataType: "xml",
             error: function () {
-                $('#tresc').text('wystapil blad');
+                $('#tresc').text('wystąpil błąd');
             },
             success: function (response) {
-                $(response).find('waluty').each(function () {
-                    var data = [];
 
-                    $(response).find('pozycja').each(function () {
+                var data = [];
+                var kurs = [];
 
+                $(response).find('pozycja').each(function () {
 
-                        $(this).find('data').each(function() {
-                            data.push($(this).text());
-                        });
-                        console.log(data);
-
-                        //var kurs = $(this).find('kurs').text();
-                        //
-                        //console.log(typeof data);
-                        //console.log(data);
-                        //
-                        //var dataTablica=data.split(" ");
-                        //
-                        //$('<p></p>').html(data).appendTo('#tresc');
-
-
-                        //dataTablica.push(data);
-                        //console.log(dataTablica);
-
-
-
-
-
-
-                        //if (wybranaData1== data[x])    {
-                        //    console.log(kurs[x]);
-                        //    $('.lista').append('<li>' + kurs + '</li>');
-                        //}
-                        //$('<p></p>').html(data).appendTo('#tresc');
-
+                    $(this).find('data').each(function () {
+                        data.push(parseFloat($(this).text()));
                     });
-                    //return dataTablica;
-                    //console.log(dataTablica);
+                    $(this).find('kurs').each(function () {
+                        kurs.push(parseFloat($(this).text()));
+                    });
+                });
+
+                var startPosition = data.indexOf(wybranaData1);
+                var stopPosition = data.indexOf(wybranaData2);
+
+                var dateChartArray = data.slice(startPosition, stopPosition+1);
+                var rateChartArray = kurs.slice(startPosition, stopPosition+1);
+
+                console.log(dateChartArray);
+                console.log(rateChartArray);
 
 
 
-
-
-                })
             }
 
         });
 
     };
-    gownoTest();
+
+    pobierzDane("../xml/GBP.xml");
 
 
 });
