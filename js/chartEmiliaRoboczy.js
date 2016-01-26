@@ -1,6 +1,11 @@
 $(document).ready(function () {
-    (function () {
-        $('#tresc').append('<ul></ul>');
+
+    var wybranaData1= 19930107;
+    var wybranaData2= 19930127;
+
+
+    function gownoTest () {
+        //$('#tresc').append('<ul></ul>');
         $.ajax({
             type: "GET",
             url: "../xml/GBPtest.xml",
@@ -12,11 +17,31 @@ $(document).ready(function () {
                 $(response).find('waluty').each(function () {
 
                     $(response).find('pozycja').each(function () {
+
                         var data = $(this).find('data').text();
                         var kurs = $(this).find('kurs').text();
+                        var dataTablica=[];
 
-                        $('<li></li>').html(data+ ' '+kurs).appendTo('#tresc');
+
+                        dataTablica.push(data);
+                        console.log(dataTablica);
+
+
+
+
+
+
+                        //if (wybranaData1== data[x])    {
+                        //    console.log(kurs[x]);
+                        //    $('.lista').append('<li>' + kurs + '</li>');
+                        //}
+
+                        //$('<li></li>').html(data).appendTo('#tresc');
                     });
+                    return dataTablica;
+                    console.log(dataTablica);
+
+
 
 
 
@@ -25,7 +50,8 @@ $(document).ready(function () {
 
         });
 
-    })();
+    };
+    gownoTest();
 
 
 });
