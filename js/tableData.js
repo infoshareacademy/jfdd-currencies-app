@@ -20,6 +20,8 @@ $(document).ready(function () {
 
 });
 
+
+
 function actualizeTableData (selectedOption, container){
 
     $.ajax({
@@ -47,6 +49,8 @@ function actualizeTableData (selectedOption, container){
         }
     });
 }
+
+
 function addLocalStorage(selectId,selectedOption){
     localStorage.setItem(selectId, selectedOption);
 }
