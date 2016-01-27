@@ -121,6 +121,4 @@ $(document).ready(function () {
     pobierzDane('../xml/JPY.xml');
 
 
-
-
 });
