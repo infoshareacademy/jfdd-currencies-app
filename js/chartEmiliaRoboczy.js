@@ -6,6 +6,20 @@ $(document).ready(function () {
     var rateChartArray = [];
 
 
+    new JsDatePick({
+        useMode:2,
+        target:"data1",
+        isStripped:false,
+        selectedDate:{
+            year:2000,
+            month:1,
+            day:3
+        },
+        yearsRange: new Array(2000,2015),
+        limitToToday:false,
+    });
+
+
     function pobierzDane(url) {
 
         $.ajax({
@@ -14,7 +28,7 @@ $(document).ready(function () {
             dataType: "xml",
             //async: false,
             error: function () {
-                $('#tresc').text('wystąpil błąd');
+                $('#canvas').text('wystąpil błąd');
             },
             success: function (response) {
 
