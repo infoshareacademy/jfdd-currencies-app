@@ -66,13 +66,13 @@ function buildSelectCurrency(selectId,selectedOption,container) {
 
     var buildSelect = '<select id="' + selectId + '" class="form-control selectCur">';
     var currency = ['Dolar amerykański', 'Dolar australijski', 'Dolar kanadyjski', 'Euro', 'Forint (Węgry)', 'Frank szwajcarski', 'Funt szterling', 'Jen (Japonia)', 'Korona czeska', 'Korona duńska', 'Korona norweska', 'Korona szwedzka', 'SDR (MFW)'];
-
+    var currenciesShorts = ['USD','AUD','CAD','EUR','HUF','CHF','GBP','JPY','CZK','DKK','NOK','SEK','SDR'];
     for (var countCurrency = 0; countCurrency <= 12; countCurrency++) {
         if (selectedOption == countCurrency) {
-            buildSelect += '<option selected>' + currency[countCurrency] + '</option>';
+            buildSelect += '<option selected value='+currenciesShorts[countCurrency]+'>' + currency[countCurrency] + '</option>';
         }
         else {
-            buildSelect += '<option >' + currency[countCurrency] + '</option>';
+            buildSelect += '<option value='+currenciesShorts[countCurrency]+'>' + currency[countCurrency] + '</option>';
         }
     }
     $(container).prepend(buildSelect);
