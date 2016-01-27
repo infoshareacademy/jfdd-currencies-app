@@ -3,7 +3,10 @@
  */
 $(document).ready(function () {
 
+
     var ctx = document.getElementById("myChart").getContext("2d");
+    var ctx2 = document.getElementById("myChart").getContext("2d");
+    var ctx3 = document.getElementById("myChart").getContext("2d");
 
     var data = {
         labels: ["PN", "WT", "ŚR", "CZW", "PT"],
@@ -73,14 +76,19 @@ $(document).ready(function () {
         datasetStrokeWidth: 2,
 
         //Boolean - Whether to fill the dataset with a colour
-        datasetFill: true
+        datasetFill: true,
+
+        responsive: true
 
     };
 
-    var chart = new Chart(ctx);
+
+
+    var currencies = {};
+
 
     function fetchDataset(url, index) {
-        $.ajax({
+        return $.ajax({
 
             type: "GET",
 
@@ -89,7 +97,7 @@ $(document).ready(function () {
             dataType: "xml",
 
             success: function (xml) {
-                $(xml).find('pozycja').eq(index).each(function () {
+                $(xml).find('pozycja').each(function () {
 
                     var nazwaWaluty = $(this).find('nazwa_waluty').text();
                     var przelicznik = $(this).find('przelicznik').text();
@@ -97,14 +105,18 @@ $(document).ready(function () {
                     var kursKupna = $(this).find('kurs_kupna').text();
                     var kursSprzedazy = $(this).find('kurs_sprzedazy').text();
 
-                    data.datasets[0].data[index] = +kursKupna.replace(',', '.');
-                    data.datasets[1].data[index] = +kursSprzedazy.replace(',', '.');
+                    currencies[kodWaluty] = currencies[kodWaluty] || {};
+
+                    currencies[kodWaluty].nazwaWaluty = nazwaWaluty;
+                    currencies[kodWaluty].przelicznik = przelicznik;
+                    currencies[kodWaluty].kodWaluty = kodWaluty;
+
+                    currencies[kodWaluty].kursyKupna = currencies[kodWaluty].kursyKupna || [];
+                    currencies[kodWaluty].kursySprzedazy = currencies[kodWaluty].kursySprzedazy || [];
+
+                    currencies[kodWaluty].kursyKupna[index] = +kursKupna.replace(',', '.');
+                    currencies[kodWaluty].kursySprzedazy[index] = +kursSprzedazy.replace(',', '.');
                 });
-
-                for (var i = 0 ; i < 5 ; i++) {
-
-                }
-                chart.Line(data, options);
             },
 
             error: function () {
@@ -112,19 +124,41 @@ $(document).ready(function () {
                 console.log("An error occurred while processing XML file.");
 
             }
-
         });
     }
+    $.when(
+    fetchDataset('xml/2016_01_11.xml',0),
+    fetchDataset('xml/2016_01_12.xml',1),
+    fetchDataset('xml/2016_01_13.xml',2),
+    fetchDataset('xml/2016_01_14.xml',3),
+    fetchDataset('xml/2016_01_15.xml',4)
+    ).then(function(){
 
-    fetchDataset('xml/2016_01_11.xml',0);
-    fetchDataset('xml/2016_01_12.xml',1);
-    fetchDataset('xml/2016_01_13.xml',2);
-    fetchDataset('xml/2016_01_14.xml',3);
-    fetchDataset('xml/2016_01_15.xml',4);
+       drawChart('USD');
+    });
 
 
+    function drawChart(currencySymbol) {
+        data.datasets[0].data = currencies[currencySymbol].kursyKupna;
+        data.datasets[1].data = currencies[currencySymbol].kursySprzedazy;
+        var chart = new Chart(ctx);
+        chart.Line(data, options);
+    }
 
+    $('#selectLeft').change(function() {
+            drawChart($(this).val());
+    });
 });
 
-
+//
+//var currenciesList = [
+//    {val : 'USD', text: 'Dolar amerykanski'},
+//    {val : 'EUR', text: 'Euro europejskie'},
+//    {val : 'CAD', text: 'Dolar canadyjski'}
+//];
+//
+//var currenciesSelect = $('<select>').appendTo('.test-select');
+//$(currenciesList).each(function() {
+//    sel.append($("<option>").attr('value',this.val).text(this.text));
+//});
 
