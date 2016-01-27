@@ -17,11 +17,11 @@ $(document).ready(function(){
 
     $('.motive-blue-btn').click(function(){
         $('.blue-skin').css('background-color','#5193ff');
-    })
+    });
 
     $('.motive-red-btn').click(function(){
         $('.blue-skin').css('background-color','#CC0000');
-    })
+    });
 
     $('.motive-green-btn').click(function(){
         $('.blue-skin').css('background-color','#73AD21;');
