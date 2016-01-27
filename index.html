@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Monitor wymiany walut</title>
-
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="734032112012-a6mpevuqh71q83hfh5kg28fmbrhac4sr.apps.googleusercontent.com">
     <!-- css files -->
     <link rel="stylesheet" href="css/reset.css">
-
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
     <link rel="stylesheet" href="css/loginPopUp.css">
     <link rel="stylesheet" href="css/interface.css">
 
@@ -82,72 +81,24 @@
         </aside>
 
 
-    </div>
         <!-- TU WRZUCAMY CONTENT -->
 
 
         <div class="content">
             <section class="dashboard-heading col-md-12 col-xs-12"><h2>Overview</h2></section>
 
-              <section id='bla' class="box-selected-cur col-md-4 col-xs-12">
-
-                  <select id="selectLeft" class="form-control left-select">
-                      <option >Dolar amerykański</option>
-                      <option >Dolar australijski</option>
-                      <option >Dolar kanadyjski</option>
-                      <option >Euro</option>
-                      <option >Forint (Węgry)</option>
-                      <option >Frank szwajcarski</option>
-                      <option >Funt szterling</option>
-                      <option >Jen (Japonia)</option>
-                      <option >Korona czeska</option>
-                      <option >Korona duńska</option>
-                      <option >Korona norweska</option>
-                      <option >Korona szwedzka</option>
-                      <option >SDR (MFW)</option>
-                  </select>
-
-
+              <section  class="box-selected-cur col-md-4 col-xs-12 select-section-1">
                   <canvas id="myChart" width="auto" height="auto"></canvas>
+              </section>
+
+              <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
+              </section>
+
+              <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
+
 
               </section>
-              <section class="box-selected-cur col-md-4 col-xs-12">
-                  <select id="selectCenter" class="form-control left-select">
-                      <option >Dolar amerykański</option>
-                      <option >Dolar australijski</option>
-                      <option >Dolar kanadyjski</option>
-                      <option >Euro</option>
-                      <option >Forint (Węgry)</option>
-                      <option >Frank szwajcarski</option>
-                      <option >Funt szterling</option>
-                      <option >Jen (Japonia)</option>
-                      <option >Korona czeska</option>
-                      <option >Korona duńska</option>
-                      <option >Korona norweska</option>
-                      <option >Korona szwedzka</option>
-                      <option >SDR (MFW)</option>
-                  </select>
 
-              </section>
-              <section class="box-selected-cur col-md-4 col-xs-12">
-                  <select id="selectRight" class="form-control left-select">
-                      <option >Dolar amerykański</option>
-                      <option >Dolar australijski</option>
-                      <option >Dolar kanadyjski</option>
-                      <option >Euro</option>
-                      <option >Forint (Węgry)</option>
-                      <option >Frank szwajcarski</option>
-                      <option >Funt szterling</option>
-                      <option >Jen (Japonia)</option>
-                      <option >Korona czeska</option>
-                      <option >Korona duńska</option>
-                      <option >Korona norweska</option>
-                      <option >Korona szwedzka</option>
-                      <option >SDR (MFW)</option>
-                  </select>
-
-              </section>
-            <div id="post"></div>
         </div>
 
 
@@ -156,19 +107,21 @@
             <p>Zaloguj się przez:</p>
             <button class="socialMediaLogIn linkedIn"><img src="images/linkedinLogIn.png"> LinkedIn</button>
             <button class="socialMediaLogIn facebook"><img src="images/facebookLogIn.png"> Facebook</button>
-            <button class="socialMediaLogIn google"><img src="images/googleLogIn.png">Google+</button>
+            <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
             <button class="socialMediaLogIn twitter"><img src="images/twitterLogIn.png">Twitter</button>
-
         </div>
         <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
         <script src="js/jquery.min.js"></script>
         <script src="js/tableData.js"></script>
         <script src="js/interface.js"></script>
+        <script src="js/google-login.js"></script>
         <script src="js/fb-login.js"></script>
         <script src="js/Chart.js-master/Chart.js"></script>
         <script src="js/Chart.js-master/chartcur.js"></script>
         <script src="js/dragdrop.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="js/google-login.js"></script>
 
 </body>
 </html>
