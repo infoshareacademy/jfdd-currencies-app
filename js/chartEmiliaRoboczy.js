@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var wybranaData1 = '1993-01-04';
+    var wybranaData1 = '2000-01-03';
     var wybranaData2 = '2015-12-31';
     var dateChartArray = [];
     var rateChartArray = [];
@@ -61,7 +61,7 @@ $(document).ready(function () {
                 ///Boolean - Whether grid lines are shown across the chart
                 scaleShowGridLines: true,
 
-                scaleFontColor:"#FFFFFF",
+                //scaleFontColor:"#FFFFFF",
 
                 //String - Colour of the grid lines
                 scaleGridLineColor: "rgba(0,0,0,.05)",
@@ -118,7 +118,7 @@ $(document).ready(function () {
 
     }
 
-    pobierzDane('../xml/AUD.xml');
+    pobierzDane('../xml/JPY.xml');
 
 
 
