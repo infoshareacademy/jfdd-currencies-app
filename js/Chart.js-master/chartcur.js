@@ -3,10 +3,7 @@
  */
 $(document).ready(function () {
 
-
     var ctx = document.getElementById("myChart").getContext("2d");
-    var ctx2 = document.getElementById("myChart").getContext("2d");
-    var ctx3 = document.getElementById("myChart").getContext("2d");
 
     var data = {
         labels: ["PN", "WT", "ŚR", "CZW", "PT"],
