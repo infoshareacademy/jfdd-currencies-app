@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
-    var wybranaData1 = '2000-01-03';
-    var wybranaData2 = '2015-12-31';
-    var dateChartArray = [];
-    var rateChartArray = [];
+    var tymczasowa = document.getElementById("currencyList");
+    var wybranaWaluta = tymczasowa.options[tymczasowa.selectedIndex].value;
+
+    console.log(wybranaWaluta);
 
 
     new JsDatePick({
@@ -17,7 +17,13 @@ $(document).ready(function () {
         },
         yearsRange: new Array(2000,2015),
         limitToToday:false,
+        dateFormat: "%Y-%d-%m"
     });
+
+    var wybranaData1 = $("#data1").val();
+    var wybranaData2 = '2015-12-31';
+    var dateChartArray = [];
+    var rateChartArray = [];
 
 
     function pobierzDane(url) {
