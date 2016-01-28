@@ -1,9 +1,22 @@
 //$(document).ready(function () {
 
+var wybranaWaluta;
+var wybranaData1;
+var wybranaData2;
 
-var wybranaWaluta = $('#currencyList').val();
+$("select").change(function () {
+    wybranaWaluta = $(this).val();
+});
 
-var url = ('../xml/'+ wybranaWaluta+'.xml');
+$("#currencyForm").submit(function (event) {
+    event.preventDefault();
+    wybranaData1 = $('#data1').val();
+    wybranaData2 = $('#data2').val();
+    var url = ('../xml/' + wybranaWaluta + '.xml');
+    pobierzDane(url);
+    return false;
+});
+
 
 console.log(wybranaWaluta);
 
@@ -36,13 +49,6 @@ new JsDatePick({
     dateFormat: "%Y-%m-%d"
 });
 
-//var wybranaData1 = $("#data1").keyuap(function(){var value = $(this).val();}).keyup();
-//var wybranaData2 = $("#data2").val();
-
-var wybranaData1 ="2000-01-03";
-var wybranaData2 ="2015-12-31";
-
-console.log(wybranaData1);
 
 var dateChartArray = [];
 var rateChartArray = [];
@@ -159,8 +165,10 @@ function pobierzDane(url) {
     });
 
 }
-pobierzDane('../xml/NOK.xml');
-//$('#createChart').click.(pobierzDane('../xml/JPY.xml'));
+//pobierzDane(url);
+
+
+//$('#createChart').click.(pobierzDane('../xml/'+ wybranaWaluta+'.xml'));
 
 
 //});
