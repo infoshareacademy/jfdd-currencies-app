@@ -266,8 +266,18 @@ body {
 
 .sidebar-list i {
     padding-left: 10px;
-    padding-right: 10px;
 }
+.sidebar-list li ul {
+    display:none;
+
+}
+.sidebar-list li:hover ul {
+    background-color: #292929;
+    border-left: none;
+    display:inline;
+
+}
+
 /* ################################################################# */
 /* ######################## MAIN FOOTER ########################### */
 
