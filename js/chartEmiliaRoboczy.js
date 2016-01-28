@@ -156,7 +156,9 @@ function pobierzDane(url) {
 
             //Boolean - Whether to horizontally center the label and point dot inside the grid
             offsetGridLines: false,
-            showToolTips: true
+            showToolTips: true,
+
+            showXLabels: 10
 
 
         };
@@ -165,10 +167,7 @@ function pobierzDane(url) {
     });
 
 }
-//pobierzDane(url);
 
-
-//$('#createChart').click.(pobierzDane('../xml/'+ wybranaWaluta+'.xml'));
 
 
 //});
@@ -179,3 +178,6 @@ function pobierzDane(url) {
 //https://github.com/nnnick/Chart.js/pull/897/files
 //https://github.com/nnnick/Chart.js/issues/963
 //https://github.com/nnnick/Chart.js/issues/908
+
+
+//https://github.com/nnnick/Chart.js/tree/v2.0-dev/samples/timeScale
