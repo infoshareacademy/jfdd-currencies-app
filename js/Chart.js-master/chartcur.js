@@ -3,10 +3,20 @@
  */
 $(document).ready(function () {
 
+    // 1. funkcja, która zwraca context, przyjmuje id charta
+    // 2. funkcja będzie znajdywać canvas o id takim jak id charta (zapisuje sobie referencje na parenta)
+    // 3. tworzy nowy canvas
 
-    var ctx = document.getElementById("myChart").getContext("2d");
-    var ctx2 = document.getElementById("myChart").getContext("2d");
-    var ctx3 = document.getElementById("myChart").getContext("2d");
+    function getContext(chartId) {
+        var find = $('#' + chartId).parent();
+        find.remove();
+        var canvas = find.append($('<canvas width="auto" height="auto"></canvas>'));
+        canvas.attr('id',chartId);
+        document.getElementById(chartId).getContext("2d");
+    }
+
+    var ctx = getContext('myChart');
+
 
     var data = {
         labels: ["PN", "WT", "ŚR", "CZW", "PT"],
@@ -79,7 +89,6 @@ $(document).ready(function () {
         datasetFill: true,
 
         responsive: true
-
     };
 
 
@@ -133,32 +142,33 @@ $(document).ready(function () {
     fetchDataset('xml/2016_01_14.xml',3),
     fetchDataset('xml/2016_01_15.xml',4)
     ).then(function(){
-
-       drawChart('USD');
+        var chartLeft = localStorage.getItem('chartLeft');
+        drawChart(chartLeft || 'USD', ctx);
+        drawChart('USD', ctx2);
+        drawChart('USD', ctx3);
     });
 
 
-    function drawChart(currencySymbol) {
+    function drawChart(currencySymbol,context) {
         data.datasets[0].data = currencies[currencySymbol].kursyKupna;
         data.datasets[1].data = currencies[currencySymbol].kursySprzedazy;
-        var chart = new Chart(ctx);
+
+        var chart = new Chart(context);
         chart.Line(data, options);
     }
 
     $('#selectLeft').change(function() {
-            drawChart($(this).val());
+            drawChart($(this).val(),ctx);
+            localStorage.setItem('chartLeft',$(this).val());
     });
-});
+    $('#selectCenter').change(function() {
+        drawChart($(this).val(),ctx2);
+    });
+    $('#selectRight').change(function() {
+        drawChart($(this).val(),ctx3);
+    });
 
-//
-//var currenciesList = [
-//    {val : 'USD', text: 'Dolar amerykanski'},
-//    {val : 'EUR', text: 'Euro europejskie'},
-//    {val : 'CAD', text: 'Dolar canadyjski'}
-//];
-//
-//var currenciesSelect = $('<select>').appendTo('.test-select');
-//$(currenciesList).each(function() {
-//    sel.append($("<option>").attr('value',this.val).text(this.text));
-//});
+
+
+});
 

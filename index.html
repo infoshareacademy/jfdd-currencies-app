@@ -25,16 +25,8 @@
         <header class="main-header">
             <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
             <nav class="navbar blue-skin">
-                <a href="#" class="sidebar-toggle blue-skin blue-skin-hover">
-                    <i class="fa fa-bars"></i>
-                </a>
                 <div class="right-navbar-items">
                     <ul class="right-top-icons">
-                        <li class=" blue-skin blue-skin-hover">
-                            <a href="#" class="control-theme">
-                                <i class="fa fa-bell"></i>
-                            </a>
-                        </li>
                         <li class=" blue-skin blue-skin-hover">
                             <a href="#" class="user-settings">
                                 <span class="userName"></span>
@@ -86,24 +78,39 @@
         </aside>
 
 
+    </div>
         <!-- TU WRZUCAMY CONTENT -->
 
 
         <div class="content">
             <section class="dashboard-heading col-md-12 col-xs-12"><h2>Overview</h2></section>
 
+
               <section  class="box-selected-cur col-md-4 col-xs-12 select-section-1">
                   <canvas id="myChart" width="auto" height="auto"></canvas>
               </section>
-
               <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
               </section>
 
               <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
+                  </section>
 
 
+
+                  <script>
+                      (function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = 146191052425641;
+                          js.src = "//connect.facebook.net/en_US/sdk.js";
+                          fjs.parentNode.insertBefore(js, fjs);
+                      }(document, 'script', 'facebook-jssdk'));
+                  </script>
+                  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                  </fb:login-button>
+                  <div id="status"></div>
               </section>
-
+            <div id="post"></div>
         </div>
 
 
@@ -120,7 +127,6 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/tableData.js"></script>
         <script src="js/interface.js"></script>
-        <script src="js/google-login.js"></script>
         <script src="js/fb-login.js"></script>
         <script src="js/Chart.js-master/Chart.js"></script>
         <script src="js/Chart.js-master/chartcur.js"></script>

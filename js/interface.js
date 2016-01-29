@@ -24,7 +24,7 @@ $(document).ready(function(){
     });
 
     $('.motive-green-btn').click(function(){
-        $('.blue-skin').css('background-color','#73AD21;');
+        $('.blue-skin').css('background-color','#73AD21');
     })
 
 });

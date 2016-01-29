@@ -29,7 +29,6 @@ $(document).ready(function () {
 
 });
 
-
 function actualizeTableData (selectedOption, container){
 
     $.ajax({
@@ -49,7 +48,7 @@ function actualizeTableData (selectedOption, container){
                 var kodWaluty = $(this).find('kod_waluty').text();
                 var kursKupna = $(this).find('kurs_kupna').text();
                 var kursSprzedazy = $(this).find('kurs_sprzedazy').text();
-                var newCurrency ='<tr class="edit-tr"><td>'+nazwaWaluty + '</td>'+ '<td>'+ kodWaluty+'</td>'+'<td>'+kursKupna+'</td>'+'<td>'+kursSprzedazy+'</td></tr>';
+                var newCurrency='<tr class="edit-tr"><td>'+nazwaWaluty + '</td>'+ '<td>'+ kodWaluty+'</td>'+'<td>'+kursKupna+'</td>'+'<td>'+kursSprzedazy+'</td></tr>';
                 $('.table .edit-tr ', container).replaceWith(newCurrency);
             });
         }
