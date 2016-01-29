@@ -36,7 +36,7 @@ function actualizeTableData (selectedOption, container){
 
         type: "GET",
 
-        url: "xml/kurs.xml",
+        url: "xml/2016_01_19.xml",
 
         dataType: "xml",
 
@@ -55,6 +55,7 @@ function actualizeTableData (selectedOption, container){
         }
     });
 }
+
 
 
 function addLocalStorage(selectId,selectedOption){
