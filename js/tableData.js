@@ -24,7 +24,6 @@ $(document).ready(function () {
     $("select").change(function() {
         actualizeTableData($(this)[0].selectedIndex, $(this).parents('section')[0]);
         addLocalStorage(this.id,$(this)[0].selectedIndex);
-
     });
 
 });

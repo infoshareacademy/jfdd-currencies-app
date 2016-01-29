@@ -37,6 +37,30 @@ $(document).ready(function () {
 
     totalTable();
 
+    $('.sort-table').click(function() {
+
+        var sortAsc = $(this).hasClass('asc'),
+            $table  = $('#mainTable'),
+            $rows   = $('tbody > tr', $table);
+
+        $rows.sort(function(a, b) {
+
+            var keyA = $.trim($('td:first-child',a).text().toLowerCase());
+            var keyB = $.trim($('td:first-child',b).text().toLowerCase());
+
+            if (sortAsc) {
+                return (keyA > keyB) ? 1 : -1;
+            } else {
+                return (keyA < keyB) ? 1 : -1;
+            }
+        });
+
+        $rows.each(function(index, row){
+            $table.append(row);
+        });
+    });
+
 });
+
 
 
