@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitor wymiany walut</title>
+
+    <!-- css files -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/interface.css">
+    <link rel="stylesheet" href="css/main-table.css">
+    <link rel="stylesheet" type="text/css" media="all" href="js/jsDatePick/jsDatePick_ltr.min.css"/>
+
+</head>
+<body>
+
+
+<header class="main-header">
+    <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
+    <nav class="navbar blue-skin">
+        <a href="#" class="sidebar-toggle blue-skin blue-skin-hover">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <div class="right-navbar-items">
+            <ul class="right-top-icons">
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="control-theme">
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </li>
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="user-settings">
+                        <span class="userName"></span>
+                    </a>
+                    <ul class="user-settings-dropdown blue-skin blue-skin-hover">
+                        <li><i class="fa fa-user"></i>Profil</li>
+                        <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
+                    </ul>
+                </li>
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
+                    <ul class="menu-hidden">
+                        <li>
+                            <div class="control-theme-section">
+                                <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
+
+                                <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
+
+                                <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
+
+                                <p class="motive-green-btn cursor-pointer">Zielono mi</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+<aside class="main-sidebar blue-skin">
+    <div class="user-last-activity">
+        <i class="fa fa-th-list fa-2x list-icon-observe"></i>
+
+        <p class="last-observed">Ostatnio obserwowane:</p>
+
+        <p class="last-observed last-observed-detail">USD / EUR</p>
+
+        <p class="last-observed last-observed-detail">PLN / EUR</p>
+
+        <p class="last-observed last-observed-detail">CAD / USD</p>
+    </div>
+
+    <ul class="sidebar-list">
+        <li><a href="index.html"><i class="fa fa-tachometer"></i>Deska</a></li>
+        <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
+        <li><i class="fa fa-line-chart"></i>Wykresy
+            <ul>
+                <li><a href="barChart.html">wykres1</a></li>
+                <li>wykres2</li>
+            </ul>
+        </li>
+        <li><i class="fa fa-sort-amount-asc"></i>Trendy</li>
+    </ul>
+</aside>
+</div>
+<!-- TU WRZUCAMY CONTENT -->
+
+<div class="content">
+    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres kursów zamknięcia (lata: 2000-2015)</h2></div>
+
+    <div class="row">
+        <form class="form-inline" id="currencyForm">
+            <div class="form-group col-md-offset-1 col-lg-offset-1">
+                <!--<label class="control-label">Wybierz walutę</label>-->
+                <select id="currencyList" class="form-control col-md-2">
+                    <option value="" disabled selected hidden>Wybierz walutę</option>
+                    <option value="USD">Dolar amerykański</option>
+                    <option value="AUD">Dolar australijski</option>
+                    <option value="CAD">Dolar kanadyjski</option>
+                    <option value="EUR">Euro</option>
+                    <option value="HUF">Forint (Węgry)</option>
+                    <option value="CHF">Frank szwajcarski</option>
+                    <option value="GBP">Funt szterling</option>
+                    <option value="JPY">Jen (Japonia)</option>
+                    <option value="CZK">Korona czeska</option>
+                    <option value="DKK">Korona duńska</option>
+                    <option value="NOK">Korona norweska</option>
+                    <option value="SEK">Korona szwedzka</option>
+                    <option value="XDR">SDR (MFW)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Pierwsza data</label>
+                <input type="text" id="data1" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Druga data </label>
+                <input type="text" id="data2" class="form-control">
+            </div>
+            <button class="btn btn-primary" type="submit" id="createChart">Stwórz wykres</button>
+        </form>
+    </div>
+    <div class="row wykres">
+        <div class="col-md-1"></div>
+           <div class="col-md-8" id="canvasDiv" >
+            <canvas id="canvas" height="500" width="900"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
+<!-- scripts !-->
+<script src="js/Chart.js-master/Chart2.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/interface.js"></script>
+<script src="js/fb-login.js"></script>
+<script src="js/totalTable.js"></script>
+<script type="text/javascript" src="js/jsDatePick/jquery.1.4.2.js"></script>
+<script src="js/jsDatePick/jsDatePick.jquery.full.1.3.js"></script>
+<script src="js/jquery.js"></script>
+
+<script src="js/chartEmiliaRoboczy.js"></script>
+
+</body>
+</html>
