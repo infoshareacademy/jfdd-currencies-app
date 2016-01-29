@@ -53,6 +53,7 @@ function actualizeTableData (selectedOption, container){
                 $('.table .edit-tr ', container).replaceWith(newCurrency);
             });
         }
+
     });
 }
 
