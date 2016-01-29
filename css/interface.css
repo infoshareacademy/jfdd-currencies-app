@@ -31,12 +31,12 @@ body {
 /* ######################## SKIN ################################ */
 
 .blue-skin {
-    background-color: #5193ff;
+    background-color: #355b9e;
     color: #ffffff;
 }
 
 .blue-skin-hover:hover {
-    background-color: #517feb;
+    background-color: #355b9e;
 }
 
 .cursor-pointer {
@@ -44,7 +44,7 @@ body {
 }
 
 .motive-blue-btn {
-    background-color: #5193ff;
+    background-color: #355b9e;
 }
 
 .motive-red-btn {
@@ -71,7 +71,7 @@ body {
     margin-bottom: 0;
     margin-left: 230px;
     border: none;
-    min-height: 50px;
+    height: 50px;
     position: relative;
 }
 
