@@ -74,18 +74,22 @@
                         </li>
                     </ul>
 
-                </div>
-            </nav>
-        </header>
+        </div>
+    </nav>
+</header>
 
-        <aside class="main-sidebar blue-skin">
-            <div class="user-last-activity">
-                <i class="fa fa-th-list fa-2x list-icon-observe"></i>
-                <p class="last-observed">Ostatnio obserwowane:</p>
-                <p class="last-observed last-observed-detail">USD / EUR</p>
-                <p class="last-observed last-observed-detail">PLN / EUR</p>
-                <p class="last-observed last-observed-detail">CAD / USD</p>
-            </div>
+<aside class="main-sidebar blue-skin">
+    <div class="user-last-activity">
+        <i class="fa fa-th-list fa-2x list-icon-observe"></i>
+
+        <p class="last-observed">Ostatnio obserwowane:</p>
+
+        <p class="last-observed last-observed-detail">USD / EUR</p>
+
+        <p class="last-observed last-observed-detail">PLN / EUR</p>
+
+        <p class="last-observed last-observed-detail">CAD / USD</p>
+    </div>
 
             <ul class="sidebar-list">
                 <li><i class="fa fa-tachometer"></i>Deska</li>
@@ -127,21 +131,24 @@
 
         </div>
 
-
-        <div class="logInBackground blockPopUp"> </div>
-        <div class="logInPopUp blockPopUp">
-            <p>Zaloguj się przez:</p>
-            <button class="socialMediaLogIn linkedIn"><img src="images/linkedinLogIn.png"> LinkedIn</button>
-            <div class="socialMediaLogIn facebook">
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-            </fb:login-button>
-            </div>
-            <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
-            <button class="socialMediaLogIn twitter"><img src="images/twitterLogIn.png">Twitter</button>
+<section class="fluid-container">
+    <div class="row logInBackground"></div>
+    <div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+        <div class="row"><p>Zaloguj się przez:</p></div>
+        <div class="row" id="facebookLogin">
+            <button class="socialMediaLogIn facebook"><img src="images/facebookLogIn.png"> Facebook</button>
         </div>
-        <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
+        <div class="row" id="googleLogin">
+            <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
+            <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>
+        </div>
+
+    </div>
+</section>
+<footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
         <script src="js/jquery.min.js"></script>
+        <script src="js/popUp.js"></script>
         <script src="js/tableData.js"></script>
         <script src="js/interface.js"></script>
         <script src="js/fb-login.js"></script>
@@ -150,6 +157,7 @@
         <script src="js/dragdrop.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="js/google-login.js"></script>
+
 
 </body>
 </html>
