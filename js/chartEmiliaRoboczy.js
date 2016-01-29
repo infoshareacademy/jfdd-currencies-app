@@ -10,10 +10,13 @@ $("select").change(function () {
 
 $("#currencyForm").submit(function (event) {
     event.preventDefault();
+    $('#canvas').remove();
+    $('#canvasDiv').append('<canvas></canvas>');
+    $('canvas').attr('id', 'canvas');
     wybranaData1 = $('#data1').val();
     wybranaData2 = $('#data2').val();
     var url = ('xml/' + wybranaWaluta + '.xml');
-    pobierzDane(url);
+    pobierzDane(url);0
     return false;
 });
 
@@ -270,6 +273,7 @@ function pobierzDane(url) {
 
         };
         var ctx = document.getElementById("canvas").getContext("2d");
+
         window.myLine = new Chart(ctx).Line(lineChartData, chartOptions);
     });
 
