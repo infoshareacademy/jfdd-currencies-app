@@ -9,7 +9,6 @@ $(document).ready(function () {
 
     function getContext(chartId) {
         var find = $('#' + chartId).parent();
-        find.remove();
         var canvas = find.append($('<canvas width="auto" height="auto"></canvas>'));
         canvas.attr('id',chartId);
         document.getElementById(chartId).getContext("2d");

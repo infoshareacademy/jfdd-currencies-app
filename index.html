@@ -20,7 +20,30 @@
 
 </head>
 <body>
+<script>
 
+
+    // Load the SDK asynchronously
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
+        });
+    }
+</script>
 
         <header class="main-header">
             <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
@@ -77,8 +100,6 @@
             </ul>
         </aside>
 
-
-    </div>
         <!-- TU WRZUCAMY CONTENT -->
 
 
@@ -89,28 +110,20 @@
               <section  class="box-selected-cur col-md-4 col-xs-12 select-section-1">
                   <canvas id="myChart" width="auto" height="auto"></canvas>
               </section>
+
               <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
+                  <canvas id="myChart2" width="auto" height="auto"></canvas>
               </section>
 
               <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
-                  </section>
-
-
-
-                  <script>
-                      (function(d, s, id) {
-                          var js, fjs = d.getElementsByTagName(s)[0];
-                          if (d.getElementById(id)) return;
-                          js = d.createElement(s); js.id = 146191052425641;
-                          js.src = "//connect.facebook.net/en_US/sdk.js";
-                          fjs.parentNode.insertBefore(js, fjs);
-                      }(document, 'script', 'facebook-jssdk'));
-                  </script>
-                  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                  </fb:login-button>
-                  <div id="status"></div>
+                  <canvas id="myChar3" width="auto" height="auto"></canvas>
               </section>
-            <div id="post"></div>
+
+
+
+
+
+
         </div>
 
 
@@ -118,7 +131,10 @@
         <div class="logInPopUp blockPopUp">
             <p>Zaloguj się przez:</p>
             <button class="socialMediaLogIn linkedIn"><img src="images/linkedinLogIn.png"> LinkedIn</button>
-            <button class="socialMediaLogIn facebook"><img src="images/facebookLogIn.png"> Facebook</button>
+            <div class="socialMediaLogIn facebook">
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+            </div>
             <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
             <button class="socialMediaLogIn twitter"><img src="images/twitterLogIn.png">Twitter</button>
         </div>
