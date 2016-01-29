@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Monitor wymiany walut</title>
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="734032112012-a6mpevuqh71q83hfh5kg28fmbrhac4sr.apps.googleusercontent.com">
+    <meta name="google-signin-client_id"
+          content="734032112012-a6mpevuqh71q83hfh5kg28fmbrhac4sr.apps.googleusercontent.com">
     <!-- css files -->
     <link rel="stylesheet" href="css/reset.css">
     <!-- Tell the browser to be responsive to screen width -->
@@ -22,111 +23,124 @@
 <body>
 
 
-        <header class="main-header">
-            <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
-            <nav class="navbar blue-skin">
-                <a href="#" class="sidebar-toggle blue-skin blue-skin-hover">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <div class="right-navbar-items">
-                    <ul class="right-top-icons">
-                        <li class=" blue-skin blue-skin-hover">
-                            <a href="#" class="control-theme">
-                                <i class="fa fa-bell"></i>
-                            </a>
-                        </li>
-                        <li class=" blue-skin blue-skin-hover">
-                            <a href="#" class="user-settings">
-                                <span class="userName"></span>
-                            </a>
-                            <ul class="user-settings-dropdown blue-skin blue-skin-hover">
-                                <li><i class="fa fa-user"></i>Profil</li>
-                                <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
-                            </ul>
-                        </li>
-                        <li class=" blue-skin blue-skin-hover">
-                            <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
-                            <ul class="menu-hidden">
-                                <li>
-                                    <div class="control-theme-section">
-                                        <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
-                                        <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
-                                        <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
-                                        <p class="motive-green-btn cursor-pointer">Zielono mi</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+<header class="main-header">
+    <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
+    <nav class="navbar blue-skin">
+        <a href="#" class="sidebar-toggle blue-skin blue-skin-hover">
+            <i class="fa fa-bars"></i>
+        </a>
 
-                </div>
-            </nav>
-        </header>
-
-        <aside class="main-sidebar blue-skin">
-            <div class="user-last-activity">
-                <i class="fa fa-th-list fa-2x list-icon-observe"></i>
-                <p class="last-observed">Ostatnio obserwowane:</p>
-                <p class="last-observed last-observed-detail">USD / EUR</p>
-                <p class="last-observed last-observed-detail">PLN / EUR</p>
-                <p class="last-observed last-observed-detail">CAD / USD</p>
-            </div>
-
-            <ul class="sidebar-list">
-                <li><i class="fa fa-tachometer"></i>Deska</li>
-                <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
-                <li><i class="fa fa-line-chart">Wykresy</i>
-                    <ul>
-                        <li><a href="barChart.html">wykres1</a></li>
-                        <li>wykres2</li>
+        <div class="right-navbar-items">
+            <ul class="right-top-icons">
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="control-theme">
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </li>
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="user-settings">
+                        <span class="userName"></span>
+                    </a>
+                    <ul class="user-settings-dropdown blue-skin blue-skin-hover">
+                        <li><i class="fa fa-user"></i>Profil</li>
+                        <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
                     </ul>
                 </li>
-                <li><i class="fa fa-sort-amount-asc"></i>Trendy</li>
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
+                    <ul class="menu-hidden">
+                        <li>
+                            <div class="control-theme-section">
+                                <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
+
+                                <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
+
+                                <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
+
+                                <p class="motive-green-btn cursor-pointer">Zielono mi</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
             </ul>
-        </aside>
-
-
-        <!-- TU WRZUCAMY CONTENT -->
-
-
-        <div class="content">
-            <section class="dashboard-heading col-md-12 col-xs-12"><h2>Overview</h2></section>
-
-              <section  class="box-selected-cur col-md-4 col-xs-12 select-section-1">
-                  <canvas id="myChart" width="auto" height="auto"></canvas>
-              </section>
-
-              <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
-              </section>
-
-              <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
-
-
-              </section>
 
         </div>
+    </nav>
+</header>
+
+<aside class="main-sidebar blue-skin">
+    <div class="user-last-activity">
+        <i class="fa fa-th-list fa-2x list-icon-observe"></i>
+
+        <p class="last-observed">Ostatnio obserwowane:</p>
+
+        <p class="last-observed last-observed-detail">USD / EUR</p>
+
+        <p class="last-observed last-observed-detail">PLN / EUR</p>
+
+        <p class="last-observed last-observed-detail">CAD / USD</p>
+    </div>
+
+    <ul class="sidebar-list">
+        <li><i class="fa fa-tachometer"></i>Deska</li>
+        <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
+        <li><i class="fa fa-line-chart">Wykresy</i>
+            <ul>
+                <li><a href="barChart.html">wykres1</a></li>
+                <li>wykres2</li>
+            </ul>
+        </li>
+        <li><i class="fa fa-sort-amount-asc"></i>Trendy</li>
+    </ul>
+</aside>
 
 
-        <div class="logInBackground blockPopUp"> </div>
-        <div class="logInPopUp blockPopUp">
-            <p>Zaloguj się przez:</p>
-            <button class="socialMediaLogIn linkedIn"><img src="images/linkedinLogIn.png"> LinkedIn</button>
+<!-- TU WRZUCAMY CONTENT -->
+
+
+<div class="content">
+    <section class="dashboard-heading col-md-12 col-xs-12"><h2>Overview</h2></section>
+
+    <section class="box-selected-cur col-md-4 col-xs-12 select-section-1">
+        <canvas id="myChart" width="auto" height="auto"></canvas>
+    </section>
+
+    <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
+    </section>
+
+    <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
+
+
+    </section>
+
+</div>
+
+<section class="fluid-container">
+    <div class="row logInBackground blockPopUp col"></div>
+    <div class=" row logInPopUp blockPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+        <div class="row"><p>Zaloguj się przez:</p></div>
+        <div class="row">
             <button class="socialMediaLogIn facebook"><img src="images/facebookLogIn.png"> Facebook</button>
-            <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
-            <button class="socialMediaLogIn twitter"><img src="images/twitterLogIn.png">Twitter</button>
         </div>
-        <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
+        <div class="row">
+            <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
+            <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>
+        </div>
+
+    </div>
+</section>
+<footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/tableData.js"></script>
-        <script src="js/interface.js"></script>
-        <script src="js/google-login.js"></script>
-        <script src="js/fb-login.js"></script>
-        <script src="js/Chart.js-master/Chart.js"></script>
-        <script src="js/Chart.js-master/chartcur.js"></script>
-        <script src="js/dragdrop.js"></script>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script src="js/google-login.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/tableData.js"></script>
+<script src="js/interface.js"></script>
+<script src="js/google-login.js"></script>
+<script src="js/fb-login.js"></script>
+<script src="js/Chart.js-master/Chart.js"></script>
+<script src="js/Chart.js-master/chartcur.js"></script>
+<script src="js/dragdrop.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="js/google-login.js"></script>
 
 </body>
 </html>
