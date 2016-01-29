@@ -28,9 +28,9 @@
     padding-bottom: 40px;
 }
 
-/*.blockPopUp {*/
-    /*display:none;*/
-/*}*/
+.blockPopUp {
+    display:none;
+}
 
 .logInPopUp p{
     font-size: 2em;
@@ -51,12 +51,13 @@
     font-size: 20px;
 }
 
-.socialMediaLogIn img   {
-    margin-top: 5px;
-    margin-bottom: 0;
-    padding-left: 0;
-    display: inline;
-}
+
+/*.socialMediaLogIn img   {*/
+    /*margin-top: 5px;*/
+    /*margin-bottom: 0;*/
+    /*padding-left: 0;*/
+    /*display: inline;*/
+/*}*/
 .google {
     padding-left: 36px;
 }

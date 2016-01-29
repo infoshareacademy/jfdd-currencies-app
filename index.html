@@ -132,13 +132,13 @@
         </div>
 
 <section class="fluid-container">
-    <div class="row logInBackground blockPopUp col"></div>
-    <div class=" row logInPopUp blockPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="row logInBackground"></div>
+    <div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
         <div class="row"><p>Zaloguj się przez:</p></div>
-        <div class="row">
+        <div class="row" id="facebookLogin">
             <button class="socialMediaLogIn facebook"><img src="images/facebookLogIn.png"> Facebook</button>
         </div>
-        <div class="row">
+        <div class="row" id="googleLogin">
             <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
             <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>
         </div>
@@ -148,6 +148,7 @@
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
         <script src="js/jquery.min.js"></script>
+        <script src="js/popUp.js"></script>
         <script src="js/tableData.js"></script>
         <script src="js/interface.js"></script>
         <script src="js/fb-login.js"></script>
@@ -156,6 +157,7 @@
         <script src="js/dragdrop.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="js/google-login.js"></script>
+
 
 </body>
 </html>
