@@ -10,7 +10,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -20,35 +20,55 @@
 
 </head>
 <body>
+<script>
 
+
+    // Load the SDK asynchronously
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '183202345374099',
+            xfbml: true,
+            version: 'v2.5'
+        });
+        $(document).trigger('fbload');
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('userName').innerHTML = response.name;
+        });
+        testAPI();
+
+    }
+</script>
 
         <header class="main-header">
             <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
             <nav class="navbar blue-skin">
-                <a href="#" class="sidebar-toggle blue-skin blue-skin-hover">
-                    <i class="fa fa-bars"></i>
-                </a>
                 <div class="right-navbar-items">
                     <ul class="right-top-icons">
                         <li class=" blue-skin blue-skin-hover">
-                            <a href="#" class="control-theme">
-                                <i class="fa fa-bell"></i>
-                            </a>
-                        </li>
-                        <li class=" blue-skin blue-skin-hover">
-                            <a href="#" class="user-settings">
-                                <span class="userName"></span>
-                            </a>
-                            <ul class="user-settings-dropdown blue-skin blue-skin-hover">
-                                <li><i class="fa fa-user"></i>Profil</li>
-                                <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
-                            </ul>
+                                <span class="userName">Hey</span>
                         </li>
                         <li class=" blue-skin blue-skin-hover">
                             <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
                             <ul class="menu-hidden">
                                 <li>
                                     <div class="control-theme-section">
+                                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                                        </fb:login-button>
                                         <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
                                         <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
                                         <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
@@ -77,7 +97,7 @@
                 <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
                 <li><i class="fa fa-line-chart">Wykresy</i>
                     <ul>
-                        <li><a href="barChart.html">wykres1</a></li>
+                        <li><a href="barChart.html">zmiana średniego kursu</a></li>
                         <li>wykres2</li>
                     </ul>
                 </li>
@@ -85,24 +105,29 @@
             </ul>
         </aside>
 
-
         <!-- TU WRZUCAMY CONTENT -->
 
 
         <div class="content">
             <section class="dashboard-heading col-md-12 col-xs-12"><h2>Overview</h2></section>
 
+
               <section  class="box-selected-cur col-md-4 col-xs-12 select-section-1">
                   <canvas id="myChart" width="auto" height="auto"></canvas>
               </section>
 
               <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
+                  <canvas id="myChart2" width="auto" height="auto"></canvas>
               </section>
 
               <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
-
-
+                  <canvas id="myChar3" width="auto" height="auto"></canvas>
               </section>
+
+
+
+
+
 
         </div>
 
@@ -111,7 +136,9 @@
         <div class="logInPopUp blockPopUp">
             <p>Zaloguj się przez:</p>
             <button class="socialMediaLogIn linkedIn"><img src="images/linkedinLogIn.png"> LinkedIn</button>
-            <button class="socialMediaLogIn facebook"><img src="images/facebookLogIn.png"> Facebook</button>
+            <div class="socialMediaLogIn facebook">
+
+            </div>
             <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
             <button class="socialMediaLogIn twitter"><img src="images/twitterLogIn.png">Twitter</button>
         </div>
@@ -120,7 +147,6 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/tableData.js"></script>
         <script src="js/interface.js"></script>
-        <script src="js/google-login.js"></script>
         <script src="js/fb-login.js"></script>
         <script src="js/Chart.js-master/Chart.js"></script>
         <script src="js/Chart.js-master/chartcur.js"></script>
