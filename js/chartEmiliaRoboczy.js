@@ -12,7 +12,7 @@ $("#currencyForm").submit(function (event) {
     event.preventDefault();
     wybranaData1 = $('#data1').val();
     wybranaData2 = $('#data2').val();
-    var url = ('../xml/' + wybranaWaluta + '.xml');
+    var url = ('xml/' + wybranaWaluta + '.xml');
     pobierzDane(url);
     return false;
 });
