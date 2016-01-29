@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="css/interface.css">
     <link rel="stylesheet" href="css/main-table.css">
-
+    <link rel="stylesheet" type="text/css" media="all" href="js/pickadate.js-3.5.6/lib/themes/classic.date.css" />
 </head>
 <body>
 
@@ -74,24 +74,29 @@
     </div>
 
     <ul class="sidebar-list">
-        <li><a href="index.html"><i class="fa fa-tachometer"></i>Deska</a></li>
-        <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
+        <li><a href="/index.html"><i class="fa fa-tachometer"></i>Deska</a></li>
+        <li><a href="/table.html"><i class="fa fa-table"></i>Tabele</a></li>
         <li><i class="fa fa-line-chart"></i>Wykresy
             <ul>
-                <li><a href="barChart.html">wykres1</a></li>
+                <li><a href="barChart.html">zmiany kursu średniego</a></li>
                 <li>wykres2</li>
             </ul>
         </li>
         <li><i class="fa fa-sort-amount-asc"></i>Trendy</li>
     </ul>
 </aside>
-</div>
+
 <!-- TU WRZUCAMY CONTENT -->
 
 
 <div class="content">
-    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykresy </h2></div>
-
+    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres różnic kursu średniego</h2></div>
+    <form class="form-inline" id="currencyForm">
+    <div class="form-group col-md-2">
+        <label class="control-label"></label>
+        <input type="text" id="data1" class="form-control pickdate">
+    </div>
+        </form>
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
@@ -104,12 +109,12 @@
 
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
+
+
 <script src="js/jquery.min.js"></script>
-<script src="js/interface.js"></script>
-<script src="js/fb-login.js"></script>
-<script src="js/totalTable.js"></script>
+<script src="js/pickadate.js-3.5.6/lib/picker.js"></script>
+<script src="js/pickadate.js-3.5.6/lib/picker.date.js"></script>
 <script src="js/Chart.js-master/Chart.js"></script>
-<script src="js/Chart.js-master/chartcur.js"></script>
 <script src="js/barChart.js"></script>
 
 </body>

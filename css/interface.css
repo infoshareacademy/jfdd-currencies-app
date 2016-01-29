@@ -348,3 +348,7 @@ body {
     background-color: #ffffff;
 }
 
+li a:link:hover{
+    text-decoration: none;
+    color:#ffffff;
+}
