@@ -10,7 +10,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -53,6 +53,7 @@
         });
     }
 
+
     window.fbAsyncInit = function() {
         FB.init({
             appId      : '183202345374099',
@@ -81,6 +82,8 @@
     };
 
     // Load the SDK asynchronously
+
+    // Load the SDK asynchronously
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -94,12 +97,18 @@
     function testAPI() {
         console.log('Welcome!  Fetching your information.... ');
         FB.api('/me', function(response) {
+
                         console.log('Successful login for: ' + response.name);
                         document.getElementById('userName').innerHTML =
                                response.name
 
 
 //            window.location = 'http://test.app.monuments.jfdd.infoshareaca.nazwa.pl';
+
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
+
         });
     }
 </script>
@@ -110,7 +119,17 @@
                 <div class="right-navbar-items">
                     <ul class="right-top-icons">
                         <li class=" blue-skin blue-skin-hover">
+
                                 <span class="userName"></span>
+
+                            <a href="#" class="user-settings">
+                                <span class="userName"></span>
+                            </a>
+                            <ul class="user-settings-dropdown blue-skin blue-skin-hover">
+                                <li><i class="fa fa-user"></i>Profil</li>
+                                <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
+                            </ul>
+
                         </li>
                         <li class=" blue-skin blue-skin-hover">
                             <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
@@ -135,8 +154,6 @@
             <div class="user-last-activity">
                 <i class="fa fa-th-list fa-2x list-icon-observe"></i>
                 <p class="last-observed">Ostatnio obserwowane:</p>
-              <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                </fb:login-button>
                 <p class="last-observed last-observed-detail">PLN / EUR</p>
                 <p class="last-observed last-observed-detail">CAD / USD</p>
             </div>
@@ -146,13 +163,14 @@
                 <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
                 <li><i class="fa fa-line-chart">Wykresy</i>
                     <ul>
-                        <li><a href="barChart.html">wykres1</a></li>
-                        <li>wykres2</li>
+                        <li><a href="barChart.html">zmiany kursu średniego</a></li>
+                        <li><a href="lineHistoricChart.html">Wykres kursów zamknięcia</a></li>
                     </ul>
                 </li>
-                <li><i class="fa fa-sort-amount-asc"></i>Trendy</li>
+                <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li> -->
             </ul>
         </aside>
+
 
         <!-- TU WRZUCAMY CONTENT -->
 
@@ -170,7 +188,7 @@
               </section>
 
               <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
-                  <canvas id="myChar3" width="auto" height="auto"></canvas>
+                  <canvas id="myChart3" width="auto" height="auto"></canvas>
               </section>
 
 
@@ -186,6 +204,10 @@
             <p>Zaloguj się przez:</p>
             <button class="socialMediaLogIn linkedIn"><img src="images/linkedinLogIn.png"> LinkedIn</button>
             <div class="socialMediaLogIn facebook">
+
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+
             </div>
             <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
             <button class="socialMediaLogIn twitter"><img src="images/twitterLogIn.png">Twitter</button>

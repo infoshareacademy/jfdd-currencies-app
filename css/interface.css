@@ -63,6 +63,7 @@ body {
 
 .main-header {
     position: relative;
+    max-height: 100px;
     z-index: 100;
 }
 
@@ -86,8 +87,6 @@ body {
     font-weight: 300;
     overflow: hidden;
 }
-
-
 
 .logo img {
     margin-left: -5px;
@@ -312,16 +311,18 @@ body {
 }
 
 .content {
-    background-color: #eaeded;
+    background-color: #ffffff;
     margin-left: 230px;
     min-height: 100%;
+
+
 }
 
 /* ################################################################# */
 /* ######################## CURRENCIES BOXES ########################### */
 
 .box-selected-cur {
-    background-color: #F5F5F5;
+    background-color: #ffffff;
     position: relative;
     min-height: 100%
 
@@ -353,57 +354,17 @@ body {
     background-color: #ffffff;
 }
 
+#mainTable {
+    background-color: white;
+}
+
+#mainTable button {
+    border: transparent;
+    background-color: transparent;
+}
+
 @media (min-width: 768px) {
     .navbar {
         border-radius: 0;
-    }
-}
-
-
-/* ### TABLE */
-
-.background-table {
-    background-color: #ffffff;
-}
-
-@media only screen and (max-width: 780px) {
-
-    .content {
-        background-color: #eaeded;
-        margin-left: 0;
-        position: absolute;
-        top: 350px;
-    }
-
-    .main-header > .navbar {
-        margin-bottom: 0;
-        margin-left: 0;
-        width: 100%;
-        border: none;
-        height: 50px;
-        position: relative;
-    }
-
-    .main-header .logo {
-        display: block;
-        float: left;
-        height: 50px;
-        font-size: 20px;
-        line-height: 50px;
-        text-align: center;
-        width: 100%;
-        padding: 0 15px;
-        font-weight: 300;
-        overflow: hidden;
-    }
-    .main-sidebar {
-        z-index: 75;
-        background-color: #333;
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding-top: 50px;
-        min-height: 270px;
-        width: 100% !important;
     }
 }

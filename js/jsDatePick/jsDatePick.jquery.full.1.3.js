@@ -59,10 +59,10 @@
 g_l = [];
 g_l["MONTHS"] = ["Styczeń","Luty","Marzec","Kwiecień","Maj","Czerwiec","Lipiec","Sierpień","Wrzesień","Październik","Listopad","Grudzień"];
 g_l["DAYS_3"] = ["N","Pn","Wt","Śr","Cz","Pt","So"];
-g_l["MONTH_FWD"] = "Move a month forward";
-g_l["MONTH_BCK"] = "Move a month backward";
-g_l["YEAR_FWD"] = "Move a year forward";
-g_l["YEAR_BCK"] = "Move a year backward";
+g_l["MONTH_FWD"] = "Miesiąc w przód ";
+g_l["MONTH_BCK"] = "Miesiąc wstecz";
+g_l["YEAR_FWD"] = "Rok w przód";
+g_l["YEAR_BCK"] = "Rok wstecz";
 g_l["CLOSE"] = "Zamknij kalendarz";
 g_l["ERROR_2"] = g_l["ERROR_1"] = "Date object invalid!";
 g_l["ERROR_4"] = g_l["ERROR_3"] = "Target invalid!";
@@ -86,7 +86,7 @@ g_l["ERROR_4"] = g_l["ERROR_3"] = "Target invalid!";
 	at javascriptcalendar.org
 	Thank you!
 */
-g_jsDatePickImagePath = "jsDatePick/img/";
+g_jsDatePickImagePath = "js/jsDatePick/img/";
 g_jsDatePickDirectionality = "ltr";
 
 g_arrayOfUsedJsDatePickCalsGlobalNumbers = [];

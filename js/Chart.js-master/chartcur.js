@@ -3,18 +3,11 @@
  */
 $(document).ready(function () {
 
-    // 1. funkcja, która zwraca context, przyjmuje id charta
-    // 2. funkcja będzie znajdywać canvas o id takim jak id charta (zapisuje sobie referencje na parenta)
-    // 3. tworzy nowy canvas
 
-    function getContext(chartId) {
-        var find = $('#' + chartId).parent();
-        var canvas = find.append($('<canvas width="auto" height="auto"></canvas>'));
-        canvas.attr('id',chartId);
-        document.getElementById(chartId).getContext("2d");
-    }
 
-    var ctx = getContext('myChart');
+    var ctx = document.getElementById('myChart').getContext("2d");
+    var ctx2 = document.getElementById('myChart2').getContext("2d");
+    var ctx3 = document.getElementById('myChart3').getContext("2d");
 
 
     var data = {
