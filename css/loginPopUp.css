@@ -13,16 +13,19 @@
 .logInPopUp    {
     background-color: white;
     opacity:1;
-    width:60%;
-    height: 70%;
     z-index: 201;
     position:absolute;
-    margin-left:20%;
-    box-shadow: #517feb;
+    box-shadow: #517feb 5px;
     border: 1px solid lightslategray;
-    padding-left: 10%;
-    padding-right: 10%;
     top:10%;
+    text-align:center;
+    padding-bottom:40px;
+}
+
+.logInPopUp a{
+    color:black;
+    text-decoration:none;
+    padding-bottom: 40px;
 }
 
 .blockPopUp {
@@ -38,7 +41,7 @@
 .socialMediaLogIn   {
     width: 200px;
     color: white;
-    background-color: #96acc4;
+    /*background-color: #96acc4;*/
     margin:auto;
     margin-bottom: 30px;
     text-align: center;
@@ -46,14 +49,15 @@
     padding-bottom: 8px;
     cursor: pointer;
     font-size: 20px;
+}
 
-}
-.socialMediaLogIn img   {
-    margin-top: 5px;
-    margin-bottom: 0;
-    padding-left: 0;
-    display: inline;
-}
+
+/*.socialMediaLogIn img   {*/
+    /*margin-top: 5px;*/
+    /*margin-bottom: 0;*/
+    /*padding-left: 0;*/
+    /*display: inline;*/
+/*}*/
 .google {
     padding-left: 36px;
 }
