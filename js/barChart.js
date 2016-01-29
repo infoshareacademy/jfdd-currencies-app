@@ -35,6 +35,7 @@ $('#data1').change(function(){
             actualizeChartData(inputValue,currenciesShorts[11],11),
             actualizeChartData(inputValue,currenciesShorts[12],12)
         ).then(function () {
+
             countChangeAverage();
             createBarChart();
         });

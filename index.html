@@ -24,14 +24,6 @@
 
 
     // Load the SDK asynchronously
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '183202345374099',
-            xfbml: true,
-            version: 'v2.5'
-        });
-        $(document).trigger('fbload');
-    };
 
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -47,10 +39,9 @@
         console.log('Welcome!  Fetching your information.... ');
         FB.api('/me', function(response) {
             console.log('Successful login for: ' + response.name);
-            document.getElementById('userName').innerHTML = response.name;
+            document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
         });
-        testAPI();
-
     }
 </script>
 
@@ -60,15 +51,19 @@
                 <div class="right-navbar-items">
                     <ul class="right-top-icons">
                         <li class=" blue-skin blue-skin-hover">
-                                <span class="userName">Hey</span>
+                            <a href="#" class="user-settings">
+                                <span class="userName"></span>
+                            </a>
+                            <ul class="user-settings-dropdown blue-skin blue-skin-hover">
+                                <li><i class="fa fa-user"></i>Profil</li>
+                                <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
+                            </ul>
                         </li>
                         <li class=" blue-skin blue-skin-hover">
                             <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
                             <ul class="menu-hidden">
                                 <li>
                                     <div class="control-theme-section">
-                                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                                        </fb:login-button>
                                         <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
                                         <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
                                         <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
@@ -97,13 +92,14 @@
                 <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
                 <li><i class="fa fa-line-chart">Wykresy</i>
                     <ul>
-                        <li><a href="barChart.html">zmiana średniego kursu</a></li>
+                        <li><a href="barChart.html">zmiany średniego kursu</a></li>
                         <li>wykres2</li>
                     </ul>
                 </li>
-                <li><i class="fa fa-sort-amount-asc"></i>Trendy</li>
+                <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li> -->
             </ul>
         </aside>
+
 
         <!-- TU WRZUCAMY CONTENT -->
 
@@ -137,7 +133,8 @@
             <p>Zaloguj się przez:</p>
             <button class="socialMediaLogIn linkedIn"><img src="images/linkedinLogIn.png"> LinkedIn</button>
             <div class="socialMediaLogIn facebook">
-
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
             </div>
             <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
             <button class="socialMediaLogIn twitter"><img src="images/twitterLogIn.png">Twitter</button>
