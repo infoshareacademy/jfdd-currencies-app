@@ -39,9 +39,8 @@
 }
 
 .socialMediaLogIn   {
-    width: 200px;
-    color: white;
-    /*background-color: #96acc4;*/
+    background-color: transparent;
+    border: none;
     margin:auto;
     margin-bottom: 30px;
     text-align: center;

@@ -100,10 +100,10 @@
 
                         console.log('Successful login for: ' + response.name);
                         document.getElementById('userName').innerHTML =
-                               response.name
+                               response.name;
 
-
-//            window.location = 'http://test.app.monuments.jfdd.infoshareaca.nazwa.pl';
+//
+//            window.location = 'http://test.app.currencies.jfdd.infoshareaca.nazwa.pl/index.html';
 
             console.log('Successful login for: ' + response.name);
             document.getElementById('status').innerHTML =
@@ -146,19 +146,12 @@
                         </li>
                     </ul>
 
-<<<<<<< HEAD
+
                 </div>
             </nav>
         </header>
 
-        <aside class="main-sidebar blue-skin">
-            <div class="user-last-activity">
-                <i class="fa fa-th-list fa-2x list-icon-observe"></i>
-                <p class="last-observed">Ostatnio obserwowane:</p>
-                <p class="last-observed last-observed-detail">PLN / EUR</p>
-                <p class="last-observed last-observed-detail">CAD / USD</p>
-            </div>
-=======
+
         </div>
     </nav>
 </header>
@@ -175,7 +168,7 @@
 
         <p class="last-observed last-observed-detail">CAD / USD</p>
     </div>
->>>>>>> 2a596f295d06045366cbb0874137d10e6b754bcc
+
 
             <ul class="sidebar-list">
                 <li><i class="fa fa-tachometer"></i>Deska</li>
@@ -217,28 +210,23 @@
 
         </div>
 
-<<<<<<< HEAD
 
-        <div class="logInBackground blockPopUp"> </div>
-        <div class="logInPopUp blockPopUp">
-            <p>Zaloguj się przez:</p>
-            <button class="socialMediaLogIn linkedIn"><img src="images/linkedinLogIn.png"> LinkedIn</button>
-            <div class="socialMediaLogIn facebook">
 
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-            </fb:login-button>
+
+
 
             </div>
-=======
+
 <section class="fluid-container">
     <div class="row logInBackground"></div>
     <div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
         <div class="row"><p>Zaloguj się przez:</p></div>
         <div class="row" id="facebookLogin">
-            <button class="socialMediaLogIn facebook"><img src="images/facebookLogIn.png"> Facebook</button>
+            <fb:login-button scope="public_profile,email" data-size="large" onlogin="checkLoginState();">
+            </fb:login-button>
         </div>
         <div class="row" id="googleLogin">
->>>>>>> 2a596f295d06045366cbb0874137d10e6b754bcc
+
             <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
             <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>
         </div>
