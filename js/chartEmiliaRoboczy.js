@@ -13,6 +13,7 @@ $("#currencyForm").submit(function (event) {
     $('#canvas').remove();
     $('#canvasDiv').append('<canvas></canvas>');
     $('canvas').attr('id', 'canvas');
+    $('canvas').attr('style', 'height:500px');
     wybranaData1 = $('#data1').val();
     wybranaData2 = $('#data2').val();
     var url = ('xml/' + wybranaWaluta + '.xml');

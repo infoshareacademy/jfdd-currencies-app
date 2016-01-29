@@ -98,15 +98,8 @@
 <!-- TU WRZUCAMY CONTENT -->
 
 <div class="content">
-    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres kursów zamknięcia (lata 2000-2015)</h2></div>
-    <div class="row wykres">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" id="canvasDiv">
-            <canvas id="canvas"></canvas>
-        </div>
-        <div class="col-md-2"></div>
+    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres kursów zamknięcia (lata: 2000-2015)</h2></div>
 
-    </div>
     <div class="row">
         <form class="form-inline" id="currencyForm">
             <div class="form-group col-md-offset-1 col-lg-offset-1">
@@ -138,6 +131,13 @@
             </div>
             <button class="btn btn-primary" type="submit" id="createChart">Stwórz wykres</button>
         </form>
+    </div>
+    <div class="row wykres">
+        <div class="col-md-1"></div>
+           <div class="col-md-8" id="canvasDiv" >
+            <canvas id="canvas" height="500" width="900"></canvas>
+        </div>
+
     </div>
 
 </div>
