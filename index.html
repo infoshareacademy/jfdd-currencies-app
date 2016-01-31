@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Monitor wymiany walut</title>
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="734032112012-a6mpevuqh71q83hfh5kg28fmbrhac4sr.apps.googleusercontent.com">
+    <meta name="google-signin-client_id"
+          content="734032112012-a6mpevuqh71q83hfh5kg28fmbrhac4sr.apps.googleusercontent.com">
     <!-- css files -->
     <link rel="stylesheet" href="css/reset.css">
     <!-- Tell the browser to be responsive to screen width -->
@@ -48,19 +49,19 @@
     // Button.  See the onlogin handler attached to it in the sample
     // code below.
     function checkLoginState() {
-        FB.getLoginStatus(function(response) {
+        FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
     }
 
 
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
         FB.init({
-            appId      : '183202345374099',
-            cookie     : true,  // enable cookies to allow the server to access
-                                // the session
-            xfbml      : true,  // parse social plugins on this page
-            version    : 'v2.2' // use version 2.2
+            appId: '183202345374099',
+            cookie: true,  // enable cookies to allow the server to access
+                           // the session
+            xfbml: true,  // parse social plugins on this page
+            version: 'v2.2' // use version 2.2
         });
 
         // Now that we've initialized the JavaScript SDK, we call
@@ -75,7 +76,7 @@
         //
         // These three cases are handled in the callback function.
 
-        FB.getLoginStatus(function(response) {
+        FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
 
@@ -84,10 +85,11 @@
     // Load the SDK asynchronously
 
     // Load the SDK asynchronously
-    (function(d, s, id) {
+    (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = 183202345374099;
+        js = d.createElement(s);
+        js.id = 183202345374099;
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
@@ -96,11 +98,11 @@
     // successful.  See statusChangeCallback() for when this call is made.
     function testAPI() {
         console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
+        FB.api('/me', function (response) {
 
-                        console.log('Successful login for: ' + response.name);
-                        document.getElementById('userName').innerHTML =
-                               response.name
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('userName').innerHTML =
+                    response.name
 
 
 //            window.location = 'http://test.app.monuments.jfdd.infoshareaca.nazwa.pl';
@@ -113,132 +115,125 @@
     }
 </script>
 
-        <header class="main-header">
-            <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
-            <nav class="navbar blue-skin">
-                <div class="right-navbar-items">
-                    <ul class="right-top-icons">
-                        <li class=" blue-skin blue-skin-hover">
+<header class="main-header">
+    <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
+    <nav class="navbar blue-skin">
+        <div class="right-navbar-items">
+            <ul class="right-top-icons">
+                <li class=" blue-skin blue-skin-hover">
 
-                                <span class="userName"></span>
+                    <span class="userName"></span>
 
-                            <a href="#" class="user-settings">
-                                <span class="userName"></span>
-                            </a>
-                            <ul class="user-settings-dropdown blue-skin blue-skin-hover">
-                                <li><i class="fa fa-user"></i>Profil</li>
-                                <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
-                            </ul>
-
-                        </li>
-                        <li class=" blue-skin blue-skin-hover">
-                            <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
-                            <ul class="menu-hidden">
-                                <li>
-                                    <div class="control-theme-section">
-                                        <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
-                                        <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
-                                        <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
-                                        <p class="motive-green-btn cursor-pointer">Zielono mi</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
+                    <a href="#" class="user-settings">
+                        <span class="userName"></span>
+                    </a>
+                    <ul class="user-settings-dropdown blue-skin blue-skin-hover">
+                        <li><i class="fa fa-user"></i>Profil</li>
+                        <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
                     </ul>
 
-<<<<<<< HEAD
-                </div>
-            </nav>
-        </header>
+                </li>
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
+                    <ul class="menu-hidden">
+                        <li>
+                            <div class="control-theme-section">
+                                <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
+                                <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
+                                <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
+                                <p class="motive-green-btn cursor-pointer">Zielono mi</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <<<<<<< HEAD
+        </div>
+    </nav>
+</header>
 
 
 =======
-        </div>
-    </nav>
+</div>
+</nav>
 </header>
 
 <aside class="main-sidebar blue-skin">
 
 
-            <ul class="sidebar-list">
-                <li><i class="fa fa-tachometer"></i>Deska</li>
-                <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
-                <li><i class="fa fa-line-chart">Wykresy</i>
-                    <ul>
-                        <li><a href="barChart.html">zmiany kursu średniego</a></li>
-                        <li><a href="lineHistoricChart.html">Wykres kursów zamknięcia</a></li>
-                    </ul>
-                </li>
-                <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li> -->
+    <ul class="sidebar-list">
+        <li><i class="fa fa-tachometer"></i>Deska</li>
+        <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
+        <li><i class="fa fa-line-chart">Wykresy</i>
+            <ul>
+                <li><a href="barChart.html">zmiany kursu średniego</a></li>
+                <li><a href="lineHistoricChart.html">Wykres kursów zamknięcia</a></li>
             </ul>
-        </aside>
+        </li>
+        <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li> -->
+    </ul>
+</aside>
 
 
-        <!-- TU WRZUCAMY CONTENT -->
+<!-- TU WRZUCAMY CONTENT -->
 
 
-        <div class="content">
-            <section class="dashboard-heading col-md-12 col-xs-12"><h2>Overview</h2></section>
+<div class="content">
+    <section class="dashboard-heading col-md-12 col-xs-12"><h2>Overview</h2></section>
 
 
-              <section  class="box-selected-cur col-md-4 col-xs-12 select-section-1">
-                  <canvas id="myChart" width="auto" height="auto"></canvas>
-              </section>
+    <section class="box-selected-cur col-md-4 col-xs-12 select-section-1">
+        <canvas id="myChart" width="auto" height="auto"></canvas>
+    </section>
 
-              <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
-                  <canvas id="myChart2" width="auto" height="auto"></canvas>
-              </section>
+    <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
+        <canvas id="myChart2" width="auto" height="auto"></canvas>
+    </section>
 
-              <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
-                  <canvas id="myChart3" width="auto" height="auto"></canvas>
-              </section>
+    <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
+        <canvas id="myChart3" width="auto" height="auto"></canvas>
+    </section>
 
-
-
-
-
-
-        </div>
+</div>
 
 <<<<<<< HEAD
 
-        <div class="logInBackground blockPopUp"> </div>
-        <div class="logInPopUp blockPopUp">
-            <p>Zaloguj się przez:</p>
-            <button class="socialMediaLogIn linkedIn"><img src="images/linkedinLogIn.png"> LinkedIn</button>
-            <div class="socialMediaLogIn facebook">
+</div>
+<!--Log in PopUp-->
+<section class="fluid-container" id="PopUp-wrapper" style="display:none">
 
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-            </fb:login-button>
 
-            </div>
-=======
-<section class="fluid-container">
     <div class="row logInBackground"></div>
     <div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-        <div class="row"><p>Zaloguj się przez:</p></div>
+
+        <div class="row"><h2>Zaloguj się przez:</h2></div>
+
         <div class="row" id="facebookLogin">
-            <button class="socialMediaLogIn facebook"><img src="images/facebookLogIn.png"> Facebook</button>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="socialMediaLogIn">
+            </fb:login-button>
         </div>
+
         <div class="row" id="googleLogin">
->>>>>>> 2a596f295d06045366cbb0874137d10e6b754bcc
             <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
-            <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>
         </div>
+
+        <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>
 
     </div>
 </section>
+
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popUp.js"></script>
-        <script src="js/tableData.js"></script>
-        <script src="js/interface.js"></script>
-        <script src="js/Chart.js-master/Chart.js"></script>
-        <script src="js/Chart.js-master/chartcur.js"></script>
-        <script src="js/dragdrop.js"></script>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script src="js/google-login.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popUp.js"></script>
+<script src="js/tableData.js"></script>
+<script src="js/interface.js"></script>
+<script src="js/Chart.js-master/Chart.js"></script>
+<script src="js/Chart.js-master/chartcur.js"></script>
+<script src="js/dragdrop.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="js/google-login.js"></script>
 
 
 </body>

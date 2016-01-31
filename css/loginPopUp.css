@@ -28,36 +28,3 @@
     padding-bottom: 40px;
 }
 
-.blockPopUp {
-    display:none;
-}
-
-.logInPopUp p{
-    font-size: 2em;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.socialMediaLogIn   {
-    width: 200px;
-    color: white;
-    /*background-color: #96acc4;*/
-    margin:auto;
-    margin-bottom: 30px;
-    text-align: center;
-    padding-top:8px;
-    padding-bottom: 8px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-
-/*.socialMediaLogIn img   {*/
-    /*margin-top: 5px;*/
-    /*margin-bottom: 0;*/
-    /*padding-left: 0;*/
-    /*display: inline;*/
-/*}*/
-.google {
-    padding-left: 36px;
-}
