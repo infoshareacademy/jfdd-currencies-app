@@ -1,8 +1,8 @@
 /**
  * Created by lukaszk on 27.01.16.
  */
+$( document ).ready(function() {
 
-$('.pickdate').pickadate();
 var inputValue="brak";
 var currenciesShorts = ['USD','AUD','CAD','EUR','HUF','CHF','GBP','JPY','CZK','DKK','NOK','SEK','XDR'];
 var averageCurrencyBefore=[];
@@ -11,15 +11,9 @@ var changeAverage=[];
 createBarChart();
 
 
-
-
-$('#data1').change(function(){
-
-
-
-    if (($("#data1").val() && !($("#data1").val() == inputValue)) || ($("#data1").val() && inputValue==="brak") ) {
+    $('.datepicker').datepicker({ format: "yyyy-mm-dd" }).on('changeDate', function(ev){
+        $(this).datepicker('hide');
         inputValue = $("#data1").val();
-
         $.when(
             actualizeChartData(inputValue,currenciesShorts[0],0),
             actualizeChartData(inputValue,currenciesShorts[1],1),
@@ -35,15 +29,12 @@ $('#data1').change(function(){
             actualizeChartData(inputValue,currenciesShorts[11],11),
             actualizeChartData(inputValue,currenciesShorts[12],12)
         ).then(function () {
-
             countChangeAverage();
             createBarChart();
         });
-    }
+    });
 
 
-
-});
 
 
 function countChangeAverage(){
@@ -125,4 +116,7 @@ function actualizeChartData(clickedDate,currencyType,numberArray) {
         });
 
 }
+
+
+});
 

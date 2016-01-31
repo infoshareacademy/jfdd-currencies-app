@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="css/interface.css">
     <link rel="stylesheet" href="css/main-table.css">
-    <link rel="stylesheet" type="text/css" media="all" href="js/pickadate.js-3.5.6/lib/themes/classic.date.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
 </head>
 <body>
 
@@ -26,16 +26,10 @@
 <header class="main-header">
     <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
     <nav class="navbar blue-skin">
-        <a href="#" class="sidebar-toggle blue-skin blue-skin-hover">
-            <i class="fa fa-bars"></i>
-        </a>
+
         <div class="right-navbar-items">
             <ul class="right-top-icons">
-                <li class=" blue-skin blue-skin-hover">
-                    <a href="#" class="control-theme">
-                        <i class="fa fa-bell"></i>
-                    </a>
-                </li>
+
                 <li class=" blue-skin blue-skin-hover">
                     <a href="#" class="user-settings">
                         <span class="userName"></span>
@@ -65,13 +59,7 @@
 </header>
 
 <aside class="main-sidebar blue-skin">
-    <div class="user-last-activity">
-        <i class="fa fa-th-list fa-2x list-icon-observe"></i>
-        <p class="last-observed">Ostatnio obserwowane:</p>
-        <p class="last-observed last-observed-detail">USD / EUR</p>
-        <p class="last-observed last-observed-detail">PLN / EUR</p>
-        <p class="last-observed last-observed-detail">CAD / USD</p>
-    </div>
+
 
     <ul class="sidebar-list">
         <li><a href="index.html"><i class="fa fa-tachometer"></i>Deska</a></li>
@@ -91,14 +79,13 @@
 
 <div class="content">
     <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres różnic kursu średniego</h2></div>
-    <form class="form-inline" id="currencyForm">
-    <div class="form-group col-md-2">
-        <label class="control-label"></label>
-        <input type="text" id="data1" class="form-control pickdate">
-    </div>
-        </form>
     <div class="row">
-        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <form class="form-inline" id="currencyForm">
+                <label class="control-label"></label>
+                <input type="text" id="data1" class="datepicker form-control" placeholder="Wybierz date">
+            </form>
+        </div>
         <div class="col-md-8">
             <div id="canvasDiv">
             <canvas id="canvas" height="550" width="900"></canvas>
@@ -114,8 +101,7 @@
 
 
 <script src="js/jquery.min.js"></script>
-<script src="js/pickadate.js-3.5.6/lib/picker.js"></script>
-<script src="js/pickadate.js-3.5.6/lib/picker.date.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
 <script src="js/Chart.js-master/Chart.js"></script>
 <script src="js/barChart.js"></script>
 
