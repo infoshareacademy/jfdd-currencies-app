@@ -205,17 +205,21 @@
 
 
     <div class="row logInBackground"></div>
-    <div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6">
 
         <div class="row"><h2>Zaloguj się przez:</h2></div>
 
         <div class="row" id="facebookLogin">
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="socialMediaLogIn">
+            <fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();" class="socialMediaLogIn">
+                Facebook
             </fb:login-button>
         </div>
 
         <div class="row" id="googleLogin">
-            <button class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark"></button>
+            <button>
+                    <div class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark">
+                 </div>
+            </button>
         </div>
 
         <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>

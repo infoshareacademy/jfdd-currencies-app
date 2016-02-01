@@ -23,8 +23,27 @@
 }
 
 .logInPopUp a{
+    font-size:20px;
     color:black;
     text-decoration:none;
     padding-bottom: 40px;
 }
+
+.logInPopUp .row{
+    margin-bottom: 20px;
+}
+
+#googleLogin button  {
+    border: none;
+    border-radius: 2px;
+    width: 160px;
+    height: 40px;
+    background-color:#4885ed;
+    padding: 0;
+    margin-bottom: 80px;
+}
+#googleLogin button div{
+    /*width:160px;*/
+}
+
 
