@@ -210,6 +210,10 @@ body {
     width: 170px;
 }
 
+.userName {
+    line-height: 50px;
+}
+
 /* ################################################################# */
 /* ######################## MAIN SIDEBAR ########################### */
 
@@ -278,6 +282,8 @@ body {
 
 }
 
+
+
 /* ################################################################# */
 /* ######################## MAIN FOOTER ########################### */
 
@@ -305,7 +311,7 @@ body {
 }
 
 .content {
-    background-color: #eaeded;
+    background-color: #ffffff;
     margin-left: 230px;
     min-height: 100%;
 
@@ -316,7 +322,7 @@ body {
 /* ######################## CURRENCIES BOXES ########################### */
 
 .box-selected-cur {
-    background-color: #F5F5F5;
+    background-color: #ffffff;
     position: relative;
     min-height: 100%
 
@@ -348,3 +354,17 @@ body {
     background-color: #ffffff;
 }
 
+#mainTable {
+    background-color: white;
+}
+
+#mainTable button {
+    border: transparent;
+    background-color: transparent;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0;
+    }
+}
