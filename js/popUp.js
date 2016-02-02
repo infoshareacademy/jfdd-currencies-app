@@ -1,14 +1,17 @@
-$(document).ready(function () {
 
-    $('#facebookLogin').click(function()    {
-        $('.logInBackground').addClass('blockPopUp');
-        $('.logInPopUp').addClass('blockPopUp')
+    $('.socialMediaLogIn').click( function()    {
+        localStorage.setItem("popupWasShown",1);
+        //location.reload();
+
+            setTimeout(function () {
+                location.reload();
+            }, 2000);
     });
 
-    $('#googleLogin').click(function()    {
-        $('.logInBackground').addClass('blockPopUp');
-        $('.logInPopUp').addClass('blockPopUp')
-    });
+    (function () {
+    if(localStorage.getItem("popupWasShown") != 1)  {
+        $('#PopUp-wrapper').removeAttr('style', 'display:none');
+    }
 
-});
+    }());
 
