@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="css/interface.css">
     <link rel="stylesheet" href="css/main-table.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="js/pickadate.js-3.5.6/lib/themes/classic.date.css" />
 </head>
 <body>
 
@@ -70,6 +70,7 @@
                 <li class="pading15"><a href="lineHistoricChart.html" onclick="logger.log({label: 'Click on Wykres-kursu-dziennych-menu', place: 'barChart.html'})">Wykres kursów dziennych</a></li>
             </ul>
         </li>
+        <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li>-->
     </ul>
 </aside>
 
@@ -77,14 +78,15 @@
 
 
 <div class="content">
-    <div class="dashboard-heading col-md-12 col-xs-12"><h2  class="underline-header">Wykres różnic kursu średniego</h2></div>
+    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres różnic kursu średniego</h2></div>
+    <form class="form-inline" id="currencyForm">
+    <div class="form-group col-md-2">
+        <label class="control-label"></label>
+        <input type="text" id="data1" class="form-control pickdate">
+    </div>
+        </form>
     <div class="row">
-        <div class="col-md-2">
-            <form class="form-inline" id="currencyForm">
-                <label class="control-label"></label>
-                <input type="text" id="data1" class="datepicker form-control" placeholder="Wybierz date">
-            </form>
-        </div>
+        <div class="col-md-2"></div>
         <div class="col-md-8">
             <div id="canvasDiv">
             <canvas id="canvas" height="550" width="900"></canvas>
@@ -100,7 +102,8 @@
 
 
 <script src="js/jquery.min.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/pickadate.js-3.5.6/lib/picker.js"></script>
+<script src="js/pickadate.js-3.5.6/lib/picker.date.js"></script>
 <script src="js/Chart.js-master/Chart.js"></script>
 <script src="js/barChart.js"></script>
 

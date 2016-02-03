@@ -22,6 +22,7 @@
 </head>
 <body>
 <script>
+    // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
@@ -40,40 +41,67 @@
     // Button.  See the onlogin handler attached to it in the sample
     // code below.
     function checkLoginState() {
-        FB.getLoginStatus(function (response) {
+        FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
         });
     }
 
-    window.fbAsyncInit = function () {
+
+    window.fbAsyncInit = function() {
         FB.init({
-            appId: '183202345374099',
-            cookie: true,  // enable cookies to allow the server to access
-                           // the session
-            xfbml: true,  // parse social plugins on this page
-            version: 'v2.2' // use version 2.2
+            appId      : '183202345374099',
+            cookie     : true,  // enable cookies to allow the server to access
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.2' // use version 2.2
         });
 
-        FB.getLoginStatus(function (response) {
+        // Now that we've initialized the JavaScript SDK, we call
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+
+        FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
         });
 
     };
-    (function (d, s, id) {
+
+    // Load the SDK asynchronously
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = 183202345374099;
+        js = d.createElement(s); js.id = 183202345374099;
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
     function testAPI() {
         console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function (response) {
+        FB.api('/me', function(response) {
+
+                        console.log('Successful login for: ' + response.name);
+                        document.getElementById('userName').innerHTML =
+                               response.name
+
+
+//            window.location = 'http://test.app.monuments.jfdd.infoshareaca.nazwa.pl';
 
             console.log('Successful login for: ' + response.name);
-//            window.location = 'http://test.app.currencies.jfdd.infoshareaca.nazwa.pl';
+            document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
+
         });
     }
 </script>
@@ -180,19 +208,17 @@
 
     </div>
 </section>
-
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
-<script src="js/jquery.min.js"></script>
-<script src="js/popUp.js"></script>
-<script src="js/tableData.js"></script>
-<script src="js/interface.js"></script>
-<script src="js/Chart.js-master/Chart.js"></script>
-<script src="js/Chart.js-master/chartcur.js"></script>
-<script src="js/dragdrop.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="js/google-login.js"></script>
-
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popUp.js"></script>
+        <script src="js/tableData.js"></script>
+        <script src="js/interface.js"></script>
+        <script src="js/Chart.js-master/Chart.js"></script>
+        <script src="js/Chart.js-master/chartcur.js"></script>
+        <script src="js/dragdrop.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="js/google-login.js"></script>
 
 
 </body>
