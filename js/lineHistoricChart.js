@@ -17,7 +17,7 @@ $("#currencyForm").submit(function (event) {
     wybranaData1 = $('#data1').val();
     wybranaData2 = $('#data2').val();
     var url = ('xml/' + wybranaWaluta + '.xml');
-    pobierzDane(url);0
+    pobierzDane(url);
     return false;
 });
 

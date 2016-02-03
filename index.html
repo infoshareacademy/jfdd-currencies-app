@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="css/loginPopUp.css">
     <link rel="stylesheet" href="css/interface.css">
-
+    <script src="js/logger.js"></script>
 </head>
 <body>
 <script>
@@ -118,12 +118,12 @@
 
 
     <ul class="sidebar-list">
-        <li><a href="index.html" onClick="log({label: 'Click on Deska', value: 'index'})"><i class="fa fa-tachometer"></i>Deska</a></li>
-        <li><a href="table.html" onClick="log({label: 'Click on Aktualne kursy', value: 'index'})"><i class="fa fa-table"></i>Aktualne kursy</a></li>
+        <li><a href="index.html" onclick="logger.log({label: 'Click on Deska-menu', place: 'index.html'})"><i class="fa fa-tachometer"></i>Deska</a></li>
+        <li><a href="table.html" onclick="logger.log({label: 'Click on Aktualne-Kursy-menu', place: 'index.html'})"><i class="fa fa-table"></i>Aktualne kursy</a></li>
         <li><i class="fa fa-line-chart"></i>Wykresy
             <ul>
-                <li class="pading15"><a href="barChart.html">Zmiany kursu średniego</a></li>
-                <li class="pading15"><a href="lineHistoricChart.html">Wykres kursów dziennych</a></li>
+                <li class="pading15"><a href="barChart.html" onclick="logger.log({label: 'Click on Zmiany-kursu-sredniego-menu', place: 'index.html'})">Zmiany kursu średniego</a></li>
+                <li class="pading15"><a href="lineHistoricChart.html" onclick="logger.log({label: 'Click on Wykres-kursu-dziennych-menu', place: 'index.html'})">Wykres kursów dziennych</a></li>
             </ul>
         </li>
     </ul>
@@ -137,7 +137,7 @@
     <section class="dashboard-heading col-md-12 col-xs-12"><h2 class="underline-header">Deska</h2></section>
 
 
-    <section class="box-selected-cur col-md-4 col-xs-12 select-section-1">
+    <section class="box-selected-cur col-md-4 col-xs-12 select-section-1" id="canvasLeft">
         <canvas id="myChart" width="auto" height="auto"></canvas>
     </section>
 
@@ -192,7 +192,7 @@
 <script src="js/dragdrop.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="js/google-login.js"></script>
-<script src="js/logger.js"></script>
+
 
 
 </body>

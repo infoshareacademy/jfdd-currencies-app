@@ -57,6 +57,7 @@ function actualizeTableData (selectedOption, container){
 
 
 
+
 function addLocalStorage(selectId,selectedOption){
     localStorage.setItem(selectId, selectedOption);
 }

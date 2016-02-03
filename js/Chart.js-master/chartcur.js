@@ -3,6 +3,23 @@
  */
 $(document).ready(function () {
 
+    $('#selectLeft').change(function (event) {
+        event.preventDefault();
+        $('#myChart').remove();
+        $('#canvasLeft').append('<canvas id="myChart" width="auto" height="auto"></canvas>');
+
+        $.when(
+            fetchDataset('xml/2016_01_11.xml',0),
+            fetchDataset('xml/2016_01_12.xml',1),
+            fetchDataset('xml/2016_01_13.xml',2),
+            fetchDataset('xml/2016_01_14.xml',3),
+            fetchDataset('xml/2016_01_15.xml',4)
+        ).then(function(){
+            var chartLeft = localStorage.getItem('chartLeft');
+            drawChart(chartLeft || 'USD', ctx);
+        });
+    });
+
 
 
     var ctx = document.getElementById('myChart').getContext("2d");
