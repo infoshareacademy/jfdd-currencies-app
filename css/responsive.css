@@ -1,0 +1,16 @@
+@media screen and (min-width: 400px){
+    .unVisibleEl {
+        visibility: visible;
+    }
+}
+
+
+
+@media screen and (max-width: 400px){
+        .visibleEl {
+            visibility: hidden;
+        }
+        .unVisibleEl {
+            visibility: hidden;
+    }
+}
