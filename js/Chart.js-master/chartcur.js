@@ -128,9 +128,11 @@ $(document).ready(function () {
     fetchDataset('xml/2016_01_15.xml',4)
     ).then(function(){
         var chartLeft = localStorage.getItem('chartLeft');
+        var chartCenter = localStorage.getItem('chartCenter');
+        var chartRight = localStorage.getItem('chartRight');
         drawChart(chartLeft || 'USD', 'myChart');
-        drawChart('USD', 'myChart2');
-        drawChart('USD', 'myChart3');
+        drawChart(chartCenter || 'USD', 'myChart2');
+        drawChart(chartRight || 'USD', 'myChart3');
     });
 
 
@@ -155,9 +157,11 @@ $(document).ready(function () {
     });
     $('#selectCenter').change(function() {
         drawChart($(this).val(), 'myChart2');
+        localStorage.setItem('chartCenter', $(this).val());
     });
     $('#selectRight').change(function() {
         drawChart($(this).val(), 'myChart3');
+        localStorage.setItem('chartRight', $(this).val());
     });
 
 
