@@ -63,7 +63,7 @@ body {
 
 .main-header {
     position: relative;
-    max-height: 100px;
+    max-height: 50px;
     z-index: 100;
 }
 
@@ -224,7 +224,6 @@ body {
     top: 0;
     left: 0;
     padding-top: 50px;
-    min-height: 100%;
     width: 230px;
 }
 
@@ -315,7 +314,6 @@ body {
     margin-left: 230px;
     min-height: 100%;
 
-
 }
 
 /* ################################################################# */
@@ -363,8 +361,44 @@ body {
     background-color: transparent;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 600px) {
     .navbar {
         border-radius: 0;
+    }
+    .main-sidebar {
+        z-index: 75;
+        background-color: #333;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 50px;
+        max-height: 150px !important;
+        width: 100%;
+    }
+    .main-header > .navbar {
+        margin-bottom: 0;
+        margin-left: 0;
+        border: none;
+        height: 50px;
+        position: relative;
+        width: 100%;
+    }
+
+    .main-header .logo {
+        display: block;
+        float: left;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        width: 100%;
+        padding: 0 15px;
+        font-weight: 300;
+        overflow: hidden;
+    }
+    .content {
+        background-color: #ffffff;
+        margin-left: 0;
+
     }
 }
