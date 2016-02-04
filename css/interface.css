@@ -27,7 +27,7 @@ body {
     display: table;
 }
 
-/* ################################################################# */
+/* ############################################################## */
 /* ######################## SKIN ################################ */
 
 .blue-skin {
@@ -58,10 +58,12 @@ body {
 
 
 
-/* ################################################################# */
+/* ################################################################ */
 /* ######################## HEADER ################################ */
 
 .main-header {
+    padding-left: 0;
+    padding-right: 0;
     position: relative;
     max-height: 50px;
     z-index: 100;
@@ -128,7 +130,7 @@ body {
     width: 170px;
     position: absolute;
     top: 50px;
-    right: 0px;
+    right: 0;
     display: none;
 }
 
@@ -220,11 +222,6 @@ body {
 .main-sidebar {
     z-index: 75;
     background-color: #333;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-top: 50px;
-    width: 230px;
 }
 
 .user-last-activity {
@@ -283,7 +280,7 @@ body {
 
 
 
-/* ################################################################# */
+/* ################################################################ */
 /* ######################## MAIN FOOTER ########################### */
 
 .main-footer {
@@ -293,8 +290,7 @@ body {
     bottom: 0;
     text-align: right;
     background: #fff;
-    padding: 5px;
-    padding-right: 20px;
+    padding: 5px 20px 5px 5px;
     color: #444;
     border-top: 1px solid #d2d6de;
     z-index: 125;
@@ -311,12 +307,11 @@ body {
 
 .content {
     background-color: #ffffff;
-    margin-left: 230px;
-    min-height: 100%;
+
 
 }
 
-/* ################################################################# */
+/* ##################################################################### */
 /* ######################## CURRENCIES BOXES ########################### */
 
 .box-selected-cur {
@@ -332,7 +327,7 @@ body {
     text-align: center;
 }
 
-/* ################################################################# */
+/* #################################################################### */
 /* ######################## DRAG DROP BOXES ########################### */
 
 
@@ -361,44 +356,13 @@ body {
     background-color: transparent;
 }
 
-@media (max-width: 600px) {
-    .navbar {
-        border-radius: 0;
-    }
-    .main-sidebar {
-        z-index: 75;
-        background-color: #333;
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding-top: 50px;
-        max-height: 150px !important;
-        width: 100%;
-    }
-    .main-header > .navbar {
-        margin-bottom: 0;
-        margin-left: 0;
-        border: none;
-        height: 50px;
-        position: relative;
-        width: 100%;
-    }
 
-    .main-header .logo {
-        display: block;
-        float: left;
-        height: 50px;
-        font-size: 20px;
-        line-height: 50px;
-        text-align: center;
-        width: 100%;
-        padding: 0 15px;
-        font-weight: 300;
-        overflow: hidden;
-    }
-    .content {
-        background-color: #ffffff;
-        margin-left: 0;
+.navbar {
+    border-radius: 0;
+}
 
-    }
+@media screen and (min-width: 768px) {
+.main-sidebar {
+    height: 100vh;
+}
 }
