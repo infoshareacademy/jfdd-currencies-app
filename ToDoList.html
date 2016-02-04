@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="Planer">
 <head>
     <meta charset="UTF-8">
     <title>Monitor wymiany walut</title>
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/interface.css">
     <link rel="stylesheet" href="css/main-table.css">
     <link rel="stylesheet" type="text/css" media="all" href="js/jsDatePick/jsDatePick_ltr.min.css"/>
+
 
 </head>
 <body>
@@ -82,7 +83,7 @@
 </div>
 <!-- TU WRZUCAMY CONTENT -->
 
-<div class="content">
+<div class="content" ng-controller="ToDoList">
 
     <div class="dashboard-heading col-md-12 col-xs-12"><h2>Zaplanuj swój tydzień</h2></div>
 
@@ -100,23 +101,31 @@
             <div class="panel-body">
                 <form class="form-inline">
 
-                    <div class="form-group col-md-3">
-                        <label class="control-label col-md-4">Data</label>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
+                    <!--<div class="form-group col-md-12">-->
+                        <!--<label class="control-label col-md-1">Data</label>-->
+                        <!--<div class="col-md-4">-->
+                            <!--<input type="text" class="form-control">-->
+                        <!--</div>-->
+                        <!--<div class="col-md-4">-->
+                            <!--<input type="text" class="form-control">-->
+                        <!--</div>-->
+                        <!--<div class="col-md-1">-->
+                            <!--<button class="btn btn-default" type="submit">Dodaj</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="form-group col-md-offset-2 col-md-7">
-                        <div class="col-md-offset-1 col-md-11">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
 
-                    <div class="col-md-2">
-                        <button class="btn btn-default" type="submit">Dodaj</button>
-                    </div>
+                </form>
 
+                <form class="form-inline row">
+                    <div class="form-group">
+                        <label>Data</label>
+                        <input type="text" class="form-control" placeholder="Data" ng-model="newItem.date">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control"  placeholder="Wpisz nowe zadanie"ng-model="newItem.task">
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="addItem(newItem)">Dodaj</button>
                 </form>
 
             </div>
@@ -130,9 +139,13 @@
                 <h3 class="panel-title">Zaplanowane zadania:</h3>
             </div>
             <div class="panel-body">
-                Waluty do wymiany<br>
-                Inne zadanie do zrobienia<br>
-                I jeszcze jedno zadanko<br>
+                <ul>
+                    <li class="list-group-item" ng-repeat="item in taskList">
+                        <input type="checkbox" ng-model="item.done"/>
+                        <span>{{item.date}}</span>
+                        {{item.task}}</li>
+                </ul>
+
             </div>
         </div>
 
@@ -169,6 +182,8 @@
 
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
+
+<script type="text/javascript" src="js/angular.js"></script>
 <script src="js/Chart.js-master/Chart2.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/interface.js"></script>
