@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="panel panel-info col-md-12">
+        <div class="panel-heading">
+            <h3 class="panel-title">Zaplanowane zadania:</h3>
+        </div>
+        <div class="panel-body">
+            <ul ng-repeat="item in taskList">
+                <li class="list-group-item" >
+                    <input type="checkbox" ng-model="item.done"/>
+                    <input type="checkbox" ng-model=""/>
+                    <span>{{item.date}}</span>
+                    {{item.task}}</li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="panel panel-success col-md-12">
+        <div class="panel-heading">
+            <h3 class="panel-title">Zrealizowane zadania:</h3>
+        </div>
+        <div class="panel-body">
+            <ul ng-repeat="item in taskList">
+                <li class="list-group-item" >
+                    <input type="checkbox" ng-model="item.done"/>
+                    <input type="checkbox" ng-model=""/>
+                    <span>{{item.date}}</span>
+                    {{item.task}}</li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="panel panel-danger col-md-12">
+        <div class="panel-heading">
+            <h3 class="panel-title">Anulowane zadania:</h3>
+        </div>
+        <div class="panel-body">
+            <ul ng-repeat="item in taskList">
+                <li class="list-group-item">
+                    <input type="checkbox" ng-model="item.done"/>
+                    <input type="checkbox" ng-model=""/>
+                    <span>{{item.date}}</span>
+                    {{item.task}}</li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>

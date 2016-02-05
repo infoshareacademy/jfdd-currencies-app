@@ -86,37 +86,21 @@
 <div class="content" ng-controller="ToDoList">
 
     <div class="dashboard-heading col-md-12 col-xs-12"><h2>Zaplanuj swój tydzień</h2></div>
-
     <div class="row">
-        <div class="panel panel-default col-md-3">
-            <div class="panel-body calendar">
+        <button class="btn btn-default" type="submit" ng-click="show=false">Lista zadań</button>
+        <button class="btn btn-default" type="submit" ng-click="show=true">Realizacja zadań</button>
 
-            </div>
-        </div>
+    </div>
 
-        <div class="panel panel-default col-md-8">
+    <change-list ng-show="show"></change-list>
+
+    <div class="row" ng-hide="show">
+
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Dodaj nowe zadania:</h3>
             </div>
             <div class="panel-body">
-                <form class="form-inline">
-
-                    <!--<div class="form-group col-md-12">-->
-                        <!--<label class="control-label col-md-1">Data</label>-->
-                        <!--<div class="col-md-4">-->
-                            <!--<input type="text" class="form-control">-->
-                        <!--</div>-->
-                        <!--<div class="col-md-4">-->
-                            <!--<input type="text" class="form-control">-->
-                        <!--</div>-->
-                        <!--<div class="col-md-1">-->
-                            <!--<button class="btn btn-default" type="submit">Dodaj</button>-->
-                        <!--</div>-->
-                    <!--</div>-->
-
-
-                </form>
-
                 <form class="form-inline row">
                     <div class="form-group">
                         <label>Data</label>
@@ -131,9 +115,8 @@
             </div>
         </div>
 
-
     </div>
-    <div class="row">
+    <div class="row" ng-hide="show">
         <div class="panel panel-info col-md-12">
             <div class="panel-heading">
                 <h3 class="panel-title">Zaplanowane zadania:</h3>
@@ -141,43 +124,43 @@
             <div class="panel-body">
                 <ul>
                     <li class="list-group-item" ng-repeat="item in taskList">
-                        <input type="checkbox" ng-model="item.done"/>
                         <span>{{item.date}}</span>
                         {{item.task}}</li>
                 </ul>
 
             </div>
         </div>
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="panel panel-success col-md-12">-->
+            <!--<div class="panel-heading">-->
+                <!--<h3 class="panel-title">Zrealizowane zadania:</h3>-->
+            <!--</div>-->
+            <!--<div class="panel-body">-->
+                <!--Zrealizowane zadanie 1<br>-->
+                <!--Zrealizowane zadanie 2<br>-->
+                <!--Zrealizowane zadanie 3<br>-->
+            <!--</div>-->
+        <!--</div>-->
 
-    </div>
-    <div class="row">
-        <div class="panel panel-success col-md-12">
-            <div class="panel-heading">
-                <h3 class="panel-title">Zrealizowane zadania:</h3>
-            </div>
-            <div class="panel-body">
-                Zrealizowane zadanie 1<br>
-                Zrealizowane zadanie 2<br>
-                Zrealizowane zadanie 3<br>
-            </div>
-        </div>
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="panel panel-danger col-md-12">-->
+            <!--<div class="panel-heading">-->
+                <!--<h3 class="panel-title">Anulowane zadania:</h3>-->
+            <!--</div>-->
+            <!--<div class="panel-body">-->
+                <!--content<br>-->
+                <!--content<br>-->
+                <!--content<br>-->
+            <!--</div>-->
+        <!--</div>-->
 
-    </div>
-    <div class="row">
-        <div class="panel panel-danger col-md-12">
-            <div class="panel-heading">
-                <h3 class="panel-title">Usunięte zadania:</h3>
-            </div>
-            <div class="panel-body">
-                content<br>
-                content<br>
-                content<br>
-            </div>
-        </div>
-
-    </div>
+    <!--</div>-->
 
 </div>
+
+
 
 
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>

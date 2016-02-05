@@ -19,10 +19,10 @@
             }
         };
 
-
-
-
-
-
-    });
+    }).directive('changeList', function()   {
+        return {
+            templateUrl: 'changeList.html',
+            restrict: 'ACE'
+        }
+    })
 })();
