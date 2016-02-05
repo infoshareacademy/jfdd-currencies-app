@@ -16,13 +16,13 @@
             if(item.task) {
                 var newItem = angular.copy(item);
                 $scope.taskList.unshift(newItem);
-            }
-        };
+}
+};
 
-    }).directive('changeList', function()   {
-        return {
-            templateUrl: 'changeList.html',
-            restrict: 'ACE'
-        }
-    })
+}).directive('changeList', function()   {
+    return {
+        templateUrl: 'changeList.html',
+        restrict: 'ACE'
+    }
+})
 })();

@@ -2,6 +2,8 @@
     <div class="panel panel-info col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Zaplanowane zadania:</h3>
+            <!--1. Zadanie zrealizowane done = true-->
+            <!--2. Anuluj zadanie -->
         </div>
         <div class="panel-body">
             <ul ng-repeat="item in taskList">
@@ -20,12 +22,16 @@
     <div class="panel panel-success col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Zrealizowane zadania:</h3>
+            <!--0. zadanie zrealizowane done = true-->
+            <!--1. usuń z listy-->
         </div>
         <div class="panel-body">
             <ul ng-repeat="item in taskList">
                 <li class="list-group-item" >
                     <input type="checkbox" ng-model="item.done"/>
+                    <span class="glyphicon glyphicon-ok"></span>
                     <input type="checkbox" ng-model=""/>
+                    <span class="glyphicon glyphicon-remove"></span>
                     <span>{{item.date}}</span>
                     {{item.task}}</li>
             </ul>
@@ -38,6 +44,8 @@
     <div class="panel panel-danger col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Anulowane zadania:</h3>
+            <!--1. Przesuń na do zrobienia-->
+            <!--Usuń z listy-->
         </div>
         <div class="panel-body">
             <ul ng-repeat="item in taskList">
