@@ -1,6 +1,9 @@
 
 var logger = (function(){
     var events = [];
+    function getStorage() {
+        events = events.concat(JSON.parse(localStorage.getItem('logger')));
+    }
 
     function addToLocalStorage(item){
         localStorage.setItem('logger', JSON.stringify(item));
@@ -8,14 +11,14 @@ var logger = (function(){
 
     return {
         log: function (event) {
+            getStorage();
             events.push(event);
             addToLocalStorage(events);
-            debugger;
-        },
-        check: function () {
-            var x = localStorage.getItem('logger');
-            console.log(x);
         }
     }
 })();
+
+
+
+
 
