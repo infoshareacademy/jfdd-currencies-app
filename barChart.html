@@ -21,27 +21,14 @@
     <link rel="stylesheet" href="css/loginPopUp.css">
     <link rel="stylesheet" href="css/interface.css">
     <link rel="stylesheet" href="css/responsive.css">
-
 </head>
+
 <body>
-
-
-<header class="main-header">
+<header class="main-header col-xs-12">
     <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
     <nav class="navbar blue-skin">
-
         <div class="right-navbar-items">
             <ul class="right-top-icons">
-
-                <li class=" blue-skin blue-skin-hover">
-                    <a href="#" class="user-settings">
-                        <span class="userName"></span>
-                    </a>
-                    <ul class="user-settings-dropdown blue-skin blue-skin-hover">
-                        <li><i class="fa fa-user"></i>Profil</li>
-                        <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
-                    </ul>
-                </li>
                 <li class=" blue-skin blue-skin-hover">
                     <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
                     <ul class="menu-hidden">
@@ -56,14 +43,11 @@
                     </ul>
                 </li>
             </ul>
-
         </div>
     </nav>
 </header>
 
-<aside class="main-sidebar blue-skin">
-
-
+<aside class="main-sidebar blue-skin col-lg-2 col-md-2 col-sm-2 col-xs-12">>
     <ul class="sidebar-list">
         <li><a href="index.html"><i class="fa fa-tachometer"></i>Deska</a></li>
         <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
@@ -73,14 +57,10 @@
                 <li><a href="lineHistoricChart.html">Wykres kursów zamknięcia</a></li>
             </ul>
         </li>
-        <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li>-->
     </ul>
 </aside>
 
-<!-- TU WRZUCAMY CONTENT -->
-
-
-<div class="content">
+<div class="content col-lg-10 col-md-10 col-sm-10 col-xs-12">
     <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres różnic kursu średniego</h2></div>
     <div class="row">
         <div class="col-md-2">
@@ -99,14 +79,16 @@
 </div>
 
 
-<footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
+<footer class="main-footer col-xs-12">copyright &copy; <span id="currentYear"></span> &bull; Monitor Kursów Walut</footer>
 <!-- scripts !-->
-
-
 <script src="js/jquery.min.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/popUp.js"></script>
+<script src="js/tableData.js"></script>
+<script src="js/interface.js"></script>
 <script src="js/Chart.js-master/Chart.js"></script>
-<script src="js/barChart.js"></script>
-
+<script src="js/Chart.js-master/chartcur.js"></script>
+<script src="js/dragdrop.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="js/google-login.js"></script>
 </body>
 </html>
