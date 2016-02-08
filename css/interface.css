@@ -44,7 +44,7 @@ body {
 }
 
 .motive-blue-btn {
-    background-color: #355b9e;
+    background-color: #5193ff;
 }
 
 .motive-red-btn {
@@ -361,7 +361,7 @@ body {
     border-radius: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
 .main-sidebar {
     height: 100vh;
 }

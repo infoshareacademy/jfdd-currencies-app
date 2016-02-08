@@ -2,29 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Monitor Kursów Walut</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id"
-          content="734032112012-a6mpevuqh71q83hfh5kg28fmbrhac4sr.apps.googleusercontent.com">
-    <link rel="icon" href="images/favicon.ico">
-    <!-- css files -->
-    <link rel="stylesheet" href="css/reset.css">
-    <!-- Tell the browser to be responsive to screen width -->
+    <title>Zmiany kursu średniego</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="734032112012-a6mpevuqh71q83hfh5kg28fmbrhac4sr.apps.googleusercontent.com">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="css/loginPopUp.css">
+
     <link rel="stylesheet" href="css/interface.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/main-table.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
 </head>
 
 <body>
-<header class="main-header col-xs-12">
+<header class="main-header col-xs-12"> <!-- ZMIANA -->
     <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
     <nav class="navbar blue-skin">
         <div class="right-navbar-items">
@@ -47,11 +44,11 @@
     </nav>
 </header>
 
-<aside class="main-sidebar blue-skin col-lg-2 col-md-2 col-sm-2 col-xs-12">>
+<aside class="main-sidebar blue-skin col-lg-2 col-md-2 col-sm-12 col-xs-12"> <!-- ZMIANA -->
     <ul class="sidebar-list">
-        <li><a href="index.html"><i class="fa fa-tachometer"></i>Deska</a></li>
+        <li><i class="fa fa-tachometer"></i>Deska</li>
         <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
-        <li><i class="fa fa-line-chart"></i>Wykresy
+        <li><i class="fa fa-line-chart">Wykresy</i>
             <ul>
                 <li><a href="barChart.html">zmiany kursu średniego</a></li>
                 <li><a href="lineHistoricChart.html">Wykres kursów zamknięcia</a></li>
@@ -71,24 +68,18 @@
         </div>
         <div class="col-md-8">
             <div id="canvasDiv">
-            <canvas id="canvas" height="550" width="900"></canvas>
+                <canvas id="canvas" height="550" width="900"></canvas>
             </div>
         </div>
         <div class="col-md-2"></div>
     </div>
 </div>
 
-
 <footer class="main-footer col-xs-12">copyright &copy; <span id="currentYear"></span> &bull; Monitor Kursów Walut</footer>
 <!-- scripts !-->
 <script src="js/jquery.min.js"></script>
-<script src="js/popUp.js"></script>
-<script src="js/tableData.js"></script>
-<script src="js/interface.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
 <script src="js/Chart.js-master/Chart.js"></script>
-<script src="js/Chart.js-master/chartcur.js"></script>
-<script src="js/dragdrop.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="js/google-login.js"></script>
+<script src="js/barChart.js"></script>
 </body>
 </html>
