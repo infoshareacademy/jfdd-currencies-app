@@ -1,11 +1,12 @@
-<div class="row">
+<link rel="stylesheet" href="css/ToDoList.css">
+<div class="row panel-list">
     <div class="panel panel-info col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Zaplanowane zadania:</h3>
             <!--1. Zadanie zrealizowane done = true-->
             <!--2. Anuluj zadanie -->
         </div>
-        <div class="panel-body">
+        <div class="panel-body scroll-panel">
             <ul ng-repeat="item in taskList">
                 <li class="list-group-item" >
                     <input type="checkbox" ng-model="item.done"/>
@@ -18,20 +19,22 @@
     </div>
 
 </div>
-<div class="row">
+<div class="row panel-list">
     <div class="panel panel-success col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Zrealizowane zadania:</h3>
             <!--0. zadanie zrealizowane done = true-->
             <!--1. usuń z listy-->
         </div>
-        <div class="panel-body">
+        <div class="panel-body scroll-panel">
             <ul ng-repeat="item in taskList">
                 <li class="list-group-item" >
-                    <input type="checkbox" ng-model="item.done"/>
-                    <span class="glyphicon glyphicon-ok"></span>
+                    <label class="btn btn-success active">
+                    <input type="checkbox" ng-model="item.done" autocomplete="off" checked/>
+                    <span class="glyphicon glyphicon-ok"></span></label>
                     <input type="checkbox" ng-model=""/>
                     <span class="glyphicon glyphicon-remove"></span>
+
                     <span>{{item.date}}</span>
                     {{item.task}}</li>
             </ul>
@@ -40,14 +43,14 @@
     </div>
 
 </div>
-<div class="row">
+<div class="row panel-list">
     <div class="panel panel-danger col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Anulowane zadania:</h3>
             <!--1. Przesuń na do zrobienia-->
             <!--Usuń z listy-->
         </div>
-        <div class="panel-body">
+        <div class="panel-body scroll-panel">
             <ul ng-repeat="item in taskList">
                 <li class="list-group-item">
                     <input type="checkbox" ng-model="item.done"/>
@@ -60,3 +63,5 @@
     </div>
 
 </div>
+<!--jak ustawić scrooll bara-->
+<!--http://stackoverflow.com/questions/19118277/div-height-percentage-based-but-still-scrolling-->
