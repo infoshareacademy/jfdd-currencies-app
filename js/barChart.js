@@ -10,12 +10,14 @@ var averageCurrencyToday=[];
 var changeAverage=[];
 createBarChart();
 
+    var $datepicker = $('.datepicker').datepicker({
+        daysOfWeekDisabled:'06',
+        weekStart: 1,
+        format: "yyyy-mm-dd"
 
+    });
+    $datepicker.on('changeDate', function(){
 
-
-
-
-    $('.datepicker').datepicker({ format: "yyyy-mm-dd" }).on('changeDate', function(ev){
         $("#loader").css('background', 'url("images/loader.gif") no-repeat center center fixed');
         $(this).datepicker('hide');
         inputValue = $("#data1").val();
