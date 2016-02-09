@@ -13,12 +13,15 @@ createBarChart();
     var $datepicker = $('.datepicker').datepicker({
         daysOfWeekDisabled:'06',
         weekStart: 1,
-        format: "yyyy-mm-dd"
+        format: "yyyy-mm-dd",
+        endDate: '2014-12-31',
+        startDate:'2000-01-03'
+
 
     });
     $datepicker.on('changeDate', function(){
 
-        $("#loader").css('background', 'url("images/loader.gif") no-repeat center center fixed');
+        $("#loader").css('background', 'url("images/loader.gif") no-repeat 50% 50% fixed');
         $(this).datepicker('hide');
         inputValue = $("#data1").val();
 
