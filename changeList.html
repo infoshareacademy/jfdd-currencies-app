@@ -8,10 +8,10 @@
         <div class="panel-body scroll-panel">
             <ul ng-repeat="item in taskList | plannedTasks">
                 <li class="list-group-item">
-                    <label>zrobiony</label>
-                    <input type="button" ng-click="item.status =  statuses.isDone"/>
-                    <label>anuluj</label>
-                    <input type="checkbox" ng-model="item.done=0"/>
+                    <button type="button" class="btn btn-success" ng-click="statusIntoDone(item)">zrobione
+                    </button>
+                    <button type="button" class="btn btn-warning" ng-click="statusIntoAnnuled(item)">anuluj
+                    </button>
                     <span>{{item.date}}</span>
                     {{item.task}}
                 </li>
@@ -31,8 +31,7 @@
             <ul ng-repeat="item in taskList | doneTasks">
 
                 <li class="list-group-item">
-                    <label> usuń</label>
-                    <input type="checkbox" ng-model=""/>
+                    <button type="button" class="btn btn-danger" ng-click="removeItem(item)">usuń</button>
                     <span>{{item.date}}</span>
                     {{item.task}}
                 </li>
@@ -43,7 +42,7 @@
 
 </div>
 <div class="row panel-list">
-    <div class="panel panel-danger col-md-12">
+    <div class="panel panel-warning col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Anulowane zadania:</h3>
 
@@ -51,10 +50,10 @@
         <div class="panel-body scroll-panel">
             <ul ng-repeat="item in taskList | annuledTasks">
                 <li class="list-group-item">
-                    <label>zaplanuj</label>
-                    <input type="checkbox" ng-model="item.done"/>
-                    <label>usuń</label>
-                    <input type="checkbox" ng-model=""/>
+                    <button type="button" class="btn btn-info" ng-click="statusIntoPlanned(item)">zaplanuj
+                    </button>
+                    <button type="button" class="btn btn-danger" ng-click="removeItem(item)">usuń
+                    </button>
                     <span>{{item.date}}</span>
                     {{item.task}}
                 </li>
@@ -64,5 +63,12 @@
     </div>
 
 </div>
+<div class="panel panel-default">
+    <div class="panel-heading">Data preview</div>
+    <div class="panel-body">
+        <div ng-repeat="obj in taskList">{{obj}}</div>
+    </div>
+</div>
+
 <!--jak ustawić scrooll bara-->
 <!--http://stackoverflow.com/questions/19118277/div-height-percentage-based-but-still-scrolling-->
