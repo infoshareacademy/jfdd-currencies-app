@@ -19,20 +19,39 @@
 
         var today = new Date();
         var dd = today.getDate();
-        var mm = today.getMonth()+1;
+        var mm = today.getMonth() + 1;
         var yyyy = today.getFullYear();
 
-        if(dd<10) {
-            dd='0'+dd
+        if (dd < 10) {
+            dd = '0' + dd
         }
 
-        if(mm<10) {
-            mm='0'+mm
+        if (mm < 10) {
+            mm = '0' + mm
         }
-        today = yyyy+'-'+mm+'-'+dd;
+        today = yyyy + '-' + mm + '-' + dd;
+
+        var myColor = 'pink';
+        $scope.mycolor = 'pink';
+        //$scope.setTaskColor = function () {
+        //
+        //    if (item.status = "isDone") {
+        //        taskColor = "green";
+        //    }
+        //    else if (item.status = "isAnnuled") {
+        //        taskColor = "orange";
+        //    }
+        //    else {
+        //        taskColor = "blue";
+        //    }
+        //    return taskColor;
+        //
+        //};
+        //$scope.taskColor = taskColor
+        //setTaskColor();
 
 
-        $scope.newItem = {date: '', task: '', status:"isPlanned"};
+        $scope.newItem = {date: '', task: '', status: "isPlanned"};
 
         $scope.addItem = function (item) {
             item.date = item.date || today;
@@ -48,14 +67,14 @@
             $scope.taskList.splice(idx, 1);
         };
 
-        $scope.statusIntoDone = function(item)  {
+        $scope.statusIntoDone = function (item) {
             item.status = "isDone";
         };
-        $scope.statusIntoPlanned = function(item)  {
+        $scope.statusIntoPlanned = function (item) {
             item.status = "isPlanned";
             item.date = today;
         };
-        $scope.statusIntoAnnuled = function(item)  {
+        $scope.statusIntoAnnuled = function (item) {
             item.status = "isAnnuled";
         };
 
@@ -83,7 +102,6 @@
             });
         }
     });
-
 
 
 })();

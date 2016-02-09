@@ -89,7 +89,7 @@
     <div class="dashboard-heading col-md-12 col-xs-12"><h2>Zaplanuj swój tydzień</h2></div>
     <div class="row">
         <button class="btn btn-default" type="submit" ng-click="show=false">Lista wszystkich zadań</button>
-        <button class="btn btn-default" type="submit" ng-click="show=true">Realizacja zadań</button>
+        <button class="btn btn-default" type="submit" ng-click="show=true">Zarządzaj zadaniami</button>
 
     </div>
     <div>
@@ -126,7 +126,7 @@
             </div>
             <div class="panel-body">
                 <ul>
-                    <li class="list-group-item" ng-repeat="item in taskList">
+                    <li class="list-group-item" ng-repeat="item in taskList" ng-style="{color: myColor}">
                         <span>{{item.date}}</span>
                         {{item.task}}</li>
                 </ul>
