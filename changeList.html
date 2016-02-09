@@ -9,8 +9,10 @@
         <div class="panel-body scroll-panel">
             <ul ng-repeat="item in taskList">
                 <li class="list-group-item" >
-                    <input type="checkbox" ng-model="item.done"/>
-                    <input type="checkbox" ng-model=""/>
+                    <labal>zrobiony</labal>
+                    <input type="checkbox" ng-model="item.done=2"/>
+                    <label>anuluj</label>
+                    <input type="checkbox" ng-model="item.done=0"/>
                     <span>{{item.date}}</span>
                     {{item.task}}</li>
             </ul>
@@ -27,7 +29,7 @@
             <!--1. usuń z listy-->
         </div>
         <div class="panel-body scroll-panel">
-            <ul ng-repeat="item in taskList">
+            <ul ng-repeat="item in taskList | filter:'item.done=2'>
                 <li class="list-group-item" >
                     <label class="btn btn-success active">
                     <input type="checkbox" ng-model="item.done" autocomplete="off" checked/>
