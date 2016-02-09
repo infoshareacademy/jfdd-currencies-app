@@ -10,11 +10,20 @@ var averageCurrencyToday=[];
 var changeAverage=[];
 createBarChart();
 
+    var $datepicker = $('.datepicker').datepicker({
+        daysOfWeekDisabled:'06',
+        weekStart: 1,
+        format: "yyyy-mm-dd"
 
-    $('.datepicker').datepicker({ format: "yyyy-mm-dd" }).on('changeDate', function(ev){
+    });
+    $datepicker.on('changeDate', function(){
+
+        $("#loader").css('background', 'url("images/loader.gif") no-repeat center center fixed');
         $(this).datepicker('hide');
         inputValue = $("#data1").val();
+
         $.when(
+
             actualizeChartData(inputValue,currenciesShorts[0],0),
             actualizeChartData(inputValue,currenciesShorts[1],1),
             actualizeChartData(inputValue,currenciesShorts[2],2),
@@ -31,6 +40,7 @@ createBarChart();
         ).then(function () {
             countChangeAverage();
             createBarChart();
+            $("#loader").css('background', 'none');
         });
     });
 
@@ -48,37 +58,40 @@ function countChangeAverage(){
 
     function createBarChart() {
 
-    var barChartData = {
-        labels: ["dolar amerykański", "dolar australijski", "dolar kanadyjski", "euro", "forint(Węgry)", "frank szwajcarski", "funt szterling", "jen (Japonia)", "korona czeska", "korona duńska", "korona norweska", "korona szwedzka", "SDR (MFW)"],
-        datasets: [
+        var data = {
+            labels: ['USD','AUD','CAD','EUR','HUF','CHF','GBP','JPY','CZK','DKK','NOK','SEK','XDR'],
+            series: [
+                changeAverage
 
-            {
-                fillColor: "rgba(151,187,205,0.5)",
-                strokeColor: "rgba(151,187,205,0.8)",
-                highlightFill: "rgba(151,187,205,0.75)",
-                highlightStroke: "rgba(151,187,205,1)",
-                data: changeAverage
-            }
-        ]
-
-    };
-
-        var charOptions={
-            // Boolean - Whether to animate the chart
-            animation: true,
-
-            // Number - Number of animation steps
-            animationSteps: 10,
-
-            responsive:true
-
+            ]
         };
 
-        var ctx = document.getElementById("canvas").getContext("2d");
-        window.myBar = new Chart(ctx).Bar(barChartData, charOptions);
+        var options = {
+            seriesBarDistance: 15
+        };
 
+        var responsiveOptions = [
+            ['screen and (min-width: 641px) and (max-width: 1024px)', {
+                seriesBarDistance: 10,
+                axisX: {
+                    labelInterpolationFnc: function (value) {
+                        return value;
+                    }
+                }
+            }],
+            ['screen and (max-width: 640px)', {
+                seriesBarDistance: 5,
+                axisX: {
+                    labelInterpolationFnc: function (value) {
+                        return value[0];
+                    }
+                }
+            }]
+        ];
 
-}
+        new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
+
+    }
 
 function actualizeChartData(clickedDate,currencyType,numberArray) {
 

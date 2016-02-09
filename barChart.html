@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/main-table.css">
     <link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
     <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+
 </head>
 <body>
 
@@ -81,16 +82,27 @@
 <div class="content">
     <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres różnic kursu średniego</h2></div>
     <div class="row">
-        <div class="col-md-2">
+        <div class=" col-md-1">
             <form class="form-inline" id="currencyForm">
-                <label class="control-label"></label>
+
                 <input type="text" id="data1" class="datepicker form-control" placeholder="Wybierz date">
             </form>
         </div>
-        <div class="col-md-8">
-            <div id="canvasDiv">
-            <canvas id="canvas" height="550" width="900"></canvas>
+        <div class=" col-md-8 ">
+
+            <div class="col-md-12" id="loader">
+                <style>
+                    .loader{
+                       margin:0 auto;
+                    }
+                </style>
+                <!--<img class='loader 'src="images/loader.gif">-->
             </div>
+                <div class="col-md-offset-2 ct-chart ct-perfect-fourth">
+
+                </div>
+
+
         </div>
         <div class="col-md-2"></div>
     </div>
@@ -103,7 +115,8 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
-<script src="js/Chart.js-master/Chart.js"></script>
+<script src="bower_components/chartist/dist/chartist.min.js"></script>
+<script src="bower_components/chartist/dist/chartist.js"></script>
 <script src="js/barChart.js"></script>
 
 </body>
