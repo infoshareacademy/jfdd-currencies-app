@@ -3,18 +3,18 @@
     <div class="panel panel-info col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Zaplanowane zadania:</h3>
-            <!--1. Zadanie zrealizowane done = true-->
-            <!--2. Anuluj zadanie -->
+
         </div>
         <div class="panel-body scroll-panel">
-            <ul ng-repeat="item in taskList">
-                <li class="list-group-item" >
-                    <labal>zrobiony</labal>
-                    <input type="checkbox" ng-model="item.done=2"/>
+            <ul ng-repeat="item in taskList | plannedTasks">
+                <li class="list-group-item">
+                    <label>zrobiony</label>
+                    <input type="button" ng-click="item.status =  statuses.isDone"/>
                     <label>anuluj</label>
                     <input type="checkbox" ng-model="item.done=0"/>
                     <span>{{item.date}}</span>
-                    {{item.task}}</li>
+                    {{item.task}}
+                </li>
             </ul>
 
         </div>
@@ -25,23 +25,20 @@
     <div class="panel panel-success col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Zrealizowane zadania:</h3>
-            <!--0. zadanie zrealizowane done = true-->
-            <!--1. usuń z listy-->
+
         </div>
         <div class="panel-body scroll-panel">
-            <ul ng-repeat="item in taskList | filter:'item.done=2'>
-                <li class="list-group-item" >
-                    <label class="btn btn-success active">
-                    <input type="checkbox" ng-model="item.done" autocomplete="off" checked/>
-                    <span class="glyphicon glyphicon-ok"></span></label>
+            <ul ng-repeat="item in taskList | doneTasks">
+
+                <li class="list-group-item">
+                    <label> usuń</label>
                     <input type="checkbox" ng-model=""/>
-                    <span class="glyphicon glyphicon-remove"></span>
-
                     <span>{{item.date}}</span>
-                    {{item.task}}</li>
+                    {{item.task}}
+                </li>
             </ul>
-
         </div>
+
     </div>
 
 </div>
@@ -49,16 +46,18 @@
     <div class="panel panel-danger col-md-12">
         <div class="panel-heading">
             <h3 class="panel-title">Anulowane zadania:</h3>
-            <!--1. Przesuń na do zrobienia-->
-            <!--Usuń z listy-->
+
         </div>
         <div class="panel-body scroll-panel">
-            <ul ng-repeat="item in taskList">
+            <ul ng-repeat="item in taskList | annuledTasks">
                 <li class="list-group-item">
+                    <label>zaplanuj</label>
                     <input type="checkbox" ng-model="item.done"/>
+                    <label>usuń</label>
                     <input type="checkbox" ng-model=""/>
                     <span>{{item.date}}</span>
-                    {{item.task}}</li>
+                    {{item.task}}
+                </li>
             </ul>
 
         </div>
