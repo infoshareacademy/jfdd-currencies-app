@@ -21,19 +21,27 @@ $("#currencyForm").submit(function (event) {
     return false;
 });
 
-new JsDatePick({
-    useMode: 2,
-    target: "data1",
-    isStripped: false,
-    selectedDate: {
-        year: 2000,
-        month: 1,
-        day: 3
-    },
-    yearsRange: new Array(2000, 2016),
-    limitToToday: false,
-    dateFormat: "%Y-%m-%d"
+$('#data1').datepicker({
+    format: "yyyy-mm-dd",
+    startDate: "2000-01-03",
+    endDate: "2015-12-31",
+    language: "pl",
+    daysOfWeekDisabled: "0,6"
 });
+
+//new JsDatePick({
+//    useMode: 2,
+//    target: "data1",
+//    isStripped: false,
+//    selectedDate: {
+//        year: 2000,
+//        month: 1,
+//        day: 3
+//    },
+//    yearsRange: new Array(2000, 2016),
+//    limitToToday: false,
+//    dateFormat: "%Y-%m-%d"
+//});
 
 new JsDatePick({
     useMode: 2,
