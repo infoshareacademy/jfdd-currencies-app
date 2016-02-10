@@ -288,6 +288,7 @@ body {
 /* ######################## MAIN FOOTER ########################### */
 
 .main-footer {
+    position:relative;
     font-size: 10px;
     width: 100%;
     text-align: right;
