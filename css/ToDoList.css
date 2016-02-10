@@ -1,26 +1,22 @@
-/*.scroll-panel   {*/
-    /*max-height: 80px;*/
-    /*overflow-y: scroll;*/
-/*}*/
-
-
-@media screen and (max-height: 1200px){
+.scroll-panel   {
+     max-height: 200px;
+     overflow-y: scroll;
+ }
+@media screen and (min-width: 992px){
     .scroll-panel {
-        max-height: 800px;
+        max-height: 250px;
         overflow-y: scroll;
     }
 }
 
-@media screen and (min-height: 1201px) and(max-height: 1500px) {
+@media screen and (min-width: 1200px){
     .scroll-panel {
-        max-height: 500px;
+        max-height: 700px;
         overflow-y: scroll;
     }
 }
 
-@media screen and (min-height: 1501px) {
-    .scroll-panel {
-        max-height: 800px;
-        overflow-y: scroll;
-    }
+.allTaskList    {
+    max-height: 700px;
+    overflow-y: scroll;
 }

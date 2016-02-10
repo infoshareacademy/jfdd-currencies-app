@@ -74,7 +74,7 @@
         <li><i class="fa fa-line-chart"></i> Wykresy
             <ul>
                 <li><a href="barChart.html">zmiany kursu średniego</a></li>
-                <li><a href="lineHistoricChart.html">Wykres kursów zamknięcia</a></li>
+                <li><a href="lineHistoricChart.html">Wykres kursów dziennych</a></li>
             </ul>
         </li>
         <li><a href="ToDoList.html"><i class="fa fa-calendar-check-o"></i> Planer</a></li>
@@ -107,7 +107,7 @@
                 <form class="form-inline row">
                     <div class="form-group">
                         <label>Data</label>
-                        <input type="text" class="form-control" placeholder="Data" ng-model="newItem.date">
+                        <input type="text" class="form-control" placeholder="Data(rrrr-mm-dd)" ng-model="newItem.date">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control"  placeholder="Wpisz nowe zadanie"ng-model="newItem.task">
@@ -124,7 +124,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Zaplanowane zadania:</h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body allTaskList">
                 <ul>
                     <li class="list-group-item" ng-repeat="item in taskList" ng-style="item.itemStyle">
                         <span>{{item.date}}</span> :
