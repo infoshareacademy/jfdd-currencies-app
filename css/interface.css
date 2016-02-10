@@ -290,8 +290,6 @@ body {
 .main-footer {
     font-size: 10px;
     width: 100%;
-    position: fixed;
-    bottom: 0;
     text-align: right;
     background: #fff;
     padding: 5px;
