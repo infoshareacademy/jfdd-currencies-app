@@ -288,9 +288,10 @@ body {
 /* ######################## MAIN FOOTER ########################### */
 
 .main-footer {
-    position:relative;
     font-size: 10px;
     width: 100%;
+    position: fixed;
+    bottom: 0;
     text-align: right;
     background: #fff;
     padding: 5px;
@@ -313,6 +314,7 @@ body {
     background-color: #ffffff;
     margin-left: 230px;
     min-height: 100%;
+    padding-bottom:50px;
 
 
 }
