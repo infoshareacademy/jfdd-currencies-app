@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="css/ToDoList.css">
-<div class="row panel-list">
-    <div class="panel panel-info col-md-12">
+
+<div class="row panel-list col-md-12">
+
+    <div class="panel panel-info col-sm-12 col-md-12 col-lg-4">
         <div class="panel-heading">
             <h3 class="panel-title">Zaplanowane zadania:</h3>
 
@@ -8,9 +10,13 @@
         <div class="panel-body scroll-panel">
             <ul ng-repeat="item in taskList | plannedTasks" ng-style="item.itemStyle">
                 <li class="list-group-item">
-                    <button type="button" class="btn btn-success" ng-click="statusIntoDone(item)" data-toggle="tooltip" data-placement="right" title="Oznacz jako zrobione"> <i class="fa fa-check"></i>
+                    <button type="button" class="btn btn-success" ng-click="statusIntoDone(item)"
+                            data-toggle="tooltip" data-placement="right" title="Oznacz jako zrobione">
+                        <i class="fa fa-check"></i>
                     </button>
-                    <button type="button" class="btn btn-warning" ng-click="statusIntoAnnuled(item)" data-toggle="tooltip" data-placement="right" title="Anuluj zadanie"><i class="fa fa-minus"></i>
+                    <button type="button" class="btn btn-warning" ng-click="statusIntoAnnuled(item)"
+                            data-toggle="tooltip" data-placement="right" title="Anuluj zadanie">
+                        <i class="fa fa-minus"></i>
                     </button>
                     <span>{{item.date}}</span>
                     {{item.task}}
@@ -20,9 +26,10 @@
         </div>
     </div>
 
-</div>
-<div class="row panel-list">
-    <div class="panel panel-success col-md-12">
+<!--</div>-->
+<!--<div class="row panel-list">-->
+
+    <div class="panel panel-success col-sm-12 col-md-12 col-lg-4">
         <div class="panel-heading">
             <h3 class="panel-title">Zrealizowane zadania:</h3>
 
@@ -31,7 +38,9 @@
             <ul ng-repeat="item in taskList | doneTasks" ng-style="item.itemStyle">
 
                 <li class="list-group-item">
-                    <button type="button" class="btn btn-danger" ng-click="removeItem(item)" data-toggle="tooltip" data-placement="right" title="Usuń zadanie"><i class="fa fa-trash-o"></i></button>
+                    <button type="button" class="btn btn-danger" ng-click="removeItem(item)"
+                            data-toggle="tooltip" data-placement="right" title="Usuń zadanie">
+                        <i class="fa fa-trash-o"></i></button>
                     <span>{{item.date}}</span>
                     {{item.task}}
                 </li>
@@ -40,9 +49,10 @@
 
     </div>
 
-</div>
-<div class="row panel-list">
-    <div class="panel panel-warning col-md-12">
+<!--</div>-->
+<!--<div class="row panel-list">-->
+
+    <div class="panel panel-warning col-sm-12 col-md-12 col-lg-4">
         <div class="panel-heading">
             <h3 class="panel-title">Anulowane zadania:</h3>
 
@@ -50,9 +60,13 @@
         <div class="panel-body scroll-panel">
             <ul ng-repeat="item in taskList | annuledTasks" ng-style="item.itemStyle">
                 <li class="list-group-item">
-                    <button type="button" class="btn btn-info" ng-click="statusIntoPlanned(item)" data-toggle="tooltip" data-placement="right" title="Zaplanuj ponownie"><i class="fa fa-plus"></i>
+                    <button type="button" class="btn btn-info" ng-click="statusIntoPlanned(item)"
+                            data-toggle="tooltip" data-placement="right" title="Zaplanuj ponownie">
+                        <i class="fa fa-plus"></i>
                     </button>
-                    <button type="button" class="btn btn-danger" ng-click="removeItem(item)" data-toggle="tooltip" data-placement="right" title="Usuń zadanie"><i class="fa fa-trash-o"></i>
+                    <button type="button" class="btn btn-danger" ng-click="removeItem(item)"
+                            data-toggle="tooltip" data-placement="right" title="Usuń zadanie">
+                        <i class="fa fa-trash-o"></i>
                     </button>
                     <span>{{item.date}}</span>
                     {{item.task}}
@@ -63,12 +77,11 @@
     </div>
 
 </div>
-<div class="panel panel-default">
-    <div class="panel-heading">Data preview</div>
-    <div class="panel-body">
-        <div ng-repeat="obj in taskList">{{obj}}</div>
-    </div>
-</div>
 
-<!--jak ustawić scrooll bara-->
-<!--http://stackoverflow.com/questions/19118277/div-height-percentage-based-but-still-scrolling-->
+<!--<div class="panel panel-default">-->
+<!--<div class="panel-heading">Data preview</div>-->
+<!--<div class="panel-body">-->
+<!--<div ng-repeat="obj in taskList">{{obj}}</div>-->
+<!--</div>-->
+<!--</div>-->
+
