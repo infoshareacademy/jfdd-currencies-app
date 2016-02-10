@@ -9,12 +9,12 @@
 
     app.controller('ToDoList', function ($scope) {
         $scope.taskList = [
-            {date: '2016-01-14', task: 'Sprzedać 300 USD', status: "isDone"},
-            {date: '2016-02-01', task: 'Sprzedać 1000 JPY, kupić 200 USD', status: "isDone"},
-            {date: '2016-02-01', task: 'Sprzedać 2000 JPY, kupić 1500 USD', status: "isPlanned"},
-            {date: '2016-02-01', task: 'Sprzedać 1000 JPY, kupić 700 USD', status: "isPlanned"},
-            {date: '2016-02-01', task: 'Sprzedać 200 JPY, kupić 500 USD', status: "isAnnuled"},
-            {date: '2016-02-20', task: 'Kupić 2000 EUR 300 USD', status: "isAnnuled"}
+            {date: '2016-01-14', task: 'Sprzedać 300 USD', status: "isDone", itemStyle: {"color":"green"}},
+            {date: '2016-02-01', task: 'Sprzedać 1000 JPY, kupić 200 USD', status: "isDone", itemStyle: {"color":"green"}},
+            {date: '2016-02-01', task: 'Sprzedać 2000 JPY, kupić 1500 USD', status: "isPlanned", itemStyle: {"color":"blue"}},
+            {date: '2016-02-01', task: 'Sprzedać 1000 JPY, kupić 700 USD', status: "isPlanned", itemStyle: {"color":"blue"}},
+            {date: '2016-02-01', task: 'Sprzedać 200 JPY, kupić 500 USD', status: "isAnnuled", itemStyle: {"color":"orange"}},
+            {date: '2016-02-20', task: 'Kupić 2000 EUR 300 USD', status: "isAnnuled", itemStyle: {"color":"orange"}}
         ];
 
         var today = new Date();
@@ -31,54 +31,75 @@
         }
         today = yyyy + '-' + mm + '-' + dd;
 
-        var myColor = 'pink';
-        $scope.mycolor = 'pink';
-        //$scope.setTaskColor = function () {
         //
-        //    if (item.status = "isDone") {
-        //        taskColor = "green";
-        //    }
-        //    else if (item.status = "isAnnuled") {
-        //        taskColor = "orange";
-        //    }
-        //    else {
-        //        taskColor = "blue";
-        //    }
-        //    return taskColor;
+        //var taskColor = "deeppink";
         //
+        //$scope.myStyle = {
+        //    "color": taskColor
         //};
-        //$scope.taskColor = taskColor
-        //setTaskColor();
+        //
+        //
+        //$scope.myStyle = myStyle;
+        //
+        //var myStyle = function () {
+        //    if (item.status == "isDone") {
+        //        taskColor = "blue";
+        //        return {"color": taskColor};
+        //    }
+        //
+        //
+        //    var myColor = 'pink';
+        //    $scope.mycolor = 'pink';
+        //    $scope.setTaskColor = function () {
+        //
+        //        if (item.status = "isDone") {
+        //            taskColor = "green";
+        //        }
+        //        else if (item.status = "isAnnuled") {
+        //            taskColor = "orange";
+        //        }
+        //        else {
+        //            taskColor = "blue";
+        //        }
+        //        return taskColor;
+        //
+        //    };
+        //    $scope.taskColor = taskColor
+        //    setTaskColor();
 
 
-        $scope.newItem = {date: '', task: '', status: "isPlanned"};
+            $scope.newItem = {date: '', task: '', status: "isPlanned", itemStyle: {"color":"blue"}};
 
-        $scope.addItem = function (item) {
-            item.date = item.date || today;
-            if (item.task) {
-                var newItem = angular.copy(item);
-                //newItem.status=statuses.isPlanned;
-                $scope.taskList.unshift(newItem);
-                console.log($scope.taskList)
-            }
-        };
-        $scope.removeItem = function (item) {
-            var idx = $scope.taskList.indexOf(item);
-            $scope.taskList.splice(idx, 1);
-        };
+            $scope.addItem = function (item) {
+                item.date = item.date || today;
+                if (item.task) {
+                    var newItem = angular.copy(item);
+                    //newItem.status=statuses.isPlanned;
+                    $scope.taskList.unshift(newItem);
+                    console.log($scope.taskList)
+                }
+            };
+            $scope.removeItem = function (item) {
+                var idx = $scope.taskList.indexOf(item);
+                $scope.taskList.splice(idx, 1);
+            };
 
-        $scope.statusIntoDone = function (item) {
-            item.status = "isDone";
-        };
-        $scope.statusIntoPlanned = function (item) {
-            item.status = "isPlanned";
-            item.date = today;
-        };
-        $scope.statusIntoAnnuled = function (item) {
-            item.status = "isAnnuled";
-        };
+            $scope.statusIntoDone = function (item) {
+                item.status = "isDone";
+                item.itemStyle= {"color":"green"}
+            };
+            $scope.statusIntoPlanned = function (item) {
+                item.status = "isPlanned";
+                item.itemStyle ={"color":"blue"};
+                item.date = today;
+            };
+            $scope.statusIntoAnnuled = function (item) {
+                item.status = "isAnnuled";
+                item.itemStyle = {"color":"orange"}
+            };
 
-    }).directive('changeList', function () {
+        }
+        ).directive('changeList', function () {
         return {
             templateUrl: 'changeList.html',
             restrict: 'ACE'

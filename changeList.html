@@ -6,7 +6,7 @@
 
         </div>
         <div class="panel-body scroll-panel">
-            <ul ng-repeat="item in taskList | plannedTasks">
+            <ul ng-repeat="item in taskList | plannedTasks" ng-style="item.itemStyle">
                 <li class="list-group-item">
                     <button type="button" class="btn btn-success" ng-click="statusIntoDone(item)"> <i class="fa fa-check"></i> zrobione
                     </button>
@@ -28,7 +28,7 @@
 
         </div>
         <div class="panel-body scroll-panel">
-            <ul ng-repeat="item in taskList | doneTasks">
+            <ul ng-repeat="item in taskList | doneTasks" ng-style="item.itemStyle">
 
                 <li class="list-group-item">
                     <button type="button" class="btn btn-danger" ng-click="removeItem(item)"> <i class="fa fa-trash-o"></i> usuń</button>
@@ -48,7 +48,7 @@
 
         </div>
         <div class="panel-body scroll-panel">
-            <ul ng-repeat="item in taskList | annuledTasks">
+            <ul ng-repeat="item in taskList | annuledTasks" ng-style="item.itemStyle">
                 <li class="list-group-item">
                     <button type="button" class="btn btn-info" ng-click="statusIntoPlanned(item)"><i class="fa fa-plus"></i> zaplanuj
                     </button>
