@@ -21,48 +21,20 @@ $(document).ready(function () {
         return false;
     });
 
-    $('.datepicker').datepicker({
+ var $datepicker = $('.datepicker').datepicker({
         daysOfWeekDisabled: '06',
         weekStart: 1,
         format: "yyyy-mm-dd",
-        endDate: '2014-12-31',
+        endDate: '2015-12-31',
         startDate: '2000-01-03'
     });
 
-//$datepicker.on('changeDate', function(){
-//    $(this).datepicker('hide');
-//    wybranaData1 = $("#data1").val();
-//
-//});
+$datepicker.on('changeDate', function(){
+    $(this).datepicker('hide');
+    wybranaData1 = $("#data1").val();
+    wybranaData2 = $("#data2").val();
 
-//new JsDatePick({
-//    useMode: 2,
-//    target: "data1",
-//    isStripped: false,
-//    selectedDate: {
-//        year: 2000,
-//        month: 1,
-//        day: 3
-//    },
-//    yearsRange: new Array(2000, 2016),
-//    limitToToday: false,
-//    dateFormat: "%Y-%m-%d"
-//});
-
-//new JsDatePick({
-//    useMode: 2,
-//    target: "data2",
-//    isStripped: false,
-//    selectedDate: {
-//        year: 2000,
-//        month: 1,
-//        day: 4
-//    },
-//    yearsRange: new Array(2000, 2016),
-//    limitToToday: false,
-//    dateFormat: "%Y-%m-%d"
-//});
-
+});
 
     var dateChartArray = [];
     var rateChartArray = [];

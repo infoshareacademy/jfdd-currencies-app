@@ -45,6 +45,20 @@
             }
             today = yyyy + '-' + mm + '-' + dd;
 
+        var $datepicker = $('.datepicker').datepicker({
+            weekStart: 1,
+            format: "yyyy-mm-dd",
+            //endDate: new.Date(),
+            startDate: today
+        });
+
+        $datepicker.on('changeDate', function(){
+            $(this).datepicker('hide');
+            date = $("#data1").val();
+
+
+        });
+
 
             $scope.newItem = {date: '', task: '', status: "isPlanned", itemStyle: {"color": "#31708F", "background-color": "#D9EDF7"}};
 
