@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="Planer">
 <head>
     <meta charset="UTF-8">
     <title>Monitor wymiany walut</title>
@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="css/interface.css">
     <link rel="stylesheet" href="css/main-table.css">
-
+    <link rel="stylesheet" href="css/ToDoList.css">
     <link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
 
 
@@ -69,77 +69,91 @@
 
 
     <ul class="sidebar-list">
-        <li><a href="index.html"><i class="fa fa-tachometer"></i>Deska</a></li>
-        <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
-        <li><i class="fa fa-line-chart"></i>Wykresy
+        <li><a href="index.html"><i class="fa fa-tachometer"></i> Deska</a></li>
+        <li><a href="table.html"><i class="fa fa-table"></i> Tabele</a></li>
+        <li><i class="fa fa-line-chart"></i> Wykresy
             <ul>
-                <li><a href="barChart.html">Zmiany kursu średniego</a></li>
+                <li><a href="barChart.html">zmiany kursu średniego</a></li>
                 <li><a href="lineHistoricChart.html">Wykres kursów dziennych</a></li>
             </ul>
         </li>
+        <li><a href="ToDoList.html"><i class="fa fa-calendar-check-o"></i> Planer</a></li>
 
     </ul>
 </aside>
 </div>
 <!-- TU WRZUCAMY CONTENT -->
 
-<div class="content">
-    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres kursów dziennych (lata: 2000-2015)</h2></div>
+<div class="content" ng-controller="ToDoList">
 
+    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Zaplanuj swój tydzień</h2></div>
     <div class="row">
-        <form class="form-inline" id="currencyForm">
-            <div class="form-group col-md-offset-1 col-lg-offset-1">
-                <!--<label class="control-label">Wybierz walutę</label>-->
-                <select id="currencyList" class="form-control col-md-2">
-                    <option value="" disabled selected hidden>Wybierz walutę</option>
-                    <option value="USD">Dolar amerykański</option>
-                    <option value="AUD">Dolar australijski</option>
-                    <option value="CAD">Dolar kanadyjski</option>
-                    <option value="EUR">Euro</option>
-                    <option value="HUF">Forint (Węgry)</option>
-                    <option value="CHF">Frank szwajcarski</option>
-                    <option value="GBP">Funt szterling</option>
-                    <option value="JPY">Jen (Japonia)</option>
-                    <option value="CZK">Korona czeska</option>
-                    <option value="DKK">Korona duńska</option>
-                    <option value="NOK">Korona norweska</option>
-                    <option value="SEK">Korona szwedzka</option>
-                    <option value="XDR">SDR (MFW)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Pierwsza data</label>
-                <input type="text" id="data1" class="datepicker form-control">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Druga data </label>
-                <input type="text" id="data2" class="datepicker form-control">
-            </div>
-            <button class="btn btn-primary" type="submit" id="createChart">Stwórz wykres</button>
-        </form>
+        <button class="btn btn-default" type="submit" ng-click="show=false">Lista wszystkich zadań</button>
+        <button class="btn btn-default" type="submit" ng-click="show=true">Zarządzaj zadaniami</button>
+
     </div>
-    <div class="row wykres">
-        <div class="col-md-1"></div>
-           <div class="col-md-8" id="canvasDiv" >
-            <canvas id="canvas" height="500" width="900"></canvas>
+    <div>
+    <change-list ng-show="show"></change-list>
+    </div>
+    <div class="row" ng-hide="show">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dodaj nowe zadania:</h3>
+            </div>
+            <div class="panel-body">
+
+                <!--dodać godzine-->
+                <form class="form-inline row">
+                    <div class="form-group">
+                        <label>Data</label>
+                        <input type="text" class="form-control datepicker" id="data1" placeholder="Data" ng-model="newItem.date">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control"  placeholder="Wpisz nowe zadanie"ng-model="newItem.task">
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="addItem(newItem)">Dodaj</button>
+                </form>
+
+            </div>
         </div>
 
     </div>
+    <div class="row" ng-hide="show">
+        <div class="panel panel-info col-md-12">
+            <div class="panel-heading">
+                <h3 class="panel-title">Zaplanowane zadania:</h3>
+            </div>
+            <div class="panel-body allTaskList">
+                <ul>
+                    <li class="list-group-item" ng-repeat="item in taskList" ng-style="item.itemStyle">
+                        <span>{{item.date}}</span> :
+                        {{item.task}}</li>
+                </ul>
+
+            </div>
+        </div>
+
 
 </div>
+</div>
+
+
 
 
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
 
-<script src="js/jquery.js"></script>
+<script type="text/javascript" src="js/angular.js"></script>
 <script src="js/Chart.js-master/Chart2.js"></script>
-
+<script src="js/jquery.js"></script>
 <script src="js/interface.js"></script>
 <script src="js/fb-login.js"></script>
 <script src="js/totalTable.js"></script>
+<script src="js/ToDoList.js"></script>
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-<script src="js/lineHistoricChart.js"></script>
+
 
 </body>
 </html>
+>
