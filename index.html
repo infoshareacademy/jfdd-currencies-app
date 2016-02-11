@@ -21,118 +21,12 @@
 
 </head>
 <body>
-<script>
-    // This is called with the results from from FB.getLoginStatus().
-    function statusChangeCallback(response) {
-        console.log('statusChangeCallback');
-        console.log(response);
-        // The response object is returned with a status field that lets the
-        // app know the current login status of the person.
-        // Full docs on the response object can be found in the documentation
-        // for FB.getLoginStatus().
-        if (response.status === 'connected') {
-            // Logged into your app and Facebook.
-            testAPI();
-        } else if (response.status === 'not_authorized') {
-            // The person is logged into Facebook, but not your app.
-//                        document.getElementById('status').innerHTML = 'Please log ' +
-//                                'into this app.';
-        } else {
-            // The person is not logged into Facebook, so we're not sure if
-            // they are logged into this app or not.
-//                        document.getElementById('status').innerHTML = 'Please log ' +
-//                                'into Facebook.';
-        }
-    }
-
-    // This function is called when someone finishes with the Login
-    // Button.  See the onlogin handler attached to it in the sample
-    // code below.
-    function checkLoginState() {
-        FB.getLoginStatus(function (response) {
-            statusChangeCallback(response);
-        });
-    }
-
-
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '183202345374099',
-            cookie: true,  // enable cookies to allow the server to access
-                           // the session
-            xfbml: true,  // parse social plugins on this page
-            version: 'v2.2' // use version 2.2
-        });
-
-        // Now that we've initialized the JavaScript SDK, we call
-        // FB.getLoginStatus().  This function gets the state of the
-        // person visiting this page and can return one of three states to
-        // the callback you provide.  They can be:
-        //
-        // 1. Logged into your app ('connected')
-        // 2. Logged into Facebook, but not your app ('not_authorized')
-        // 3. Not logged into Facebook and can't tell if they are logged into
-        //    your app or not.
-        //
-        // These three cases are handled in the callback function.
-
-        FB.getLoginStatus(function (response) {
-            statusChangeCallback(response);
-        });
-
-    };
-
-    // Load the SDK asynchronously
-
-    // Load the SDK asynchronously
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = 183202345374099;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    // Here we run a very simple test of the Graph API after login is
-    // successful.  See statusChangeCallback() for when this call is made.
-    function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function (response) {
-
-            console.log('Successful login for: ' + response.name);
-            document.getElementById('userName').innerHTML =
-                    response.name
-
-
-//            window.location = 'http://test.app.monuments.jfdd.infoshareaca.nazwa.pl';
-
-            console.log('Successful login for: ' + response.name);
-            document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
-
-        });
-    }
-</script>
 
 <header class="main-header">
     <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
     <nav class="navbar blue-skin">
         <div class="right-navbar-items">
             <ul class="right-top-icons">
-                <li class=" blue-skin blue-skin-hover">
-
-                    <span class="userName"></span>
-
-                    <a href="#" class="user-settings">
-                        <span class="userName"></span>
-                    </a>
-                    <ul class="user-settings-dropdown blue-skin blue-skin-hover">
-                        <li><i class="fa fa-user"></i>Profil</li>
-                        <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
-                    </ul>
-
-                </li>
                 <li class=" blue-skin blue-skin-hover">
                     <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
                     <ul class="menu-hidden">
@@ -148,16 +42,11 @@
                 </li>
             </ul>
 
-            <<<<<<< HEAD
+
         </div>
     </nav>
 </header>
 
-
-=======
-</div>
-</nav>
-</header>
 
 <aside class="main-sidebar blue-skin">
 
@@ -167,10 +56,11 @@
         <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
         <li><i class="fa fa-line-chart">Wykresy</i>
             <ul>
-                <li><a href="barChart.html">zmiany kursu średniego</a></li>
-                <li><a href="lineHistoricChart.html">Wykres kursów zamknięcia</a></li>
+                <li><a href="barChart.html">Zmiany kursu średniego</a></li>
+                <li><a href="lineHistoricChart.html">Wykres kursów dziennych</a></li>
             </ul>
         </li>
+        <li><a href="ToDoList.html"><i class="fa fa-calendar-check-o"></i> Planer</a></li>
         <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li> -->
     </ul>
 </aside>
@@ -197,9 +87,6 @@
 
 </div>
 
-
-
-</div>
 <!--Log in PopUp-->
 <section class="fluid-container" id="PopUp-wrapper" style="display:none">
 
@@ -229,7 +116,7 @@
 
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
-<script src="js/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
 <script src="app/js/angular.js"></script>
 <script src="app/app.js"></script>
 <script src="js/popUp.js"></script>
