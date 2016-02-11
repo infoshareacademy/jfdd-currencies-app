@@ -1,22 +1,27 @@
-
 var logger = (function(){
-    var events = [];
-    function getStorage() {
-        events = events.concat(JSON.parse(localStorage.getItem('logger')));
-    }
-
-    function addToLocalStorage(item){
-        localStorage.setItem('logger', JSON.stringify(item));
-    }
+    var key = 'logger';
 
     return {
         log: function (event) {
-            getStorage();
+            var events = JSON.parse(localStorage.getItem(key)) || [];
             events.push(event);
-            addToLocalStorage(events);
+            localStorage.setItem(key, JSON.stringify(events));
+        },
+
+        getLog: function () {
+            return JSON.parse(localStorage.getItem(key)) || []
         }
     }
 })();
+
+
+$(function () {
+   logger.getLog().forEach(function (logEntry, index) {
+       $('#tableLog tbody').append('<tr><td>' + index + '</td><td>' + logEntry.label + '</td><td>' + logEntry.place +'</td></tr>');
+   })
+});
+
+
 
 
 

@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="css/interface.css">
     <link rel="stylesheet" href="css/main-table.css">
     <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
-    <script src="js/logger.js"></script>
 
 </head>
 <body>
@@ -78,58 +77,44 @@
 
 
 <div class="content">
-    <div class="dashboard-heading col-md-12 col-xs-12"><h2 class="underline-header">Aktualne kursy</h2></div>
-
+    <div class="dashboard-heading col-md-12 col-xs-12"><h2 class="underline-header">Pomoc</h2></div>
     <div class="row">
-        <div class="col-xs-12 text-center">
-            <form class="form-inline" id="trendsForm">
-                <div class="input-group date" data-provide="datepicker">
-                    <input type="text" class="form-control" id="dateOne">
-                    <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-th"></span>
-                    </div>
-                </div>
-                <div class="input-group date" data-provide="datepicker">
-                    <input type="text" class="form-control" id="dateTwo">
-                    <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-th"></span>
-                    </div>
-                </div>
-                <button class="btn btn-primary" type="submit" id="submitTrends">Zbadaj trend</button>
-            </form>
-        </div>
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-8">
-            <table id="trendsTable" class="table table-bordered table-striped table-cur background-table">
-                <caption class="text-center"><b>Tabela trendów walut</b></caption>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <table class="table table-striped" id="tableLog">
                 <thead>
                 <tr>
-                    <th><b>Waluta</b></th>
-                    <th><b>Kod waluty</b></th>
-                    <th><b>Wartość początkowa</b></th>
-                    <th><b>Wartość końcowa</b></th>
-                    <th><b>Trend [%]</b></th>
+                    <th><b>#</b></th>
+                    <th><b>Zdarzenie</b></th>
+                    <th><b>Miejsce</b></th>
                 </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-3">
+    </div>
     </div>
 </div>
 
+
+
+
+
+
+
+
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
-<script src="js/jquery.min.js"></script>
-<script src="js/interface.js"></script>
+
 <script src="js/fb-login.js"></script>
 <script src="js/jquery.js"></script>
+<script src="js/interface.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.js"></script>
-
+<script src="js/logger.js"></script>
 <script src="js/trends.js"></script>
 
 

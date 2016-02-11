@@ -5,7 +5,7 @@ var currencyMap = {};
 
 currency.forEach(function (item, idx) {
     currencyMap[currenciesShorts[idx]] = item;
-})
+});
 
 var currencyDataFirst,
     currencyDataSecond;
@@ -33,7 +33,7 @@ $("#trendsForm").submit(function (event) {
 
                name: $xml.find('nazwa').text(),
 
-                fullName: currencyMap[$xml.find('nazwa').text().trim()],
+               fullName: currencyMap[$xml.find('nazwa').text().trim()],
 
                min: $xml.find('pozycja').filter(function () {
                    return $(this).find('data').text().trim() === currencyDataFirst;
