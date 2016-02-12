@@ -1,6 +1,4 @@
-/**
- * Created by Tomasz on 19.01.2016.
- */
+
 $(document).ready(function(){
 
     $(".trigger-slide").click(function() {
@@ -16,15 +14,18 @@ $(document).ready(function(){
 
 
     $('.motive-blue-btn').click(function(){
-        $('.blue-skin').css('background-color','#5193ff');
+        $('.blue-skin').css('background-color','#2980B9');
+        $('img').attr('src','images/logo_blue.svg')
     });
 
     $('.motive-red-btn').click(function(){
-        $('.blue-skin').css('background-color','#CC0000');
+        $('.blue-skin').css('background-color','#C0392B');
+        $('img').attr('src','images/logo_red.svg')
     });
 
     $('.motive-green-btn').click(function(){
-        $('.blue-skin').css('background-color','#73AD21');
+        $('.blue-skin').css('background-color','#16A085');
+        $('img').attr('src','images/logo_green.svg')
     });
 
     $(function () {

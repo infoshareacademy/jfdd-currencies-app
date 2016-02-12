@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Monitor wymiany walut</title>
+    <title>Zmiany kursu średniego</title>
 
     <!-- css files -->
     <link rel="stylesheet" href="css/reset.css">
-
+    <link rel="icon" href="images/favicon.ico">
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
     <link rel="stylesheet" href="css/interface.css">
     <link rel="stylesheet" href="css/main-table.css">
     <link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
@@ -25,71 +24,52 @@
 <body>
 
 
-<header class="main-header">
-    <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
+<header class="main-header col-xs-12"> <!-- change -->
+    <a href="index.html" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
     <nav class="navbar blue-skin">
-
         <div class="right-navbar-items">
             <ul class="right-top-icons">
-
-                <li class=" blue-skin blue-skin-hover">
-                    <a href="#" class="user-settings">
-                        <span class="userName"></span>
-                    </a>
-                    <ul class="user-settings-dropdown blue-skin blue-skin-hover">
-                        <li><i class="fa fa-user"></i>Profil</li>
-                        <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
-                    </ul>
-                </li>
+                <li><span id="userName"></span></li>
                 <li class=" blue-skin blue-skin-hover">
                     <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
                     <ul class="menu-hidden">
                         <li>
                             <div class="control-theme-section">
                                 <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
-                                <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
-                                <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
-                                <p class="motive-green-btn cursor-pointer">Zielono mi</p>
+                                <p class="motive-blue-btn cursor-pointer">Głębia oceanu</p>
+                                <p class="motive-red-btn cursor-pointer">Owoc granatu</p>
+                                <p class="motive-green-btn cursor-pointer">Zielone morze</p>
                             </div>
                         </li>
                     </ul>
                 </li>
             </ul>
-
         </div>
     </nav>
 </header>
-
-<aside class="main-sidebar blue-skin">
-
-
+<aside class="main-sidebar blue-skin col-lg-2 col-md-2 col-sm-12 col-xs-12"> <!-- change -->
     <ul class="sidebar-list">
-        <li><a href="index.html"><i class="fa fa-tachometer"></i>Deska</a></li>
+        <li><i class="fa fa-tachometer"></i>Deska</li>
         <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
-        <li><i class="fa fa-line-chart"></i>Wykresy
+        <li><i class="fa fa-line-chart">Wykresy</i>
             <ul>
-                <li><a href="barChart.html">zmiany kursu średniego</a></li>
-                <li><a href="lineHistoricChart.html">Wykres kursów zamknięcia</a></li>
+                <li><a href="barChart.html">Zmiany kursu średniego</a></li>
+                <li><a href="lineHistoricChart.html">Wykres kursów dziennych</a></li>
             </ul>
         </li>
-        <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li>-->
+        <li><a href="ToDoList.html"><i class="fa fa-calendar-check-o"></i> Planer</a></li>
     </ul>
 </aside>
 
-<!-- TU WRZUCAMY CONTENT -->
-
-
-<div class="content">
-    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Wykres różnic kursu średniego</h2></div>
+<div class="content col-lg-10 col-md-10 col-sm-10 col-xs-12">
+    <div class="dashboard-heading col-xs-12"><h2>Wykres różnic kursu średniego</h2></div>
     <div class="row">
         <div class=" col-md-1">
             <form class="form-inline" id="currencyForm">
-
                 <input type="text" id="data1" class="datepicker form-control" placeholder="Wybierz date">
             </form>
         </div>
         <div class=" col-md-8 ">
-
             <div class="col-md-offset-2 col-md-8" id="loader"></div>
                 <div class="col-md-offset-2 ct-chart ct-perfect-fourth"></div>
         </div>
@@ -107,6 +87,7 @@
 <script src="bower_components/chartist/dist/chartist.min.js"></script>
 <script src="bower_components/chartist/dist/chartist.js"></script>
 <script src="js/barChart.js"></script>
-
+<script src="js/google-login.js"></script>
+<script src="js/interface.js"></script>
 </body>
 </html>

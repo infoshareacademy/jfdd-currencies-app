@@ -44,15 +44,15 @@ body {
 }
 
 .motive-blue-btn {
-    background-color: #355b9e;
+    background-color: #2980b9;
 }
 
 .motive-red-btn {
-    background-color: #CC0000;
+    background-color: #c0392b;
 }
 
 .motive-green-btn {
-    background-color: #73AD21;
+    background-color: #16a085;
 }
 
 
@@ -355,17 +355,31 @@ body {
     background-color: transparent;
 }
 
+#loader{
+    width:100%;
+    height:100%;
+    position:absolute;
+}
+.navbar {
+    border-radius: 0;
+}
+
+/* ################################################################# */
+
 @media screen and (min-width: 992px) {
     .main-sidebar {
         height: 100vh;
     }
 }
-#loader{
-    width:100%;
-    height:100%;
-    position:absolute;
 
+@media screen and (max-width: 991px) {
+    .sidebar-list {
+        text-align: center;
+    }
 }
-.navbar {
-    border-radius: 0;
+
+@media screen and (max-width: 991px) {
+    .table {
+      width: 80vw;
+    }
 }

@@ -1,6 +1,3 @@
-/**
- * Created by siwexx on 25.01.16.
- */
 
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
