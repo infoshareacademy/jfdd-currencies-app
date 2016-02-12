@@ -11,8 +11,8 @@ config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'lineHistoricChart.html'
     }).when('/trends', {
         templateUrl: 'trends.html'
-    //}).when('/logger', {
-    //    templateUrl: 'logger.html'
+    }).when('/logger', {
+        templateUrl: 'logger.html'
     }).when('/ToDoList', {
         templateUrl: 'ToDoList.html',
         controller:'ToDoList'
