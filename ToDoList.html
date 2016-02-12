@@ -17,14 +17,13 @@
             </div>
             <div class="panel-body">
 
-                <!--dodać godzine-->
                 <form class="form-inline row">
                     <div class="form-group">
                         <label>Data</label>
-                        <input type="text" class="form-control datepicker" id="data1" placeholder="Data" ng-model="newItem.date">
+                        <input type="text" class="form-control datepicker" id="data1" placeholder="Data" ng-model="newItem.date" style="margin-top:0px;">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control"  placeholder="Wpisz nowe zadanie"ng-model="newItem.task">
+                        <input type="text" class="form-control"  placeholder="Wpisz nowe zadanie"ng-model="newItem.task" style="margin-top:0px;">
                     </div>
                     <button type="submit" class="btn btn-default" ng-click="addItem(newItem)">Dodaj</button>
                 </form>
@@ -63,8 +62,3 @@
     <script src="js/ToDoList.js"></script>
 
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-
-
-</body>
-</html>
->
