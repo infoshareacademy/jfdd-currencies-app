@@ -1,14 +1,129 @@
-<section class="dashboard-heading col-md-12 col-xs-12" ><h2>Overview</h2></section>
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitor wymiany walut</title>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id"
+          content="734032112012-a6mpevuqh71q83hfh5kg28fmbrhac4sr.apps.googleusercontent.com">
+    <!-- css files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/loginPopUp.css">
+    <link rel="stylesheet" href="css/interface.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
 
 
-<section class="box-selected-cur col-md-4 col-xs-12 select-section-1">
-    <canvas id="myChart" width="auto" height="auto"></canvas>
-</section>
+</head>
+<body>
 
-<section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
-    <canvas id="myChart2" width="auto" height="auto"></canvas>
-</section>
+<header class="main-header">
+    <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
+    <nav class="navbar blue-skin">
+        <div class="right-navbar-items">
+            <ul class="right-top-icons">
+                <li><span id="userName"></span></li>
+                <li class=" blue-skin blue-skin-hover">
+                    <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
+                    <ul class="menu-hidden">
+                        <li>
+                            <div class="control-theme-section">
+                                <p><i class="fa fa-exchange"></i>Wybierz motyw:</p>
+                                <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
+                                <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
+                                <p class="motive-green-btn cursor-pointer">Zielono mi</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
 
-<section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
-    <canvas id="myChart3" width="auto" height="auto"></canvas>
-</section>
+
+        </div>
+    </nav>
+</header>
+
+
+<aside class="main-sidebar blue-skin">
+
+
+    <ul class="sidebar-list">
+        <li><i class="fa fa-tachometer"></i>Deska</li>
+        <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
+        <li><i class="fa fa-line-chart">Wykresy</i>
+            <ul>
+                <li><a href="/barChart">Zmiany kursu średniego</a></li>
+                <li><a href="lineHistoricChart.html">Wykres kursów dziennych</a></li>
+            </ul>
+        </li>
+        <li><a href="ToDoList.html"><i class="fa fa-calendar-check-o"></i> Planer</a></li>
+        <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li> -->
+    </ul>
+</aside>
+
+
+<!-- TU WRZUCAMY CONTENT -->
+
+
+<div class="content" >
+    <div ng-view></div>
+
+
+</div>
+
+<!--Log in PopUp-->
+<!--<section class="fluid-container" id="PopUp-wrapper" style="display:none">-->
+
+
+<!--<div class="row logInBackground"></div>-->
+<!--<div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6">-->
+
+<!--<div class="row"><h2>Zaloguj się przez:</h2></div>-->
+
+<!--<div class="row" id="facebookLogin">-->
+<!--<fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();" class="socialMediaLogIn">-->
+<!--Facebook-->
+<!--</fb:login-button>-->
+<!--</div>-->
+
+<!--<div class="row" id="googleLogin">-->
+<!--<button>-->
+<!--<div class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark">-->
+<!--</div>-->
+<!--</button>-->
+<!--</div>-->
+
+<!--<div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>-->
+
+<!--</div>-->
+<!--</section>-->
+
+<footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
+<!-- scripts !-->
+<script src="js/jquery.js"></script>
+
+<script src="app/js/angular.js"></script>
+<script src="https://code.angularjs.org/1.4.9/angular-route.js"></script>
+<script src="app/app.js"></script>
+<script src="js/popUp.js"></script>
+<script src="js/tableData.js"></script>
+<script src="js/interface.js"></script>
+<script src="js/Chart.js-master/Chart.js"></script>
+<script src="js/Chart.js-master/chartcur.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="js/google-login.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="bower_components/chartist/dist/chartist.min.js"></script>
+<script src="bower_components/chartist/dist/chartist.js"></script>
+<script src="js/barChart.js"></script>
+
+</body>
+</html>
