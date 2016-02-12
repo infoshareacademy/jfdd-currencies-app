@@ -1,6 +1,6 @@
 
 
-    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Zaplanuj swój tydzień</h2></div>
+    <div class="dashboard-heading col-md-12 col-xs-12"><h2>Zaplanuj wymianę walut</h2></div>
     <div class="row">
         <button class="btn btn-default" type="submit" ng-click="show=false">Lista wszystkich zadań</button>
         <button class="btn btn-default" type="submit" ng-click="show=true">Zarządzaj zadaniami</button>
@@ -17,14 +17,13 @@
             </div>
             <div class="panel-body">
 
-                <!--dodać godzine-->
                 <form class="form-inline row">
                     <div class="form-group">
                         <label>Data</label>
-                        <input type="text" class="form-control datepicker" id="data1" placeholder="Data" ng-model="newItem.date">
+                        <input type="text" class="form-control datepicker" id="data1" placeholder="Data" ng-model="newItem.date" style="margin-top:0px;">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control"  placeholder="Wpisz nowe zadanie"ng-model="newItem.task">
+                        <input type="text" class="form-control"  placeholder="Wpisz nowe zadanie"ng-model="newItem.task" style="margin-top:0px;">
                     </div>
                     <button type="submit" class="btn btn-default" ng-click="addItem(newItem)">Dodaj</button>
                 </form>
@@ -51,20 +50,8 @@
 
 </div>
 
-
-
-
-
-<footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
-
-
 <script src="js/Chart.js-master/Chart2.js"></script>
     <script src="js/ToDoList.js"></script>
 
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-
-
-</body>
-</html>
->

@@ -3,6 +3,13 @@
  */
 $(document).ready(function(){
 
+    (function () {
+        if(! localStorage.name)  {
+            $('#PopUp-wrapper').removeAttr('style', 'display:none');
+        }
+
+    }());
+
     $(".trigger-slide").click(function() {
         $('.menu-hidden').toggleClass('menu-show-up')
     });
@@ -29,6 +36,9 @@ $(document).ready(function(){
 
     $(function () {
         $('#userName').append(localStorage.getItem("name"));
+
     });
+
+
 });
 
