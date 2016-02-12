@@ -16,6 +16,8 @@ config(['$routeProvider', function ($routeProvider) {
     }).when('/ToDoList', {
         templateUrl: 'ToDoList.html',
         controller:'ToDoList'
-    })
-
+    }).
+    otherwise({
+        redirectTo: '/desc'
+    });
 }]);
