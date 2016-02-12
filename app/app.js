@@ -1,22 +1,21 @@
-angular.module('myApp', []).
+angular.module('myApp', ['ngRoute','Planer']).
 config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/barChart', {
             templateUrl: 'barChart.html'
-        }).
-    when('/desc', {
+        }).when('/desc', {
         templateUrl: 'desc.html'
-    }).
-    when('/table', {
+    }).when('/table', {
         templateUrl: 'table.html'
-
-    }). when('/lineHistoricChart', {
+    }).when('/lineHistoricChart', {
         templateUrl: 'lineHistoricChart.html'
-
+    }).when('/trends', {
+        templateUrl: 'trends.html'
+    //}).when('/logger', {
+    //    templateUrl: 'logger.html'
     }).when('/ToDoList', {
-        templateUrl: 'ToDoList.html'
-
+        templateUrl: 'ToDoList.html',
+        controller:'ToDoList'
     })
-
 
 }]);
