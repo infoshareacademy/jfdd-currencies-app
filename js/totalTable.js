@@ -18,15 +18,14 @@ $(document).ready(function () {
 
                 $(xml).find('pozycja').each(function () {
 
-                    var nazwaWaluty = $(this).find('nazwa_waluty').text();
-                    var przelicznik = $(this).find('przelicznik').text();
-                    var kodWaluty = $(this).find('kod_waluty').text();
-                    var kursKupna = $(this).find('kurs_kupna').text();
-                    var kursSprzedazy = $(this).find('kurs_sprzedazy').text();
+                    var nazwaWaluty = $(this).find('nazwa_waluty').text(),
+                        przelicznik = $(this).find('przelicznik').text(),
+                        kodWaluty = $(this).find('kod_waluty').text(),
+                        kursKupna = $(this).find('kurs_kupna').text(),
+                        kursSprzedazy = $(this).find('kurs_sprzedazy').text();
 
 
-                    $('.table-cur tbody').append('<tr><td>' + nazwaWaluty + '</td>' + '<td>' + kodWaluty
-                        + '</td>' + '<td>' + kursKupna + '</td>' + '<td>' + kursSprzedazy + '</td></tr>');
+                    $('.table-cur tbody').append('<tr><td>' + [nazwaWaluty,kodWaluty,kursKupna,kursSprzedazy].join('</td><td>') + '</td></tr>');
 
                     var dataDzien = $(xml).find('data_notowania');
                     $('.dateOfTable').append(dataDzien);

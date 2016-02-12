@@ -3,9 +3,8 @@ var currency = ['Dolar amerykański', 'Dolar australijski', 'Dolar kanadyjski', 
     'Forint (Węgry)', 'Frank szwajcarski', 'Funt szterling', 'Jen (Japonia)', 'Korona czeska',
     'Korona duńska', 'Korona norweska', 'Korona szwedzka', 'SDR (MFW)'],
     currenciesShorts = ['USD','AUD','CAD','EUR','HUF','CHF','GBP','JPY','CZK','DKK','NOK','SEK','XDR'],
-    currencyMap = {},
-    currencyDataFirst,
-    currencyDataSecond;
+    currencyMap = {};
+
 
     currency.forEach(function (item, idx) {
     currencyMap[currenciesShorts[idx]] = item;
@@ -15,8 +14,8 @@ var currency = ['Dolar amerykański', 'Dolar australijski', 'Dolar kanadyjski', 
 $("#trendsForm").submit(function (event) {
 
     event.preventDefault();
-    currencyDataFirst = $('#dateOne').val();
-    currencyDataSecond = $('#dateTwo').val();
+    var currencyDataFirst = $('#dateOne').val();
+    var currencyDataSecond = $('#dateTwo').val();
 
     $.when.apply($, currenciesShorts.map(function (item) {
         var url = ('xml/' + item + '.xml');
@@ -26,7 +25,8 @@ $("#trendsForm").submit(function (event) {
         var tableBody = $('#trendsTable tbody');
 
         tableBody.html('');
-       results.forEach(function(item){
+
+        results.forEach(function(item){
             $xml = $(item[0]);
             var row = {
 
@@ -45,7 +45,7 @@ $("#trendsForm").submit(function (event) {
            };
 
            var percents = ((row.max / row.min)*100 - 100).toFixed(3);
-           var insertedRow = tableBody.append('<tr><td>' + [row.fullName,row.name,row.min,row.max,percents + '%'].join('</td><td>') + '</td></tr>')
+           tableBody.append('<tr><td>' + [row.fullName,row.name,row.min,row.max,percents + '%'].join('</td><td>') + '</td></tr>')
            .find('td').last().css('color', percents >= 0 ? 'green' : 'red');
 
        });
