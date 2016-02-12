@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Workshop">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>Monitor wymiany walut</title>
@@ -18,121 +18,19 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="css/loginPopUp.css">
     <link rel="stylesheet" href="css/interface.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+
 
 </head>
 <body>
-<script>
-    // This is called with the results from from FB.getLoginStatus().
-    function statusChangeCallback(response) {
-        console.log('statusChangeCallback');
-        console.log(response);
-        // The response object is returned with a status field that lets the
-        // app know the current login status of the person.
-        // Full docs on the response object can be found in the documentation
-        // for FB.getLoginStatus().
-        if (response.status === 'connected') {
-            // Logged into your app and Facebook.
-            testAPI();
-        } else if (response.status === 'not_authorized') {
-            // The person is logged into Facebook, but not your app.
-//                        document.getElementById('status').innerHTML = 'Please log ' +
-//                                'into this app.';
-        } else {
-            // The person is not logged into Facebook, so we're not sure if
-            // they are logged into this app or not.
-//                        document.getElementById('status').innerHTML = 'Please log ' +
-//                                'into Facebook.';
-        }
-    }
-
-    // This function is called when someone finishes with the Login
-    // Button.  See the onlogin handler attached to it in the sample
-    // code below.
-    function checkLoginState() {
-        FB.getLoginStatus(function (response) {
-            statusChangeCallback(response);
-        });
-    }
-
-
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '183202345374099',
-            cookie: true,  // enable cookies to allow the server to access
-                           // the session
-            xfbml: true,  // parse social plugins on this page
-            version: 'v2.2' // use version 2.2
-        });
-
-        // Now that we've initialized the JavaScript SDK, we call
-        // FB.getLoginStatus().  This function gets the state of the
-        // person visiting this page and can return one of three states to
-        // the callback you provide.  They can be:
-        //
-        // 1. Logged into your app ('connected')
-        // 2. Logged into Facebook, but not your app ('not_authorized')
-        // 3. Not logged into Facebook and can't tell if they are logged into
-        //    your app or not.
-        //
-        // These three cases are handled in the callback function.
-
-        FB.getLoginStatus(function (response) {
-            statusChangeCallback(response);
-        });
-
-    };
-
-    // Load the SDK asynchronously
-
-    // Load the SDK asynchronously
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = 183202345374099;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    // Here we run a very simple test of the Graph API after login is
-    // successful.  See statusChangeCallback() for when this call is made.
-    function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function (response) {
-
-            console.log('Successful login for: ' + response.name);
-            document.getElementById('userName').innerHTML =
-                    response.name
-
-
-//            window.location = 'http://test.app.monuments.jfdd.infoshareaca.nazwa.pl';
-
-            console.log('Successful login for: ' + response.name);
-            document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
-
-        });
-    }
-</script>
 
 <header class="main-header">
     <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
     <nav class="navbar blue-skin">
         <div class="right-navbar-items">
             <ul class="right-top-icons">
-                <li class=" blue-skin blue-skin-hover">
-
-                    <span class="userName"></span>
-
-                    <a href="#" class="user-settings">
-                        <span class="userName"></span>
-                    </a>
-                    <ul class="user-settings-dropdown blue-skin blue-skin-hover">
-                        <li><i class="fa fa-user"></i>Profil</li>
-                        <li><i class="fa fa-sign-out"></i>Wyloguj się</li>
-                    </ul>
-
-                </li>
+                <li><span id="userName"></span></li>
                 <li class=" blue-skin blue-skin-hover">
                     <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
                     <ul class="menu-hidden">
@@ -142,35 +40,33 @@
                                 <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
                                 <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
                                 <p class="motive-green-btn cursor-pointer">Zielono mi</p>
+                        <a href="#logger"> Help</a>
                             </div>
                         </li>
                     </ul>
                 </li>
             </ul>
 
-            <<<<<<< HEAD
+
         </div>
     </nav>
 </header>
 
 
-=======
-</div>
-</nav>
-</header>
-
 <aside class="main-sidebar blue-skin">
 
 
     <ul class="sidebar-list">
-        <li><i class="fa fa-tachometer"></i>Deska</li>
-        <li><a href="table.html"><i class="fa fa-table"></i>Tabele</a></li>
+        <li><a href="#desc"><i class="fa fa-tachometer"></i>Deska</a></li>
+        <li><a href="#table"><i class="fa fa-table"></i>Tabele</a></li>
         <li><i class="fa fa-line-chart">Wykresy</i>
             <ul>
-                <li><a href="barChart.html">zmiany kursu średniego</a></li>
-                <li><a href="lineHistoricChart.html">Wykres kursów zamknięcia</a></li>
+                <li><a href="#barChart">Zmiany kursu średniego</a></li>
+                <li><a href="#lineHistoricChart">Wykres kursów dziennych</a></li>
             </ul>
         </li>
+        <li><a href="#ToDoList"><i class="fa fa-calendar-check-o"></i> Planer</a></li>
+        <li><a href="#trends"><i class="fa fa-calendar-check-o"></i> Trendy</a></li>
         <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li> -->
     </ul>
 </aside>
@@ -179,67 +75,51 @@
 <!-- TU WRZUCAMY CONTENT -->
 
 
-<div class="content" ng-controller="BaseController">
-    <section class="dashboard-heading col-md-12 col-xs-12" ><h2>{{info}}</h2></section>
-
-
-    <section class="box-selected-cur col-md-4 col-xs-12 select-section-1">
-        <canvas id="myChart" width="auto" height="auto"></canvas>
-    </section>
-
-    <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
-        <canvas id="myChart2" width="auto" height="auto"></canvas>
-    </section>
-
-    <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
-        <canvas id="myChart3" width="auto" height="auto"></canvas>
-    </section>
-
-</div>
-
+<div class="content">
+    <div ng-view></div>
 
 
 </div>
+
 <!--Log in PopUp-->
-<section class="fluid-container" id="PopUp-wrapper" style="display:none">
+<!--<section class="fluid-container" id="PopUp-wrapper" style="display:none">-->
 
 
-    <div class="row logInBackground"></div>
-    <div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6">
+    <!--<div class="row logInBackground"></div>-->
+    <!--<div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6">-->
 
-        <div class="row"><h2>Zaloguj się przez:</h2></div>
+        <!--<div class="row"><h2>Zaloguj się przez:</h2></div>-->
 
-        <div class="row" id="facebookLogin">
-            <fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();" class="socialMediaLogIn">
-                Facebook
-            </fb:login-button>
-        </div>
+        <!--<div class="row" id="facebookLogin">-->
+            <!--<fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();" class="socialMediaLogIn">-->
+                <!--Facebook-->
+            <!--</fb:login-button>-->
+        <!--</div>-->
 
-        <div class="row" id="googleLogin">
-            <button>
-                    <div class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark">
-                 </div>
-            </button>
-        </div>
+        <!--<div class="row" id="googleLogin">-->
+            <!--<button>-->
+                    <!--<div class="g-signin2 socialMediaLogIn google" data-onsuccess="onSignIn" data-theme="dark">-->
+                 <!--</div>-->
+            <!--</button>-->
+        <!--</div>-->
 
-        <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>
+        <!--<div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>-->
 
-    </div>
-</section>
+    <!--</div>-->
+<!--</section>-->
 
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
-<script src="js/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
 <script src="app/js/angular.js"></script>
+<script src="https://code.angularjs.org/1.4.9/angular-route.js"></script>
 <script src="app/app.js"></script>
 <script src="js/popUp.js"></script>
-<script src="js/tableData.js"></script>
 <script src="js/interface.js"></script>
-<script src="js/Chart.js-master/Chart.js"></script>
-<script src="js/Chart.js-master/chartcur.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="js/google-login.js"></script>
-
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/ToDoList.js"></script>
 
 </body>
 </html>
