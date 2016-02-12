@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>Monitor wymiany walut</title>
@@ -18,16 +18,19 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="css/loginPopUp.css">
     <link rel="stylesheet" href="css/interface.css">
-    <script src="js/logger.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+
+
 </head>
 <body>
-<script src="js/fb-login.js"></script>
 
 <header class="main-header">
     <a href="#" class="logo blue-skin blue-skin-hover"><img src="images/logo.svg"></a>
     <nav class="navbar blue-skin">
         <div class="right-navbar-items">
             <ul class="right-top-icons">
+                <li><span id="userName"></span></li>
                 <li class=" blue-skin blue-skin-hover">
                     <a href="#" class="control-theme trigger-slide"><i class="fa fa-cogs"></i></a>
                     <ul class="menu-hidden">
@@ -37,28 +40,34 @@
                                 <p class="motive-blue-btn cursor-pointer">Niebieskie migdały</p>
                                 <p class="motive-red-btn cursor-pointer">Krwawa Merry</p>
                                 <p class="motive-green-btn cursor-pointer">Zielono mi</p>
-                                <a href="logger.html">HELP</a>
+                        <a href="#logger"> Help</a>
                             </div>
                         </li>
                     </ul>
                 </li>
             </ul>
+
+
         </div>
     </nav>
 </header>
 
-<aside class="main-sidebar">
+
+<aside class="main-sidebar blue-skin">
 
 
     <ul class="sidebar-list">
-        <li><a href="index.html" onclick="logger.log({label: 'Click on Deska-menu', place: 'index.html'})"><i class="fa fa-tachometer"></i>Deska</a></li>
-        <li><a href="table.html" onclick="logger.log({label: 'Click on Aktualne-Kursy-menu', place: 'index.html'})"><i class="fa fa-table"></i>Aktualne kursy</a></li>
-        <li><i class="fa fa-line-chart"></i>Wykresy
+        <li><a href="#desc"><i class="fa fa-tachometer"></i>Deska</a></li>
+        <li><a href="#table"><i class="fa fa-table"></i>Tabele</a></li>
+        <li><i class="fa fa-line-chart">Wykresy</i>
             <ul>
-                <li class="pading15"><a href="barChart.html" onclick="logger.log({label: 'Click on Zmiany-kursu-sredniego-menu', place: 'index.html'})">Zmiany kursu średniego</a></li>
-                <li class="pading15"><a href="lineHistoricChart.html" onclick="logger.log({label: 'Click on Wykres-kursu-dziennych-menu', place: 'index.html'})">Wykres kursów dziennych</a></li>
+                <li><a href="#barChart">Zmiany kursu średniego</a></li>
+                <li><a href="#lineHistoricChart">Wykres kursów dziennych</a></li>
             </ul>
         </li>
+        <li><a href="#ToDoList"><i class="fa fa-calendar-check-o"></i> Planer</a></li>
+        <li><a href="#trends"><i class="fa fa-calendar-check-o"></i> Trendy</a></li>
+        <!--<li><i class="fa fa-sort-amount-asc"></i>Trendy</li> -->
     </ul>
 </aside>
 
@@ -67,20 +76,8 @@
 
 
 <div class="content">
-    <section class="dashboard-heading col-md-12 col-xs-12"><h2 class="underline-header">Deska</h2></section>
+    <div ng-view></div>
 
-
-    <section class="box-selected-cur col-md-4 col-xs-12 select-section-1" id="canvasLeft">
-        <canvas id="myChart" width="auto" height="auto"></canvas>
-    </section>
-
-    <section class="box-selected-cur col-md-4 col-xs-12 select-section-2">
-        <canvas id="myChart2" width="auto" height="auto"></canvas>
-    </section>
-
-    <section class="box-selected-cur col-md-4 col-xs-12 select-section-3">
-        <canvas id="myChart3" width="auto" height="auto"></canvas>
-    </section>
 
 </div>
 
@@ -91,10 +88,7 @@
     <div class="row logInBackground"></div>
     <div class=" row logInPopUp col-xs-12 col col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6">
 
-        <div class="row">
-            <h2 class="underline-header"><b>Logowanie</b></h2>
-            <h5>Zaloguj się <b>Monitora Kursu Walut</b> przez wybrany portal społecznościowy</h5>
-        </div>
+        <div class="row"><h2>Zaloguj się przez:</h2></div>
 
         <div class="row" id="facebookLogin">
             <fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();" class="socialMediaLogIn">
@@ -109,22 +103,25 @@
             </button>
         </div>
 
-        <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/"><button class="btn btn-default">Powrót</button></a></div>
+        <div class="row"><a href="http://test.currencies.jfdd.infoshareaca.nazwa.pl/">Powrót</a></div>
 
     </div>
 </section>
+
 <footer class="main-footer">copyright c 2016 Monitor Kursów Walut</footer>
 <!-- scripts !-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popUp.js"></script>
-        <script src="js/tableData.js"></script>
-        <script src="js/interface.js"></script>
-        <script src="js/Chart.js-master/Chart.js"></script>
-        <script src="js/Chart.js-master/chartcur.js"></script>
-        <script src="js/dragdrop.js"></script>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script src="js/google-login.js"></script>
+<script src="js/jquery.js"></script>
+<script src="app/js/angular.js"></script>
+<script src="https://code.angularjs.org/1.4.9/angular-route.js"></script>
+<script src="app/app.js"></script>
+<script src="js/popUp.js"></script>
+<script src="js/interface.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="js/google-login.js"></script>
+<script src="js/fb-login.js"></script>
 
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/ToDoList.js"></script>
 
 </body>
 </html>
