@@ -17,10 +17,9 @@ var logger = (function(){
 
 $(function () {
    logger.getLog().forEach(function (logEntry, index) {
-       $('#tableLog tbody').append('<tr><td>' + index + '</td><td>' + logEntry.label + '</td><td>' + logEntry.place +'</td></tr>');
+       $('#tableLog tbody').append('<tr><td>' + [index,logEntry.label,logEntry.place].join('</td><td>') + '</td></tr>')
    })
 });
-
 
 
 
