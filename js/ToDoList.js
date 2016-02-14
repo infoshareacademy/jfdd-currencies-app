@@ -4,7 +4,6 @@
     app.controller('ToDoList', function ($scope) {
             $scope.taskList = [];
 
-
             var today = new Date();
             var dd = today.getDate();
             var mm = today.getMonth() + 1;
@@ -97,24 +96,3 @@
 
 
 })();
-
-//DO ZROBIENIA W WEEKEND:
-//zapisywanie danych w local storage.
-//
-//var logger = (function() {
-//    var key = 'log';
-//    return {
-//        log: function (event) {
-//            var events = JSON.parse(localStorage.getItem(key)) || [];
-//            events.push(event);
-//            localStorage.setItem(key, JSON.stringify(events));
-//        }
-//    } })();
-//
-//
-//var names = [];
-//names[0] = prompt("New member name?");
-//localStorage["names"] = JSON.stringify(names);
-//
-////...
-//var storedNames = JSON.parse(localStorage["names"]);

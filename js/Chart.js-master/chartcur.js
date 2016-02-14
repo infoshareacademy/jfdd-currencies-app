@@ -3,13 +3,6 @@
  */
 $(document).ready(function () {
 
-
-
-    var ctx = document.getElementById('myChart').getContext("2d");
-    var ctx2 = document.getElementById('myChart2').getContext("2d");
-    var ctx3 = document.getElementById('myChart3').getContext("2d");
-
-
     var data = {
         labels: ["PN", "WT", "ŚR", "CZW", "PT"],
         datasets: [
@@ -135,13 +128,22 @@ $(document).ready(function () {
     fetchDataset('xml/2016_01_15.xml',4)
     ).then(function(){
         var chartLeft = localStorage.getItem('chartLeft');
-        drawChart(chartLeft || 'USD', ctx);
-        drawChart('USD', ctx2);
-        drawChart('USD', ctx3);
+        var chartCenter = localStorage.getItem('chartCenter');
+        var chartRight = localStorage.getItem('chartRight');
+        drawChart(chartLeft || 'USD', 'myChart');
+        drawChart(chartCenter || 'USD', 'myChart2');
+        drawChart(chartRight || 'USD', 'myChart3');
     });
 
 
-    function drawChart(currencySymbol,context) {
+    function drawChart(currencySymbol,chartId) {
+        var $existingCanvas = $('#' + chartId);
+        var $newCanvas = $('<canvas>').attr('id', chartId);
+
+        $existingCanvas.replaceWith($newCanvas);
+
+        var context = $newCanvas.get(0).getContext('2d');
+
         data.datasets[0].data = currencies[currencySymbol].kursyKupna;
         data.datasets[1].data = currencies[currencySymbol].kursySprzedazy;
 
@@ -150,14 +152,16 @@ $(document).ready(function () {
     }
 
     $('#selectLeft').change(function() {
-            drawChart($(this).val(),ctx);
-            localStorage.setItem('chartLeft',$(this).val());
+        drawChart($(this).val(),'myChart');
+        localStorage.setItem('chartLeft', $(this).val());
     });
     $('#selectCenter').change(function() {
-        drawChart($(this).val(),ctx2);
+        drawChart($(this).val(), 'myChart2');
+        localStorage.setItem('chartCenter', $(this).val());
     });
     $('#selectRight').change(function() {
-        drawChart($(this).val(),ctx3);
+        drawChart($(this).val(), 'myChart3');
+        localStorage.setItem('chartRight', $(this).val());
     });
 
 

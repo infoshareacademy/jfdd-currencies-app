@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 
     $('.motive-blue-btn').click(function(){
-        $('.blue-skin').css('background-color','#5193ff');
+        $('.blue-skin').css('background-color','#355b9e');
     });
 
     $('.motive-red-btn').click(function(){

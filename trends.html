@@ -1,0 +1,46 @@
+
+    <div class="dashboard-heading col-md-12 col-xs-12"><h2 class="underline-header">Aktualne kursy</h2></div>
+
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <form class="form-inline" id="trendsForm">
+                <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control" id="dateOne">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control" id="dateTwo">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit" id="submitTrends">Zbadaj trend</button>
+            </form>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <table id="trendsTable" class="table table-bordered table-striped table-cur background-table">
+                <caption class="text-center"><b>Tabela trendów walut</b></caption>
+                <thead>
+                <tr>
+                    <th><b>Waluta</b></th>
+                    <th><b>Kod waluty</b></th>
+                    <th><b>Wartość początkowa</b></th>
+                    <th><b>Wartość końcowa</b></th>
+                    <th><b>Trend [%]</b></th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/trends.js"></script>
+
